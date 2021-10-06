@@ -2,7 +2,7 @@
 name: "[Task] Task Card"
 about: "[Task] Task Card"
 title: "[Task] Task Card"
-labels: Back-end
+labels: Back-end, Front-end
 assignees: ''
 
 ---
