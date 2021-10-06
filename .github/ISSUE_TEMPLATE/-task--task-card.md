@@ -10,7 +10,7 @@ assignees: ''
 ### **ISSUE**
 
 - Group: `client`, `server`
-- Type: `bug`, `feature`, `delete`
+- Type: `feature`, `delete`, `bug`
 - Detail: 
 
 ### **TODO**
