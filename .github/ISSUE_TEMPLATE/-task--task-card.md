@@ -9,9 +9,9 @@ assignees: ''
 
 ### **ISSUE**
 
-- Group: `client`, `server`, `sr`
+- Group: `client`, `server`
 - Type: `bug`, `feature`, `delete`
-- Detail: fix actions from client redux
+- Detail: 
 
 ### **TODO**
 
@@ -21,24 +21,11 @@ assignees: ''
 
 ### **Estimated time**
 
-> Pick one
-> 
-
 ### **`0.5h`**
-
-### **`1h`**
-
-### **`1.5h`**
-
-### **`2h`**
-
-### **`2.5h`**
-
-### **`3h`**
 
 ### **Labels**
 
 - Estimated time: `E: 1h`
 - Group : `client`, `server`
-- Sprint: `Sprint__NUMBER__`
+- Sprint: `Sprint_Bare Minimum`
 - Urgency: `High`, `Middle`, `Low`
