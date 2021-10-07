@@ -23,7 +23,7 @@ app.use(
 
 // Routing
 app.use('/', (req, res) => {
-  res.send('hello world!', PORT);
+  res.send('hello world!');
 });
 
 // Server Running
