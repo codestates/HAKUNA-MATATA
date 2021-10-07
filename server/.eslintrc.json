@@ -30,7 +30,7 @@
     ],
     "require-await": "off",
     "no-unused-vars": [
-      "error",
+      "off",
       { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
     ]
   }
