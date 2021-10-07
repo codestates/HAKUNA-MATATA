@@ -23,7 +23,7 @@ app.use(
 
 // Routing
 app.use('/', (req, res) => {
-  res.send('hello world!');
+  res.send(process.env.DATABASE_USER);
 });
 
 // Server Running
