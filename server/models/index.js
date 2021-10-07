@@ -43,4 +43,14 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// Associations Setting
+const { user, post, category } = sequelize.models;
+
+// one to many
+user.hasMany(post, { foreignKey: 'user_id' });
+post.belongsTo(user, { foreignKey: 'user_id' });
+
+category.hasMany(post, { foreignKey: 'category_id' });
+post.belongsTo(category, { foreignKey: 'category_id' });
+
 module.exports = db;
