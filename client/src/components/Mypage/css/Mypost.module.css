@@ -1,0 +1,120 @@
+button {
+  background: inherit;
+  cursor: pointer;
+  border: none;
+}
+.post {
+  margin-top: 10px;
+  padding: 15px 20px;
+  width: 580px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+/* post Left */
+.category {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45em;
+  color: #f3887e;
+}
+.postTitle {
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.45em;
+  color: #404040;
+}
+.subInfo {
+  margin-top: 20px;
+  display: flex;
+}
+.image {
+  width: 16px;
+  margin-right: 2px;
+  height: 16px;
+}
+
+.number {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45em;
+  color: #737373;
+  margin-right: 5px;
+}
+
+.imageBox {
+  display: flex;
+  align-items: center;
+}
+
+/* post Right */
+
+.postRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+.dotBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+
+.dotBox.dotClick {
+  border: 2px solid #404040;
+  border-radius: 50%;
+}
+
+.dotMenu {
+  width: 24px;
+  height: 24px;
+}
+
+.menuBox {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  left: -25px;
+  bottom: -10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modifyButton {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
+
+.deleteButton {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
+.date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45em;
+  color: #737373;
+}
