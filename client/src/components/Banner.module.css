@@ -10,7 +10,7 @@
   z-index: 0;
   overflow: hidden;
   /* padding: 200px 0px; */
-  background-image: url('../assets/desert.jpg');
+  background-image: url('../images/desert.jpg');
   background-size: cover;
   background-position: center;
 }

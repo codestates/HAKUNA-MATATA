@@ -1,7 +1,7 @@
 import style from './Header.module.css';
 import Button from './Button';
 import Logo from './Logo';
-import userImg from '../../public/images/user.png';
+import userImg from '../images/user.png';
 
 const Header = () => {
   return (

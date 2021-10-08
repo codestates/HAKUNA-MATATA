@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './Post.module.css';
-import dotMenu from '../../public/dot-menu.png';
-import userImg from '../../public/user.png';
-import comments from '../../public/comment.png';
-import eye from '../../public/eye.png';
-import like from '../../public/heart.png';
+import dotMenu from '../images/dot-menu.png';
+import userImg from '../images/user.png';
+import comments from '../images/comments.png';
+import eye from '../images/eye.png';
+import like from '../images/heart.png';
 
 const Post = () => {
   return (
