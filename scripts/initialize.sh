@@ -1,7 +1,7 @@
 #!/bin/bash
-cd /home/ubuntu/im-sprint-practice-deploy/server
-npm install
-npm install pm2@latest -g
+cd /home/ubuntu/HAKUNA-MATATA/server
+sudo npm install
+sudo npm install pm2@latest -g
 sudo apt-get update
 sudo apt-get install authbind
 sudo touch /etc/authbind/byport/80

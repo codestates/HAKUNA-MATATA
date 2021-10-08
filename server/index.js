@@ -7,7 +7,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = process.env.HTTPS_PORT || 4000;
+const PORT = process.env.PORT_NUMVER || 4000;
 
 // Middleware
 app.use(morgan('dev'));
@@ -23,7 +23,7 @@ app.use(
 
 // Routing
 app.use('/', (req, res) => {
-  res.send('hello world!');
+  res.send(process.env.DATABASE_USER);
 });
 
 // Server Running
