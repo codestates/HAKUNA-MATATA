@@ -6,10 +6,12 @@ import Board from '../pages/Board';
 import Post from '../pages/Post';
 import About from '../pages/About';
 import AddPost from '../pages/AddPost';
+import Banner from './Banner';
 
 const Main = () => {
   return (
     <main>
+      <Banner />
       <Switch>
         <Route path="/about">
           <About />
