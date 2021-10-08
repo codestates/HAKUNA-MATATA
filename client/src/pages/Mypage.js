@@ -9,7 +9,6 @@ import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
 const Mypage = () => {
-
   const [subMenu, setSubMenu] = useState({
     profile: true,
     mypost: false,
@@ -120,8 +119,6 @@ const Mypage = () => {
       <footer className={style.footer} />
     </>
   );
-
-
 };
 
 export default Mypage;
