@@ -27,13 +27,17 @@ module.exports = async (req, res) => {
     // 등록된 회원이 존재하는지 확인한다.
     const userInfo = await user.findOne({ where: { email } });
     if (!userInfo) {
-      return res.status(403).json({ message: 'Not authorized!' });
+      return res
+        .status(403)
+        .json({ message: 'Not authorized! non-existent account' });
     }
 
     // 등록된 회원이 존재한다면 비밀번호를 확인한다.
     const match = await bcrypt.compare(password, userInfo.dataValues.password);
     if (!match) {
-      return res.status(403).json({ message: 'Not authorized!' });
+      return res
+        .status(403)
+        .json({ message: 'Not authorized! passwords do not match.' });
     }
 
     // 회원의 비밀번호와 역할을 삭제한다.
