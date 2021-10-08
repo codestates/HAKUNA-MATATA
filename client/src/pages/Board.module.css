@@ -1,0 +1,1827 @@
+.Board {
+    position: absolute;
+    width: 110px;
+    height: 72px;
+    left: 405px;
+    top: 358px;
+    
+    background: #F2B4B2;
+    border-radius: 5px;
+      
+    border-radius: 5px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 73px;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+.Board2 {
+    position: absolute;
+    width: 110px;
+    height: 72px;
+    left: 535px;
+    top: 358px;
+    
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 72px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    color: #4D4D4D;
+}
+.Board3{
+    position: absolute;
+    width: 110px;
+    height: 72px;
+    left: 665px;
+    top: 358px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 72px;
+    align-items: center;
+    text-align: center;
+
+    color: #4D4D4D;
+}
+.Board4{
+    position: absolute;
+    width: 110px;
+    height: 72px;
+    left: 795px;
+    top: 358px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 72px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+
+    color: #4D4D4D;
+}
+.Board5{
+    position: absolute;
+    width: 110px;
+    height: 72px;
+    left: 925px;
+    top: 358px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 72px;
+    align-items: center;
+    text-align: center;
+
+    color: #4D4D4D;
+}
+
+.new{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 210px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #F2B4B2;
+}
+.popular{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 281px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C4C;
+}
+.comments{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 352px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C4C;
+}
+.views{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 423px;
+    top: 487px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #4C4C4C;
+}
+
+.search{
+    position: absolute;
+    width: 239px;
+    height: 43px;
+    left: 990px;
+    top: 480px;
+
+    background: #FFFFFF;
+    border: 1px solid #F2B4B2;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.searchinput{
+    position: absolute;
+    width: 73px;
+    height: 17px;
+    left: 1005px;
+    top: 492px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+
+    color: #F2B4B2;
+}
+.searchicon{
+    position: absolute;
+    width: 41px;
+    height: 43px;
+    left: 1188px;
+    top: 480px;
+
+    background: #F2B4B2;
+    border-radius: 0px 3px 3px 0px;
+}
+.searchinputicon{
+    position: absolute;
+    width: 16.82px;
+    height: 16.82px;
+    left: 1199px;
+    top: 490px;
+
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.searchinputiconbar{
+    position: absolute;
+    width: 10.11px;
+    height: 0px;
+    left: 1210.65px;
+    top: 508.30px;
+
+    border: 2px solid #FFFFFF;
+    transform: rotate(50.19deg);
+}
+
+.postcard{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 543px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.postcard2{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 543px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard3{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 543px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard4{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  
+  }
+  .postcard5{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard6{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard7{
+    
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard8{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .postcard9{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  
+  }
+
+  .postcardpicture{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 543px;
+
+    
+    background: url('../../src/pages/images/postcardpicture.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture2{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 543px;
+    
+    background: url('../../src/pages/images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture3{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 543px;
+    
+    background: url('../../src/pages/images/postcardpicture3.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture4{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 782px;
+    
+    background: url('../../src/pages/images/postcardpicture4.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture5{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 782px;
+    
+    background: url('../../src/pages/images/postcardpicture3.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture6{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 782px;
+    
+    background: url('../../src/pages/images/postcardpicture.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture7{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 1021px;
+    
+    background: url('../../src/pages/images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture8{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 1021px;
+    
+    background: url('../../src/pages/images/postcardpicture4.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture9{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 1021px;
+    
+    background: url('../../src/pages/images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .postcardments{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+    
+  }
+  .postcardments2{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+    
+  }
+  .postcardments3{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments4{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;    
+  }
+  .postcardments5{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments6{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments7{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments8{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments9{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+
+  .postcardcommentsicon{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 230.71px;
+    top: 700px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+  }
+  .postcardcommentsicon2{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 574.71px;
+    top: 700px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+  }
+  .postcardcommentsicon3{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 918.71px;
+    top: 700px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+  }
+  .postcardcommentsicon4{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 230.71px;
+    top: 939px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+  }
+  .postcardcommentsicon5{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 574.71px;
+    top: 939px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+  }
+  .postcardcommentsicon6{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 918.71px;
+    top: 939px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+}
+  .postcardcommentsicon7{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 230.71px;
+    top: 1178px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+}
+  .postcardcommentsicon8{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 574.71px;
+    top: 1178px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+}
+  .postcardcommentsicon9{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 918.71px;
+    top: 1178px;
+    
+    background: url('../../src/pages/images/postcardcommentsicon.png');
+}
+
+.postcardlikeicon{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 291.46px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon2{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 635.46px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon3{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 979.46px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon4{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 291.46px;
+    top: 939px;    
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon5{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 635.46px;
+    top: 939px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon6{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 979.46px;
+    top: 939px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon7{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 291.46px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon8{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 635.46px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+.postcardlikeicon9{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 979.46px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardlikeicon.png');
+}
+
+.postcardviewicon{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 346.69px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon2{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 690.69px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon3{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 1034.69px;
+    top: 700px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon4{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 346.69px;
+    top: 939px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon5{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 690.69px;
+    top: 939px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon6{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 1034.69px;
+    top: 939px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon7{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 346.69px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon8{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 690.69px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+.postcardviewicon9{
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 1034.69px;
+    top: 1178px;
+
+    background: url('../../src/pages/images/postcardviewicon.png');
+}
+
+.postcardcommentsnumber{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 254.18px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber2{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 598.18px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber3{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 942.18px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber4{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 254.18px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber5{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 598.18px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber6{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 942.18px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber7{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 254.18px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber8{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 598.18px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardcommentsnumber9{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 942.18px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+
+.postcardlikeiconnumber{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 316.32px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber2{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 660.32px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber3{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 1004.32px;
+    top: 702px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber4{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 316.32px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber5{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 660.32px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber6{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 1004.32px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber7{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 316.32px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber8{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 660.32px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardlikeiconnumber9{
+    position: absolute;
+    width: 23.47px;
+    height: 10px;
+    left: 1004.32px;
+    top: 1180px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+
+.postcardviewiconnumber{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 371.55px;
+    top: 702px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+}
+.postcardviewiconnumber2{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 715.55px;
+    top: 702px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+       
+}
+.postcardviewiconnumber3{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 1059.55px;
+    top: 702px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+       
+}
+.postcardviewiconnumber4{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 371.55px;
+    top: 941px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #656F7B;
+}
+.postcardviewiconnumber5{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 715.55px;
+    top: 941px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+}
+.postcardviewiconnumber6{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 1059.55px;
+    top: 941px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;   
+}
+.postcardviewiconnumber7{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 371.55px;
+    top: 1180px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+}
+.postcardviewiconnumber8{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 715.55px;
+    top: 1180px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;
+       
+}
+.postcardviewiconnumber9{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 1059.55px;
+    top: 1180px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #656F7B;    
+}
+
+.postcardline{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 230.71px;
+    top: 724px;
+    
+    border: 1px solid #E6E9EB;
+}
+.postcardline2{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 574.71px;
+    top: 724px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline3{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 918.71px;
+    top: 724px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline4{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 230.71px;
+    top: 963px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline5{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 574.71px;
+    top: 963px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline6{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 918.71px;
+    top: 963px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline7{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 230.71px;
+    top: 1202px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline8{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 574.71px;
+    top: 1202px;
+    
+    border: 1px solid #E6E9EB;    
+}
+.postcardline9{
+    position: absolute;
+    width: 288.58px;
+    height: 0px;
+    left: 918.71px;
+    top: 1202px;
+    
+    border: 1px solid #E6E9EB;    
+}
+
+.postcardnicknameicon{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 233.71px;
+    top: 735px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');
+}
+.postcardnicknameicon2{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 577.71px;
+    top: 735px;
+
+    background: url('../../src/pages/images/postcardnicknameicon.png');
+}
+.postcardnicknameicon3{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 921.71px;
+    top: 735px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');   
+}
+.postcardnicknameicon4{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 233.71px;
+    top: 974px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');  
+}
+.postcardnicknameicon5{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 577.71px;
+    top: 974px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');   
+}
+.postcardnicknameicon6{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 921.71px;
+    top: 974px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');  
+}
+.postcardnicknameicon7{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 233.71px;
+    top: 1213px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');  
+}
+.postcardnicknameicon8{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 577.71px;
+    top: 1213px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png');    
+}
+.postcardnicknameicon9{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 921.71px;
+    top: 1213px;
+    
+    background: url('../../src/pages/images/postcardnicknameicon.png'); 
+}
+
+.postcardnickname{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 256px;
+    top: 735px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    color: #333333;
+}
+.postcardnickname2{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 600px;
+    top: 735px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    color: #333333;        
+}
+.postcardnickname3{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 944px;
+    top: 735px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    color: #333333;    
+}
+.postcardnickname4{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 256px;
+    top: 974px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    color: #333333;    
+}
+.postcardnickname5{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 600px;
+    top: 974px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    color: #333333;    
+}
+.postcardnickname6{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 944px;
+    top: 974px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    color: #333333;    
+}
+.postcardnickname7{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 256px;
+    top: 1213px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    color: #333333;    
+}
+.postcardnickname8{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 600px;
+    top: 1213px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+ 
+    color: #333333;    
+}
+.postcardnickname9{
+    position: absolute;
+    width: 73.18px;
+    height: 14px;
+    left: 944px;
+    top: 1213px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    color: #333333;    
+}
+
+.postcardcommentsday{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 472.49px;
+    top: 735px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;
+}
+.postcardcommentsday2{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 816.49px;
+    top: 735px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday3{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 1160.49px;
+    top: 735px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;
+        
+}
+.postcardcommentsday4{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 472.49px;
+    top: 974px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday5{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 816.49px;
+    top: 974px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday6{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 1160.49px;
+    top: 974px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday7{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 472.49px;
+    top: 1213px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday8{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 816.49px;
+    top: 1213px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;    
+}
+.postcardcommentsday9{
+    position: absolute;
+    width: 71.8px;
+    height: 14px;
+    left: 1160.49px;
+    top: 1213px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #656F7B;
+        
+}

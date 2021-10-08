@@ -6,11 +6,13 @@ import Main from './components/Main';
 
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <Main />
-      <Footer />
-    </Fragment>
+    <div className="box">
+      <Fragment>
+        <Header />
+        <Main />
+        <Footer />
+      </Fragment>
+    </div>
   );
 }
 
