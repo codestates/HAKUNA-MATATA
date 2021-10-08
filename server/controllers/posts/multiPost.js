@@ -4,25 +4,27 @@ const { Op } = require('sequelize');
 module.exports = {
   get: async (req, res) => {
     try {
-      let { category, offset, limit, order, sort, content } = req.query;
+      let { user, category, offset, limit, order, sort, content } = req.query;
 
       // 정렬 : 기본 값은 id 기준 DESC 이다.
-      if (order !== 'views' && order !== 'likes' && order !== 'comments')
+      if (order !== 'views' && order !== 'likes' && order !== 'comments') {
         order = null;
+      }
       if (
         sort !== 'DESC' &&
         sort !== 'ASC' &&
         sort !== 'desc' &&
         sort !== 'asc'
-      )
+      ) {
         sort = null;
+      }
 
       // 페이지네이션 : 리미트의 기본 조회 값은 9 이다.
-      isNaN(limit)
-        ? (limit = 9)
-        : limit < 1
-        ? (limit = 1)
-        : (limit = Number(limit));
+      if (isNaN(limit)) limit = 9;
+      else {
+        if (limit < 1) limit = 1;
+        else limit = Number(limit);
+      }
 
       const total = await models.post.count();
       const lastPage = Math.ceil(total / limit);
@@ -64,7 +66,8 @@ module.exports = {
           },
           {
             model: models.user, // users 테이블 조인
-            attributes: ['login', 'nickname', 'image']
+            attributes: ['login', 'nickname', 'image'],
+            where: user ? { login: user } : {}
           }
         ],
         order: [
@@ -81,9 +84,9 @@ module.exports = {
       });
 
       // 모든 게시물을 반환한다.
-      return res
-        .status(200)
-        .json({ posts: { total, page: offset, rows: posts.rows } });
+      return res.status(200).json({
+        posts: { count: posts.count, page: offset, rows: posts.rows }
+      });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error!' });
