@@ -5,20 +5,24 @@ module.exports = async (req, res) => {
   try {
     // 쿠키에 에세스 토큰이 있는지 확인한다.
     const { accessToken } = req.cookies;
-    if (!accessToken)
+    if (!accessToken) {
       return res
         .status(401)
         .json({ message: 'Invalid access token! not provided' });
+    }
 
     // 에세스 토큰이 유효한지 확인한다.
     const accessTokenData = checkAccessToken(accessToken);
-    if (!accessTokenData)
+    if (!accessTokenData) {
       return res.status(401).json({ message: 'Invalid access token!' });
+    }
 
     // 에세스 토큰 정보가 유효한지 확인한다.
     const { login } = accessTokenData;
     const userInfo = await user.findOne({ where: { login } });
-    if (!userInfo) return res.status(403).json({ message: 'Not authorized!' });
+    if (!userInfo) {
+      return res.status(403).json({ message: 'Not authorized!' });
+    }
 
     // 에세스 유효하거나 권한이 있는 경우 사용자 정보를 리턴한다.
     return userInfo;

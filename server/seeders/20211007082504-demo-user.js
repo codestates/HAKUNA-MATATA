@@ -12,18 +12,21 @@ module.exports = {
         login: process.env.ADMIN_USER_LOGIN,
         email: process.env.ADMIN_USER_EMAIL,
         password: hash,
+        nickname: process.env.ADMIN_USER_LOGIN,
         role: 0
       },
       {
         login: 'kimcoding',
         email: 'kimcoding@gmail.com',
         password: hash,
+        nickname: 'kimcoding',
         role: 2
       },
       {
         login: 'parkhacker',
         email: 'parkhacker@gmail.com',
         password: hash,
+        nickname: 'parkhacker',
         role: 2
       }
     ]);
