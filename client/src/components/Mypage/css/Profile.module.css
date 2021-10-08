@@ -1,0 +1,42 @@
+.disabled {
+  padding: 12px 0 12px 15px;
+  width: 414px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: #f2f2f2;
+}
+
+.disabled::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.15em;
+  color: #bcbcbc;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.textarea {
+  width: 414px;
+  height: 200px;
+  margin-top: 10px;
+  resize: none;
+  padding-top: 11px;
+  padding-left: 15px;
+  border: 1px solid #f3887e;
+  border-radius: 3px;
+}
+.textarea:focus {
+  outline: none;
+  border: 3px solid #f3887e;
+}
+
+.textarea::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.45em;
+  color: #f3887e;
+}
