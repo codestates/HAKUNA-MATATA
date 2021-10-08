@@ -6,9 +6,20 @@ const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const router = require('./routers');
+const { sequelize } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT_NUMVER || 4000;
+
+// Check DB connection
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    console.log('👉👈 Database connection successfully!');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 // Middleware
 app.use(morgan('dev'));
@@ -39,8 +50,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.send(err.message);
+  res.status(err.status || 500).send(err.message);
 });
 
 // Server Running
