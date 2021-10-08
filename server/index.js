@@ -5,6 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const router = require('./routers');
 
 const app = express();
 const PORT = process.env.PORT_NUMVER || 4000;
@@ -22,8 +23,24 @@ app.use(
 );
 
 // Routing
-app.use('/', (req, res) => {
-  res.send(process.env.DATABASE_USER);
+app.get('/', (req, res) => {
+  res.send('Hakuna Matata!');
+});
+
+app.use('/posts', router.postRouter);
+app.use('/users', router.userRouter);
+
+app.use((req, res, next) => {
+  const error = new Error(
+    `${req.method} ${req.originalUrl} 라우터가 없습니다.`
+  );
+  error.status = 404;
+  next(error);
+});
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send(err.message);
 });
 
 // Server Running
