@@ -2,7 +2,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('posts', {
-      post_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -11,35 +11,35 @@ module.exports = {
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
-        references: { model: 'users', key: 'user_id' }
+        references: { model: 'users', key: 'id' }
       },
-      post_title: {
+      title: {
         allowNull: false,
         type: Sequelize.STRING(255)
       },
-      post_image: {
+      image: {
         allowNull: false,
         type: Sequelize.STRING(255)
       },
-      post_content: {
+      content: {
         type: Sequelize.TEXT('long')
       },
       category_id: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
-        references: { model: 'categories', key: 'category_id' }
+        references: { model: 'categories', key: 'id' }
       },
-      post_comments: {
+      comments: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
         defaultValue: 0
       },
-      post_likes: {
+      likes: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
         defaultValue: 0
       },
-      post_views: {
+      views: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
         defaultValue: 0

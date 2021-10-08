@@ -2,7 +2,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('comments', {
-      comment_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -11,14 +11,14 @@ module.exports = {
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
-        references: { model: 'users', key: 'user_id' }
+        references: { model: 'users', key: 'id' }
       },
       post_id: {
         allowNull: false,
         type: Sequelize.INTEGER(11),
-        references: { model: 'posts', key: 'post_id' }
+        references: { model: 'posts', key: 'id' }
       },
-      comment_content: {
+      content: {
         allowNull: false,
         type: Sequelize.STRING(255)
       },

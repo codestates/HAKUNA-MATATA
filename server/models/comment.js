@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Comment.init(
     {
-      comment_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.INTEGER(11)
       },
-      comment_content: {
+      content: {
         allowNull: false,
         type: DataTypes.STRING(255)
       },
@@ -45,7 +45,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'comment',
-      id: 'comment_id',
       createdAt: 'created_at',
       updatedAt: 'updated_at'
     }
