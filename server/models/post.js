@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Post.init(
     {
-      post_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -23,28 +23,28 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.INTEGER(11)
       },
-      post_title: {
+      title: {
         allowNull: false,
         type: DataTypes.STRING(255)
       },
-      post_image: {
+      image: {
         allowNull: false,
         type: DataTypes.STRING(255)
       },
-      post_content: {
+      content: {
         type: DataTypes.TEXT('long')
       },
       category_id: {
         allowNull: false,
         type: DataTypes.INTEGER(11)
       },
-      post_comments: {
+      comments: {
         type: DataTypes.INTEGER(11)
       },
-      post_likes: {
+      likes: {
         type: DataTypes.INTEGER(11)
       },
-      post_views: {
+      views: {
         type: DataTypes.INTEGER(11)
       },
       created_at: {
@@ -61,7 +61,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'post',
-      id: 'post_id',
       createdAt: 'created_at',
       updatedAt: 'updated_at'
     }

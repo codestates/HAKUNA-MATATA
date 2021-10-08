@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Like.init(
     {
-      like_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -41,7 +41,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'like',
-      id: 'like_id',
       createdAt: 'created_at',
       updatedAt: 'updated_at'
     }

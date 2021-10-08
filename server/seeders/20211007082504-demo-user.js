@@ -9,22 +9,22 @@ module.exports = {
 
     return queryInterface.bulkInsert('users', [
       {
-        user_login: process.env.ADMIN_USER_LOGIN,
-        user_email: process.env.ADMIN_USER_EMAIL,
-        user_password: hash,
-        user_role: 0
+        login: process.env.ADMIN_USER_LOGIN,
+        email: process.env.ADMIN_USER_EMAIL,
+        password: hash,
+        role: 0
       },
       {
-        user_login: 'kimcoding',
-        user_email: 'kimcoding@gmail.com',
-        user_password: hash,
-        user_role: 2
+        login: 'kimcoding',
+        email: 'kimcoding@gmail.com',
+        password: hash,
+        role: 2
       },
       {
-        user_login: 'parkhacker',
-        user_email: 'parkhacker@gmail.com',
-        user_password: hash,
-        user_role: 2
+        login: 'parkhacker',
+        email: 'parkhacker@gmail.com',
+        password: hash,
+        role: 2
       }
     ]);
   },
