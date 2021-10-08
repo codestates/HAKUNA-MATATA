@@ -21,4 +21,4 @@ export NODEMAILER_PASSWD=$(aws ssm get-parameters --region ap-northeast-2 --name
 
 export CLIENT_ORIGIN=$(aws ssm get-parameters --region ap-northeast-2 --names CLIENT_ORIGIN --query Parameters[0].Value | sed 's/"//g')
 
-sudo authbind --deep pm2 start index.js
+authbind --deep pm2 start index.js
