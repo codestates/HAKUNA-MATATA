@@ -9,9 +9,9 @@ module.exports = {
       // 매개 변수가 숫자가 아니면 다음을 리턴한다.
       if (isNaN(postId)) {
         return res.status(400).json({ message: 'Bad Request!' });
-      } else {
-        postId = Number(postId);
       }
+
+      postId = Number(postId);
 
       // 단일 게시물을 조회한다.
       const postInfo = await post.findOne({
@@ -51,7 +51,7 @@ module.exports = {
       postInfo.dataValues.views = postInfo.dataValues.views + 1;
 
       // 단일 게시물을 리턴한다.
-      return res.json({ posts: postInfo });
+      return res.status(200).json({ posts: postInfo });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error! ' });
@@ -70,7 +70,6 @@ module.exports = {
       }
 
       postId = Number(postId);
-
       const postInfo = await post.findOne({ where: { id: postId } });
 
       // 게시물이 존재하지 않는 경우 다음을 리턴한다.
@@ -140,7 +139,6 @@ module.exports = {
       }
 
       postId = Number(postId);
-
       const postInfo = await post.findOne({ where: { id: postId } });
 
       // 게시물이 존재하지 않는 경우 다음을 리턴한다.
