@@ -6,25 +6,27 @@ import instagram from '../images/instagram.png';
 
 const Footer = () => {
   return (
-    <>
+    <Fragment>
       <footer>
-        <div>
-          <div className={style.footer}>
-            <div className={style.images}>
+        <div className={style.footer}>
+          <div className={style.images}>
+            <a href="https://instagram.com/">
               <img src={instagram} />
+            </a>
+            <a href="https://github.com/">
               <img src={github} />
+            </a>
+            <a href="https://youtube.com">
               <img src={youtube} />
-            </div>
+            </a>
           </div>
-          <div className={style.copyright}>
-            <p>
-              © Copyright ⓒ 2021 Hakuna <br />
-              MatataThe HADA Project Team
-            </p>
-          </div>
+          <p className={style.copyright}>
+            © Copyright ⓒ 2021 Hakuna Matata <br />
+            &emsp;&emsp;The HADA Project Team
+          </p>
         </div>
       </footer>
-    </>
+    </Fragment>
   );
 };
 

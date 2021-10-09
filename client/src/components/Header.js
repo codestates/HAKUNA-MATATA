@@ -35,7 +35,7 @@ const Header = () => {
             <img src={userImg} alt="user image" />
           </button>
           <div className={userImgClicked ? style.menuBox : style.hidden}>
-            <Link to="#">
+            <Link to="/mypage">
               <button className={style.modifyButton}>마이페이지</button>
             </Link>
             <Link to="#">

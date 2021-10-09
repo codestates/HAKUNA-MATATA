@@ -12,7 +12,6 @@
 }
 
 .navbar {
-  font-size: 18px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -21,10 +20,15 @@
   left: -40px;
 }
 
+.navbar span {
+  font-size: 25px;
+  font-weight: 500;
+}
+
 .navbar img {
   width: 45px;
   height: 45px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .userImg {
@@ -36,11 +40,6 @@
   align-items: center;
   width: 35px;
   height: 35px;
-}
-
-.userImg.userImgClicked {
-  border: 2px solid #404040;
-  border-radius: 50%;
 }
 
 .menuBox {

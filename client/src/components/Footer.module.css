@@ -24,7 +24,11 @@ img {
   height: 32px;
 }
 
-.copyright p {
-  color: orange;
-  background-color: orchid;
+.copyright {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+  line-height: 1.45rem;
 }
