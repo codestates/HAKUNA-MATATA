@@ -55,9 +55,7 @@ const Mypage = () => {
 
   return (
     <>
-      <header className={style.header} />
       <section className={style.section}>
-        <div className={style.banner}></div> {/* 배너 컴포넌트 자리 */}
         <main className={style.mypage}>
           <div className={style.container}>
             <div className={style.profileHeader}>
@@ -110,7 +108,7 @@ const Mypage = () => {
                 {subMenu.setting ? <Setting /> : null}
               </div>
             </div>
-            <Link to="/post">
+            <Link to="/add-post">
               <button className={style.addButton}>ADD POST</button>
             </Link>
           </div>
