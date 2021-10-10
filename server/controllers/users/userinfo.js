@@ -61,10 +61,14 @@ module.exports = {
     try {
       // 로그인 인증 검사
       const userInfo = await userAuthen(req, res);
-      // 계정 삭제
-      const deleteUserId = await user.destroy({ where: { id: userInfo.id } });
-      // 쿠키 삭제
+
+      // 계정을 삭제한다.
+      const deleteCount = await user.destroy({ where: { id: userInfo.id } });
+
+      // 쿠키를 삭제한다.
       res.cookie('accessToken', null, { maxAge: 0 });
+
+      // 삭제한 회원 아이디를 리턴한다.
       res.status(200).json({ id: userInfo.id });
     } catch (err) {
       console.error(err);

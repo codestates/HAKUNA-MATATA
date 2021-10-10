@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { posts } = require('../controllers');
 
-router.route('/').get(posts.multiPost.get).post(posts.addPost.post);
+router.route('/').get(posts.multiPost.get).post(posts.addPost);
 
 router
   .route('/:postId')
