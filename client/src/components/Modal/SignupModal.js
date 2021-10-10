@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import ModalInput from './ModalInput';
+import SignupModalInput from './SignupModalInput';
 import ModalButton from './ModalButton';
 import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
+
 function SignupModal({ handleLoginModal, handleSignupModal }) {
   const [usingOpen, setUsingOpen] = useState(false);
   const [PersonalOpen, setPersonalOpen] = useState(false);
@@ -70,9 +71,9 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
       </div>
 
       <div className={style.inputBox}>
-        <ModalInput placeholder={'이메일'} />
-        <ModalInput placeholder={'비밀번호'} password />
-        <ModalInput placeholder={'비밀번호 확인'} password />
+        <SignupModalInput placeholder={'이메일'} />
+        <SignupModalInput placeholder={'비밀번호'} password />
+        <SignupModalInput placeholder={'비밀번호 확인'} password />
         <ModalButton>회원가입</ModalButton>
         <ModalButton oauth={true}>깃허브로 회원가입</ModalButton>
       </div>
