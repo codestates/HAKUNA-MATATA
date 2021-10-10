@@ -12,16 +12,63 @@
 }
 
 .navbar {
-  font-size: 18px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 391px;
+  position: relative;
+  left: -40px;
+}
+
+.navbar span {
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .navbar img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
+  margin-left: 20px;
+}
+
+.userImg {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+
+.menuBox {
+  width: 114px;
+  height: 119px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.modifyButton {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
 }
 
 /* 로그인, 회원가입 모달 */

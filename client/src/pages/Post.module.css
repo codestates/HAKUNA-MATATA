@@ -7,134 +7,22 @@
   padding: 50px;
   transform: translateY(-80px);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.section1-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  /* padding: 0px 5px; */
-}
-
-.section1-header p {
-  color: #7b7b7b;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.section1-content h1 {
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 40.54px;
-}
-
-.section1-content {
-  margin: 20px 0;
-  padding: 20px 0;
-  border-top: 1px solid rgb(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
-}
-
-.basicinfo span img {
-  width: 21px;
-  height: 21px;
-}
-
-.basicinfo span span {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 23.44px;
-  color: #404040;
-  margin-left: 3px;
   position: relative;
-  top: -4px;
+  top: 0;
+  left: 0;
+  /* overflow-x: hidden; */
 }
 
-.basicinfo span {
-  font-size: 13px;
-  font-weight: 400;
-  color: #737373;
-}
-
-.section1 img {
-  width: 24px;
-  height: 24px;
-}
-
-.section1-content div:first-of-type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* margin: 20px 0px; */
-}
-
-.maincontent {
-  margin: 40px 0px;
-  line-height: 25.6px;
-}
-
-.section2 {
-  margin: 20px 0px;
-  /* padding: 20px 0; */
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
-}
-
-.section2 h1 {
-  font-size: 24px;
-  line-height: 34.75px;
-  margin-bottom: 3px;
-}
-
-.reactions {
-  display: flex;
-  /* flex-direction: ; */
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.reactions img {
-  width: 16px;
-  height: 16px;
-  margin: 0px 1px;
-}
-
-.comments {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 0;
-}
-
-.section2 div {
-  font-size: 15px;
-  margin-bottom: 3px;
-}
-
-.section2 span {
-  font-size: 7px;
-  padding: 150px 0px;
-}
-
-.comments p img {
-  width: 30px;
-  height: 30px;
-}
-
-.comments p span {
-  font-size: 18px;
-  line-height: 23.44px;
-  position: relative;
-  top: -8px;
-  margin-left: 3px;
-}
-
-.comments img {
-  width: 24px;
-  height: 24px;
-}
-
-.section3 {
-  background-color: aquamarine;
-  padding: 100px;
+.addButton {
+  position: fixed;
+  width: 100px;
+  padding: 13px 12px 15px 12px;
+  border-radius: 10px;
+  background-color: #f3887e;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2em;
+  text-align: center;
+  color: #fff;
+  right: -110px;
 }
