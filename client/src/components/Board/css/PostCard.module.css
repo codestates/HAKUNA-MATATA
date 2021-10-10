@@ -1,0 +1,473 @@
+.PostCard{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 543px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+}
+.PostCard2{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 543px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard3{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 543px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard4{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  
+  }
+  .PostCard5{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard6{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 782px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard7{
+    
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 210px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard8{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 554px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .PostCard9{
+    position: absolute;
+    width: 330px;
+    height: 224px;
+    left: 898px;
+    top: 1021px;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  
+  }
+
+  .postcardpicture{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 543px;
+
+    
+    background: url('../images/postcardpicture.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture2{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 543px;
+    
+    background: url('../images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture3{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 543px;
+    
+    background: url('../images/postcardpicture3.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture4{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 782px;
+    
+    background: url('../images/postcardpicture4.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture5{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 782px;
+    
+    background: url('../images/postcardpicture4.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture6{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 782px;
+    
+    background: url('../images/postcardpicture.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture7{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 210px;
+    top: 1021px;
+    
+    background: url('../images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture8{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 554px;
+    top: 1021px;
+    
+    background: url('../images/postcardpicture4.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .postcardpicture9{
+    position: absolute;
+    width: 330px;
+    height: 80px;
+    left: 898px;
+    top: 1021px;
+    
+    background: url('../images/postcardpicture2.jpg');
+    background-position: 50%;
+    background-size: 330px;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .postcardments{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+    
+  }
+  .postcardments2{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+    
+  }
+  .postcardments3{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 638px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments4{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;    
+  }
+  .postcardments5{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments6{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 877px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments7{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 231px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments8{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 575px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+  .postcardments9{
+    position: absolute;
+    width: 286px;
+    height: 32px;
+    left: 919px;
+    top: 1116px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #222222;
+  }
+
+  .postcardline{
+
+  }
+
+  .image {
+    position: absolute;
+    width: 22.09px;
+    height: 16px;
+    left: 230.71px;
+    top: 700px;
+  }
+  .number {
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 260.18px;
+    top: 703px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #737373;
+  }
+.image2{
+    position: absolute;
+    width: 22.09px;
+    height: 17px;
+    left: 291.46px;
+    top: 700px;
+}
+.number2{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 320.32px;
+    top: 703px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #737373;
+}
+.image3{
+    position: absolute;
+    width: 22.09px;
+    height: 17px;
+    left: 343.69px;
+    top: 700px;
+}
+.number3{
+    position: absolute;
+    width: 37.28px;
+    height: 10px;
+    left: 375.55px;
+    top: 704px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #737373;
+}
+.image4{
+    position: absolute;
+    width: 22.09px;
+    height: 17px;
+    left: 574.71px;
+    top: 700px;
+}
+.number4{
+    position: absolute;
+    width: 30.38px;
+    height: 10px;
+    left: 605.18px;
+    top: 703px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}

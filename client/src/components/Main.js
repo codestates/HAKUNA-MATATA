@@ -1,4 +1,5 @@
 // import { Fragment } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router';
 
 import MyPage from '../pages/Mypage';
