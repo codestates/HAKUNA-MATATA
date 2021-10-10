@@ -17,7 +17,10 @@ router
 router
   .route('/:postId/comments')
   .get(posts.comments.get)
-  .post(posts.comments.post)
+  .post(posts.comments.post);
+
+router
+  .route('/:postId/comments/:commentId')
   .patch(posts.comments.patch)
   .delete(posts.comments.delete);
 

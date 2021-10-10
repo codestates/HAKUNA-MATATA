@@ -43,15 +43,13 @@ module.exports = {
       if (!postInfo) return res.status(404).json({ message: 'Not Found!' });
 
       // 게시물의 조회수를 + 1 한다.
-      const updateId = await postInfo.update(
+      const updatePost = await postInfo.update(
         { views: postInfo.dataValues.views + 1 },
         { where: { id: postId } }
       );
 
-      //postInfo.dataValues.views = postInfo.dataValues.views + 1;
-
       // 단일 게시물을 리턴한다.
-      return res.status(200).json({ posts: postInfo, message: 'ok' });
+      return res.status(200).json({ posts: updatePost });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error! ' });
@@ -78,7 +76,7 @@ module.exports = {
       }
 
       // 현재 유저가 게시물을 수정할 권한이 없는경우 다음을 리턴한다.
-      if (userInfo.id !== postInfo.user_id) {
+      if (userInfo.id !== postInfo.user_id && userInfo.role !== 0) {
         return res.status(403).json({ message: 'Not authorized!' });
       }
 
@@ -123,7 +121,7 @@ module.exports = {
       res.status(200).json({ posts: newPostInfo });
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Server error! ' });
+      return res.status(500).json({ message: 'Server error!' });
     }
   },
   delete: async (req, res) => {
@@ -147,7 +145,7 @@ module.exports = {
       }
 
       // 현재 유저가 게시물을 삭제할 권한이 없는경우 다음을 리턴한다.
-      if (userInfo.id !== postInfo.user_id) {
+      if (userInfo.id !== postInfo.user_id && userInfo.role !== 0) {
         return res.status(403).json({ message: 'Not authorized!' });
       }
 
@@ -167,7 +165,7 @@ module.exports = {
       });
 
       // 삭제된 게시물 아이디를 반환한다.
-      res.status(200).json({ id: postInfo.id, deleteLikeCount });
+      res.status(200).json({ id: postInfo.id });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error!' });
