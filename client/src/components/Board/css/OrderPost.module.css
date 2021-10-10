@@ -1,0 +1,141 @@
+.OrderPost {
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 210px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #F2B4B2;
+
+}
+.OrderPost2{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 281px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C4C;
+}
+.OrderPost3{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 352px;
+    top: 487px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C4C;
+}
+.OrderPost4{
+    position: absolute;
+    width: 56px;
+    height: 29px;
+    left: 423px;
+    top: 487px;
+    
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #4C4C4C;
+}
+.SearchPost{
+    position: absolute;
+    width: 239px;
+    height: 43px;
+    left: 990px;
+    top: 480px;
+
+    background: #FFFFFF;
+    border: 1px solid #F2B4B2;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.SearchPostInput{
+    position: absolute;
+    width: 73px;
+    height: 17px;
+    left: 1005px;
+    top: 492px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+
+    color: #F2B4B2;
+}
+.SearchIcon{
+    position: absolute;
+    width: 41px;
+    height: 43px;
+    left: 1188px;
+    top: 480px;
+
+    background: #F2B4B2;
+    border-radius: 0px 3px 3px 0px;
+}
+.SearchInputIcon{
+    position: absolute;
+    width: 16.82px;
+    height: 16.82px;
+    left: 1199px;
+    top: 490px;
+
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.SearchInputBar{
+    position: absolute;
+    width: 10.11px;
+    height: 0px;
+    left: 1210.65px;
+    top: 508.30px;
+
+    border: 2px solid #FFFFFF;
+    transform: rotate(50.19deg);
+}
