@@ -11,7 +11,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   console.log(setIsLogin);
   const handleMenu = () => {
     setIsOpen(!isOpen);
@@ -26,11 +26,15 @@ const Header = () => {
   return (
     <>
       {loginModal && (
-        <div
-          className={loginModal && style.backDrop}
-          onClick={handleLoginModal}
-        >
-          <LoginModal handleSignupModal={handleSignupModal} />
+        <div>
+          <div
+            className={loginModal && style.backDrop}
+            onClick={handleLoginModal}
+          ></div>
+          <LoginModal
+            handleSignupModal={handleSignupModal}
+            handleLoginModal={handleLoginModal}
+          />
         </div>
       )}
       {signupModal && (
@@ -50,8 +54,12 @@ const Header = () => {
         <Logo />
         <div className={style.navbar}>
           <span>About</span>
-          <span>Board</span>
-          <Button> + Add Post</Button>
+          <Link to="/">
+            <span>Board</span>
+          </Link>
+          <Link to="/add-post">
+            <Button> + Add Post</Button>
+          </Link>
 
           <img
             src={userImg}
