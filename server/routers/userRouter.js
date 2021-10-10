@@ -1,9 +1,12 @@
 const router = require('express').Router();
-const { users } = require('../controllers');
+const { users, oauth } = require('../controllers');
 
 router.post('/signup', users.signup);
 router.post('/signin', users.signin);
 router.post('/logout', users.logout);
+
+// OAuth
+router.post('/oauth/github', oauth.github);
 
 router
   .route('/userinfo')

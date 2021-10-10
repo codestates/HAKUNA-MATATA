@@ -9,7 +9,7 @@ module.exports = {
     const cookieOptions = {
       httpOnly: true,
       domain: process.env.CLIENT_ORIGIN,
-      maxAge: '5h',
+      maxAge: 1000 * 60 * 60 * 24 * 7,
       secure: true,
       sameSite: 'none'
     };
