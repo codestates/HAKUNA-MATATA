@@ -5,9 +5,10 @@
   color: #f3887e;
   font-weight: 900;
   font-size: 20px;
-  padding: 5px 15px;
+  padding: 7px 10px;
   border-radius: 5px;
   cursor: pointer;
+  /* left: 10px; */
 }
 
 .button:hover,

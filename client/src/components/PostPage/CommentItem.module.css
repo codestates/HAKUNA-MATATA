@@ -1,63 +1,62 @@
-button {
-  background: inherit;
-  cursor: pointer;
-  border: none;
+.section2 {
+  margin: 20px 0px;
+  /* padding: 20px 0; */
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
-.post {
-  margin-top: 10px;
-  padding: 15px 20px;
-  width: 580px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-/* post Left */
-.category {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.45em;
-  color: #f3887e;
-}
-.postTitle {
-  margin-top: 5px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.45em;
+
+.section2 h1 {
+  font-size: 24px;
+  line-height: 1.42em;
+  margin: 22px 0;
   color: #404040;
 }
-.subInfo {
-  margin-top: 20px;
-  display: flex;
-}
-.image {
-  width: 16px;
-  margin-right: 2px;
-  height: 16px;
-}
 
-.number {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.45em;
-  color: #737373;
-  margin-right: 5px;
-}
-
-.imageBox {
+.comments {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
 }
 
-/* post Right */
+.section2 div:last-of-type {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #404040;
+}
 
-.postRight {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+.section2 > span {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  display: block;
+  /* padding: 150px 0px; */
+  color: #737373;
+  font-weight: 300;
+  line-height: 1.45em;
+}
+
+.comments p img {
+  width: 30px;
+  height: 30px;
+}
+
+.comments p span {
+  font-size: 18px;
+  line-height: 23.44px;
   position: relative;
+  top: -8px;
+  margin-left: 7px;
 }
+
+.comments div {
+  padding: px 0;
+}
+
+.comments img {
+  width: 24px;
+  height: 24px;
+}
+
 .dotBox {
   position: absolute;
   top: 0;
@@ -89,8 +88,8 @@ button {
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   position: absolute;
-  left: -25px;
-  bottom: -10px;
+  right: 15px;
+  top: 20px;
   z-index: 10;
   background-color: #fff;
 }
@@ -112,10 +111,4 @@ button {
   font-weight: 700;
   line-height: 1.45em;
   color: #404040;
-}
-.date {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.45em;
-  color: #737373;
 }

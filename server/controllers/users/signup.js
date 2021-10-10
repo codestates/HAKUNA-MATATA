@@ -54,5 +54,6 @@ module.exports = async (req, res) => {
     res.status(201).json({ id: newUser.dataValues.id });
   } catch (err) {
     console.error(err);
+    res.status(500).json({ message: 'Server error!' });
   }
 };

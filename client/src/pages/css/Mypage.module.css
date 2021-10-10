@@ -37,7 +37,8 @@ section {
   height: 759px;
   background-color: #fff;
   position: absolute;
-  top: 202px;
+  /* top: 202px; */
+  top: -106px;
   border-radius: 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
@@ -65,11 +66,13 @@ section {
   position: absolute;
   top: -77px;
   border: none;
+  cursor: pointer;
 }
 
 .userImage {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .modifyImg {
@@ -121,12 +124,12 @@ hr {
 
 .overflow {
   overflow: auto;
-  /* -ms-overflow-style: none; */
+  -ms-overflow-style: none;
 }
 
-/* .overflow::-webkit-scrollbar {
+.overflow::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .profileBody {
   display: flex;
