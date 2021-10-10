@@ -38,7 +38,7 @@ module.exports = {
       });
 
       // 게시물의 좋아요 수를 + 1 한다.
-      const updateId = await postInfo.update(
+      const updatePost = await postInfo.update(
         { likes: postInfo.dataValues.likes + 1 },
         { where: { id: postId } }
       );
@@ -47,7 +47,7 @@ module.exports = {
       return res.status(201).json({ id: newLikeInfo.dataValues.id });
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Server error! ' });
+      return res.status(500).json({ message: 'Server error!' });
     }
   },
   delete: async (req, res) => {
@@ -83,7 +83,7 @@ module.exports = {
       const deleteCount = await like.destroy({ where: { id: likeInfo.id } });
 
       // 게시물의 좋아요 수를 - 1 한다.
-      const updateId = await postInfo.update(
+      const updatePost = await postInfo.update(
         { likes: postInfo.dataValues.likes - 1 },
         { where: { id: postId } }
       );
@@ -92,7 +92,7 @@ module.exports = {
       res.status(200).json({ id: likeInfo.id });
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Server error! ' });
+      return res.status(500).json({ message: 'Server error!' });
     }
   }
 };

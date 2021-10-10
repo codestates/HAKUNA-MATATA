@@ -13,10 +13,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
+
   const isLogin = useSelector((state) => state.isLogin.value);
 
   const dispatch = useDispatch();
   const movePage = useSelector((state) => state.movePage);
+
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
