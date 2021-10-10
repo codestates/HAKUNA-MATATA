@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import React from 'react';
 import style from './Footer.module.css';
 import youtube from '../images/youtube.png';
 import github from '../images/github.png';
