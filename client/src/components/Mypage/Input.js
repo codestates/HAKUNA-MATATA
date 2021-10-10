@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './css/Input.module.css';
+import style from './Input.module.css';
 import PropTypes from 'prop-types';
 
 const Input = ({ placeholder }) => {

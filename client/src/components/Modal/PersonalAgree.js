@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './css/PersonalAgree.module.css';
+import style from './PersonalAgree.module.css';
 import PropTypes from 'prop-types';
 function PersonalAgree({ openPersonalHandler }) {
   return (

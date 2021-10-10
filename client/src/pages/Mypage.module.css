@@ -4,22 +4,6 @@
   box-sizing: border-box;
 }
 
-/* 지울거 */
-.header {
-  height: 65px;
-  background-color: yellow;
-}
-/* 지울거 */
-.banner {
-  height: 318px;
-  background-color: blue;
-}
-/* 지울거 */
-.footer {
-  height: 282px;
-  background-color: black;
-}
-
 section {
   position: relative;
 }
