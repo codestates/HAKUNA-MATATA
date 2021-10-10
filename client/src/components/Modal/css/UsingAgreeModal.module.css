@@ -1,0 +1,38 @@
+.container {
+  border-radius: 10px;
+  width: 515px;
+  padding: 30px;
+  background-color: #ffff;
+  position: absolute;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+}
+.title {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.45em;
+}
+
+.title > em {
+  color: #e8605d;
+}
+.textarea {
+  resize: none;
+  width: 450px;
+  height: 300px;
+  border: none;
+  margin-top: 30px;
+  overflow-x: hidden;
+}
+
+.textarea:focus {
+  outline: none;
+}
+.textarea::-webkit-scrollbar-thumb {
+  background-color: red;
+}

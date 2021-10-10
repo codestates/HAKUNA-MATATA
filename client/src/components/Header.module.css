@@ -70,3 +70,50 @@
   line-height: 1.45em;
   color: #404040;
 }
+
+/* 로그인, 회원가입 모달 */
+.menuBox {
+  width: 114px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px 27px 15px 28px;
+  position: absolute;
+  top: 47px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.font {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+  cursor: pointer;
+}
+
+.font:nth-child(2) {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.backDrop {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.img {
+  cursor: pointer;
+}
+
+.font.focus {
+  color: #f3887e;
+}
