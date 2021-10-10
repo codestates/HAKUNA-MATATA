@@ -1,17 +1,17 @@
+import React, { useState } from 'react';
 import style from './Header.module.css';
 import Button from './Button';
 import Logo from './Logo';
 import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   console.log(setIsLogin);
   const handleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,7 +30,7 @@ const Header = () => {
           className={loginModal && style.backDrop}
           onClick={handleLoginModal}
         >
-          <LoginModal />
+          <LoginModal handleSignupModal={handleSignupModal} />
         </div>
       )}
       {signupModal && (
@@ -39,7 +39,10 @@ const Header = () => {
             className={signupModal && style.backDrop}
             onClick={handleSignupModal}
           ></div>
-          <SignupModal />
+          <SignupModal
+            handleLoginModal={handleLoginModal}
+            handleSignupModal={handleSignupModal}
+          />
         </div>
       )}
 
