@@ -3,23 +3,16 @@ import style from './Header.module.css';
 import Button from './Button';
 import Logo from './Logo';
 import userImg from '../images/user.png';
-
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
-  
-  const [userImgClicked, setUserImgClicked] = useState(false);
-  
-  const userImgHandler = () => {
-    setUserImgClicked(!userImgClicked)
-  };
-  
+  const [isLogin, setIsLogin] = useState(true);
+  console.log(setIsLogin);
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -28,7 +21,7 @@ const Header = () => {
   };
   const handleSignupModal = () => {
     setSignupModal(!signupModal);
-  }
+  };
 
   return (
     <>
@@ -59,13 +52,18 @@ const Header = () => {
           <span>About</span>
           <span>Board</span>
           <Button> + Add Post</Button>
+
           <img
             src={userImg}
             alt="user image"
             onClick={handleMenu}
             className={style.img}
           />
-          <div className={isOpen ? style.menuBox : style.hidden}>
+          {/* 로그인이 되면 isLogin상태를 리덕스에서 가져와서 
+          isOpen && !isLogin ?style.menuBox : style.hidden 
+          즉 프로필버튼눌러서 isOpen=true가되고 isLogin도 true라면 클래스가 hidden이라가려짐
+           */}
+          <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
             <button
               className={
                 loginModal ? `${style.font} ${style.focus}` : style.font
@@ -82,18 +80,8 @@ const Header = () => {
             >
               회원가입
             </button>
-
-          <button
-            className={
-              userImgClicked
-                ? `${style.userImg} ${style.userImgClicked}`
-                : style.userImg
-            }
-            onClick={userImgHandler}
-          >
-            <img src={userImg} alt="user image" />
-          </button>
-          <div className={userImgClicked ? style.menuBox : style.hidden}>
+          </div>
+          <div className={isOpen && isLogin ? style.successMenu : style.hidden}>
             <Link to="/mypage">
               <button className={style.modifyButton}>마이페이지</button>
             </Link>
@@ -103,7 +91,6 @@ const Header = () => {
             <Link to="#">
               <button className={style.modifyButton}>로그아웃</button>
             </Link>
-          </div>
           </div>
         </div>
       </header>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalInput from './ModalInput';
 import ModalButton from './ModalButton';
-import style from './css/SignupModal.module.css';
+import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
@@ -12,7 +12,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
     handleSignupModal();
     handleLoginModal();
   };
-  const opneModalHandler = () => {
+  const openModalHandler = () => {
     setUsingOpen(!usingOpen);
   };
 
@@ -22,8 +22,8 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
   return (
     <div className={style.container}>
       {usingOpen && (
-        <div className={style.modalBackDrop} onClick={opneModalHandler}>
-          <UsingAgreeModal opneModalHandler={opneModalHandler} />
+        <div className={style.modalBackDrop} onClick={openModalHandler}>
+          <UsingAgreeModal openModalHandler={openModalHandler} />
         </div>
       )}
       {PersonalOpen && (
@@ -48,7 +48,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
           <button
             href="#"
             className={style.agreeDetail}
-            onClick={opneModalHandler}
+            onClick={openModalHandler}
           >
             [자세히 보기]
           </button>

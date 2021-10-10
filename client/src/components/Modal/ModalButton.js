@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './css/ModalButton.module.css';
+import style from './ModalButton.module.css';
 
 function ModalButton({ children, oauth }) {
   return (

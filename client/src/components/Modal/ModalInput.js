@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './css/ModalInput.module.css';
+import style from './ModalInput.module.css';
 import PropTypes from 'prop-types';
 function ModalInput({ placeholder, password }) {
   return (
