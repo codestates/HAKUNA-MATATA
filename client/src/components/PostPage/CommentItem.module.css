@@ -1,0 +1,114 @@
+.section2 {
+  margin: 20px 0px;
+  /* padding: 20px 0; */
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.section2 h1 {
+  font-size: 24px;
+  line-height: 1.42em;
+  margin: 22px 0;
+  color: #404040;
+}
+
+.comments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.section2 div:last-of-type {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #404040;
+}
+
+.section2 > span {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  display: block;
+  /* padding: 150px 0px; */
+  color: #737373;
+  font-weight: 300;
+  line-height: 1.45em;
+}
+
+.comments p img {
+  width: 30px;
+  height: 30px;
+}
+
+.comments p span {
+  font-size: 18px;
+  line-height: 23.44px;
+  position: relative;
+  top: -8px;
+  margin-left: 7px;
+}
+
+.comments div {
+  padding: px 0;
+}
+
+.comments img {
+  width: 24px;
+  height: 24px;
+}
+
+.dotBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+
+.dotBox.dotClick {
+  border: 2px solid #404040;
+  border-radius: 50%;
+}
+
+.dotMenu {
+  width: 24px;
+  height: 24px;
+}
+
+.menuBox {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.modifyButton {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
+
+.deleteButton {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
