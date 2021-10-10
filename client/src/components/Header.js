@@ -7,7 +7,6 @@ import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
