@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('posts', [
       {
         user_id: 1,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '페어가 힘들게 합니다.',
         content: '페어가 자꾸 저를 힘들게 합니다. 저를...',
         category_id: 2,
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         user_id: 1,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '친구 사이에 이게 가능하다고 보십니까??',
         content: '제가 예민하게 반응한 건지 궁금합니다. 제가 이상한 건가요????',
         category_id: 2,
@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         user_id: 2,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '솔직히 말해서 친구 사이에 어디까지?',
         content: '너무 선 넘는 듯...',
         category_id: 2,
@@ -57,7 +57,7 @@ module.exports = {
       },
       {
         user_id: 3,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '친구들이 저를 은근히 무시하네요.',
         content: '저는 친구들이 너무 좋은데 자꾸 저를 소외시키는 것 같아요.',
         category_id: 2,
@@ -67,7 +67,7 @@ module.exports = {
       },
       {
         user_id: 2,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '친구가 자꾸 저를 따라합니다. ㅜㅜ',
         content: '저도 진짜 신경 안쓰려고 했는데 한 두번 이여야지... 에휴',
         category_id: 2,
@@ -77,7 +77,7 @@ module.exports = {
       },
       {
         user_id: 2,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '이 친구와 손절해야하는지 모르겠습니다.',
         content: '이 친구와 손절해야하는지 모르겠습니다...ㅜㅜ',
         category_id: 2,
@@ -87,7 +87,7 @@ module.exports = {
       },
       {
         user_id: 1,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '고등학교 때 친구가 평생갈까요??',
         content: '예전과는 너무 달라진 현실 때문에 막막합니다...ㅜㅠㅠ',
         category_id: 2,
@@ -97,7 +97,7 @@ module.exports = {
       },
       {
         user_id: 3,
-        image: '/images/thumbnail/friends.jpg',
+        image: '/images/thumbnail/desert.jpg',
         title: '제 친구를 응원합니다.',
         content: '제 친구는 열심히 코딩 공부를 합니다. 항상 응원합니다!!!',
         category_id: 2,
