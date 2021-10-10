@@ -114,6 +114,12 @@
   cursor: pointer;
 }
 
-.font.focus {
+.focus {
   color: #f3887e;
+}
+.test {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  position: fixed;
 }
