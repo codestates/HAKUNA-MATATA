@@ -5,6 +5,7 @@ import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
+import ReactDom from 'react-dom';
 
 function SignupModal({ handleLoginModal, handleSignupModal }) {
   const [usingOpen, setUsingOpen] = useState(false);
@@ -20,7 +21,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
   const openPersonalHandler = () => {
     setPersonalOpen(!PersonalOpen);
   };
-  return (
+  return ReactDom.createPortal(
     <div className={style.container}>
       {usingOpen && (
         <div className={style.modalBackDrop} onClick={openModalHandler}>
@@ -80,7 +81,8 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
       <div className={style.signup} onClick={openLoginModal}>
         하쿠나 마타타에 로그인 하세요.
       </div>
-    </div>
+    </div>,
+    document.getElementById('modal')
   );
 }
 SignupModal.propTypes = {

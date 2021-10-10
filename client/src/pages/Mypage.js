@@ -8,14 +8,13 @@ import SubButton from '../components/Mypage/SubButton.js';
 import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
+import { useSelector, useDispatch } from 'react-redux';
+import { profile, mypost, setting } from '../store/moveReducer';
 const Mypage = () => {
-  const [subMenu, setSubMenu] = useState({
-    profile: true,
-    mypost: false,
-    setting: false
-  });
-
   const [imgSrc, setImgSrc] = useState(userImage);
+  const movePage = useSelector((state) => state.movePage);
+  const dispatch = useDispatch();
+
   const processImage = (e) => {
     const imageFile = e.target.files[0];
     console.log(imageFile);
@@ -27,30 +26,14 @@ const Mypage = () => {
     fileReader.onload = (e) => setImgSrc(e.target.result);
   };
 
-  const handleSubButton = (text) => {
-    switch (text) {
-      case '프로필':
-        setSubMenu({
-          profile: true,
-          mypost: false,
-          setting: false
-        });
-        break;
-      case '게시글':
-        setSubMenu({
-          profile: false,
-          mypost: true,
-          setting: false
-        });
-        break;
-      case '설정':
-        setSubMenu({
-          profile: false,
-          mypost: false,
-          setting: true
-        });
-        break;
-    }
+  const profilePage = () => {
+    dispatch(profile());
+  };
+  const mypostPage = () => {
+    dispatch(mypost());
+  };
+  const settingPage = () => {
+    dispatch(setting());
   };
 
   return (
@@ -78,34 +61,25 @@ const Mypage = () => {
             <hr />
             <div className={style.profileBody}>
               <div className={style.buttonContainer}>
-                <SubButton
-                  handleSubButton={handleSubButton}
-                  focus={subMenu.profile}
-                >
+                <SubButton movePage={profilePage} focus={movePage.profile}>
                   프로필
                 </SubButton>
-                <SubButton
-                  handleSubButton={handleSubButton}
-                  focus={subMenu.mypost}
-                >
+                <SubButton movePage={mypostPage} focus={movePage.mypost}>
                   게시글
                 </SubButton>
-                <SubButton
-                  handleSubButton={handleSubButton}
-                  focus={subMenu.setting}
-                >
+                <SubButton movePage={settingPage} focus={movePage.setting}>
                   설정
                 </SubButton>
               </div>
               <div className={style.inputContainer}>
-                {subMenu.profile ? <Profile /> : null}
+                {movePage.profile ? <Profile /> : null}
                 <ul className={style.overflow}>
-                  {subMenu.mypost ? <Mypost /> : null}
-                  {subMenu.mypost ? <Mypost /> : null}
-                  {subMenu.mypost ? <Mypost /> : null}
-                  {subMenu.mypost ? <Mypost /> : null}
+                  {movePage.mypost ? <Mypost /> : null}
+                  {movePage.mypost ? <Mypost /> : null}
+                  {movePage.mypost ? <Mypost /> : null}
+                  {movePage.mypost ? <Mypost /> : null}
                 </ul>
-                {subMenu.setting ? <Setting /> : null}
+                {movePage.setting ? <Setting /> : null}
               </div>
             </div>
             <Link to="/add-post">
