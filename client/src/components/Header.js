@@ -7,19 +7,18 @@ import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
-  
+
   const [userImgClicked, setUserImgClicked] = useState(false);
-  
+
   const userImgHandler = () => {
-    setUserImgClicked(!userImgClicked)
+    setUserImgClicked(!userImgClicked);
   };
-  
+
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -28,7 +27,7 @@ const Header = () => {
   };
   const handleSignupModal = () => {
     setSignupModal(!signupModal);
-  }
+  };
 
   return (
     <>
@@ -83,27 +82,27 @@ const Header = () => {
               회원가입
             </button>
 
-          <button
-            className={
-              userImgClicked
-                ? `${style.userImg} ${style.userImgClicked}`
-                : style.userImg
-            }
-            onClick={userImgHandler}
-          >
-            <img src={userImg} alt="user image" />
-          </button>
-          <div className={userImgClicked ? style.menuBox : style.hidden}>
-            <Link to="/mypage">
-              <button className={style.modifyButton}>마이페이지</button>
-            </Link>
-            <Link to="#">
-              <button className={style.modifyButton}>내 게시글</button>
-            </Link>
-            <Link to="#">
-              <button className={style.modifyButton}>로그아웃</button>
-            </Link>
-          </div>
+            <button
+              className={
+                userImgClicked
+                  ? `${style.userImg} ${style.userImgClicked}`
+                  : style.userImg
+              }
+              onClick={userImgHandler}
+            >
+              <img src={userImg} alt="user image" />
+            </button>
+            <div className={userImgClicked ? style.menuBox : style.hidden}>
+              <Link to="/mypage">
+                <button className={style.modifyButton}>마이페이지</button>
+              </Link>
+              <Link to="#">
+                <button className={style.modifyButton}>내 게시글</button>
+              </Link>
+              <Link to="#">
+                <button className={style.modifyButton}>로그아웃</button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
