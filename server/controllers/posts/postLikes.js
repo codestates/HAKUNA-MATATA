@@ -1,4 +1,4 @@
-const { post, user, like } = require('../../models');
+const { post, like } = require('../../models');
 const userAuthen = require('../authentication/userAuthen');
 
 module.exports = {
@@ -38,19 +38,13 @@ module.exports = {
       });
 
       // 게시물의 좋아요 수를 + 1 한다.
-      const newPostInfo = await post.update(
+      const updateId = await postInfo.update(
         { likes: postInfo.dataValues.likes + 1 },
         { where: { id: postId } }
       );
 
-      postInfo.dataValues.likes = postInfo.dataValues.likes + 1;
-
       // 생성된 좋아요 아이디를 리턴한다.
-      return res.json({
-        id: newLikeInfo.dataValues.id,
-        postInfo,
-        message: 'successfully created!'
-      });
+      return res.status(201).json({ id: newLikeInfo.dataValues.id });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error! ' });
@@ -82,26 +76,20 @@ module.exports = {
 
       // 해당 게시물에 해당 유저가 좋아요를 누르지 않은 경우 다음을 리턴한다.
       if (!likeInfo) {
-        return res.status(400).json({ message: 'Already liked it!' });
+        return res.status(400).json({ message: "Didn't like it!" });
       }
 
       // likes 테이블에 레코드 삭제한다.
       const deleteCount = await like.destroy({ where: { id: likeInfo.id } });
 
       // 게시물의 좋아요 수를 - 1 한다.
-      const newPostInfo = await post.update(
+      const updateId = await postInfo.update(
         { likes: postInfo.dataValues.likes - 1 },
         { where: { id: postId } }
       );
 
-      postInfo.dataValues.likes = postInfo.dataValues.likes - 1;
-
       // 삭제한 좋아요 아이디를 리턴한다.
-      res.status(200).json({
-        id: likeInfo.id,
-        postInfo,
-        message: 'successfully deleted!'
-      });
+      res.status(200).json({ id: likeInfo.id });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error! ' });

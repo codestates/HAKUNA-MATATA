@@ -1,4 +1,4 @@
-const { post, user, category } = require('../../models');
+const { post, user, category, like, comment } = require('../../models');
 const userAuthen = require('../authentication/userAuthen');
 
 module.exports = {
@@ -48,10 +48,10 @@ module.exports = {
         { where: { id: postId } }
       );
 
-      postInfo.dataValues.views = postInfo.dataValues.views + 1;
+      //postInfo.dataValues.views = postInfo.dataValues.views + 1;
 
       // 단일 게시물을 리턴한다.
-      return res.status(200).json({ posts: postInfo });
+      return res.status(200).json({ posts: postInfo, message: 'ok' });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error! ' });
@@ -151,11 +151,23 @@ module.exports = {
         return res.status(403).json({ message: 'Not authorized!' });
       }
 
+      // 게시물과 연관된 좋아요 레코드를 삭제한다.
+      const deleteLikeCount = await like.destroy({
+        where: { post_id: postInfo.id }
+      });
+
+      // 게시물과 연관된 댓글 레코드를 삭제한다.
+      const deleteCommentCount = await comment.destroy({
+        where: { post_id: postInfo.id }
+      });
+
       // 게시물 삭제한다.
-      const deleteCount = await post.destroy({ where: { id: postInfo.id } });
+      const deletePostCount = await post.destroy({
+        where: { id: postInfo.id }
+      });
 
       // 삭제된 게시물 아이디를 반환한다.
-      res.status(200).json({ id: postInfo.id });
+      res.status(200).json({ id: postInfo.id, deleteLikeCount });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ message: 'Server error!' });

@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     });
 
     // 새로 생성한 게시물의 아이디를 반환한다.
-    res.status(201).json({ newPost });
+    res.status(201).json({ id: newPost.id });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error!' });
