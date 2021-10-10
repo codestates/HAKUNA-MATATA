@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import ModalInput from './ModalInput';
+import SignupModalInput from './SignupModalInput';
 import ModalButton from './ModalButton';
-import style from './css/SignupModal.module.css';
+import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
+import ReactDom from 'react-dom';
+
 function SignupModal({ handleLoginModal, handleSignupModal }) {
   const [usingOpen, setUsingOpen] = useState(false);
   const [PersonalOpen, setPersonalOpen] = useState(false);
@@ -12,18 +14,18 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
     handleSignupModal();
     handleLoginModal();
   };
-  const opneModalHandler = () => {
+  const openModalHandler = () => {
     setUsingOpen(!usingOpen);
   };
 
   const openPersonalHandler = () => {
     setPersonalOpen(!PersonalOpen);
   };
-  return (
+  return ReactDom.createPortal(
     <div className={style.container}>
       {usingOpen && (
-        <div className={style.modalBackDrop} onClick={opneModalHandler}>
-          <UsingAgreeModal opneModalHandler={opneModalHandler} />
+        <div className={style.modalBackDrop} onClick={openModalHandler}>
+          <UsingAgreeModal openModalHandler={openModalHandler} />
         </div>
       )}
       {PersonalOpen && (
@@ -48,7 +50,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
           <button
             href="#"
             className={style.agreeDetail}
-            onClick={opneModalHandler}
+            onClick={openModalHandler}
           >
             [자세히 보기]
           </button>
@@ -70,16 +72,17 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
       </div>
 
       <div className={style.inputBox}>
-        <ModalInput placeholder={'이메일'} />
-        <ModalInput placeholder={'비밀번호'} password />
-        <ModalInput placeholder={'비밀번호 확인'} password />
+        <SignupModalInput placeholder={'이메일'} />
+        <SignupModalInput placeholder={'비밀번호'} password />
+        <SignupModalInput placeholder={'비밀번호 확인'} password />
         <ModalButton>회원가입</ModalButton>
         <ModalButton oauth={true}>깃허브로 회원가입</ModalButton>
       </div>
       <div className={style.signup} onClick={openLoginModal}>
         하쿠나 마타타에 로그인 하세요.
       </div>
-    </div>
+    </div>,
+    document.getElementById('modal')
   );
 }
 SignupModal.propTypes = {

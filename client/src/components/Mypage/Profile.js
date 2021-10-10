@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './css/Profile.module.css';
+import style from './Profile.module.css';
 import Input from './Input';
 import MypageButton from './MypageButton';
 

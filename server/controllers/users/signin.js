@@ -6,7 +6,6 @@ const {
   sendAccessToken,
   checkAccessToken
 } = require('../tokenFunction');
-const userAuthen = require('../authentication/userAuthen');
 
 module.exports = async (req, res) => {
   try {

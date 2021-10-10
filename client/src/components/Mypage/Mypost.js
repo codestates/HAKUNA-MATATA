@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import style from './css/Mypost.module.css';
+import style from './Mypost.module.css';
 import dotMenu from '../../images/dot-menu.png';
 import comments from '../../images/comments.png';
 import heart from '../../images/heart.png';

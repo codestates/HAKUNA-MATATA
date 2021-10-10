@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import MypageButton from './MypageButton';
-import style from './css/Setting.module.css';
+import style from './Setting.module.css';
 const Setting = () => {
   return (
     <>

@@ -42,19 +42,18 @@
   height: 35px;
 }
 
-.menuBox {
+.successMenu {
   width: 114px;
-  height: 119px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 20px;
+  padding: 5px 20px 15px 20px;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   position: absolute;
-  right: 15px;
-  top: 20px;
+  right: 35px;
+  top: 35px;
   z-index: 10;
   background-color: #fff;
 }
@@ -65,7 +64,7 @@
 
 .modifyButton {
   margin-top: 10px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.45em;
   color: #404040;
@@ -78,8 +77,9 @@
   border-radius: 5px;
   padding: 15px 27px 15px 28px;
   position: absolute;
-  top: 47px;
-  right: 50px;
+  right: 35px;
+  top: 35px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,6 +114,12 @@
   cursor: pointer;
 }
 
-.font.focus {
+.focus {
   color: #f3887e;
+}
+.test {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  position: fixed;
 }

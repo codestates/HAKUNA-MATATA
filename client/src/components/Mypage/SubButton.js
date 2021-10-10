@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './css/SubButton.module.css';
+import style from './SubButton.module.css';
 
-const Button = ({ children, handleSubButton, focus }) => {
+const Button = ({ children, movePage, focus }) => {
   return (
     <>
       <button
         className={focus ? `${style.button} ${style.click}` : style.button}
-        onClick={() => handleSubButton(children)}
+        onClick={() => movePage(children)}
       >
         {children}
       </button>
@@ -17,7 +17,7 @@ const Button = ({ children, handleSubButton, focus }) => {
 
 Button.propTypes = {
   children: PropTypes.any.isRequired,
-  handleSubButton: PropTypes.any.isRequired,
+  movePage: PropTypes.any.isRequired,
   focus: PropTypes.any.isRequired
 };
 export default Button;
