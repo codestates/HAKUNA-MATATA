@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
 import style from './Header.module.css';
 import Button from './Button';
 import Logo from './Logo';
 import userImg from '../images/user.png';
-
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
-  const [signupModal, setSignupModal] = useState(false);
-
-  const [userImgClicked, setUserImgClicked] = useState(false);
-
-  const userImgHandler = () => {
-    setUserImgClicked(!userImgClicked);
-  };
-
+  const [singupModal, setSignupModal] = useState(false);
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -26,7 +17,7 @@ const Header = () => {
     setLoginModal(!loginModal);
   };
   const handleSignupModal = () => {
-    setSignupModal(!signupModal);
+    setSignupModal(!singupModal);
   };
 
   return (
@@ -36,19 +27,16 @@ const Header = () => {
           className={loginModal && style.backDrop}
           onClick={handleLoginModal}
         >
-          <LoginModal handleSignupModal={handleSignupModal} />
+          <LoginModal />
         </div>
       )}
-      {signupModal && (
+      {singupModal && (
         <div>
           <div
-            className={signupModal && style.backDrop}
+            className={singupModal && style.backDrop}
             onClick={handleSignupModal}
           ></div>
-          <SignupModal
-            handleLoginModal={handleLoginModal}
-            handleSignupModal={handleSignupModal}
-          />
+          <SignupModal />
         </div>
       )}
 
@@ -75,34 +63,12 @@ const Header = () => {
             </button>
             <button
               className={
-                signupModal ? `${style.font} ${style.focus}` : style.font
+                singupModal ? `${style.font} ${style.focus}` : style.font
               }
               onClick={handleSignupModal}
             >
               회원가입
             </button>
-
-            <button
-              className={
-                userImgClicked
-                  ? `${style.userImg} ${style.userImgClicked}`
-                  : style.userImg
-              }
-              onClick={userImgHandler}
-            >
-              <img src={userImg} alt="user image" />
-            </button>
-            <div className={userImgClicked ? style.menuBox : style.hidden}>
-              <Link to="/mypage">
-                <button className={style.modifyButton}>마이페이지</button>
-              </Link>
-              <Link to="#">
-                <button className={style.modifyButton}>내 게시글</button>
-              </Link>
-              <Link to="#">
-                <button className={style.modifyButton}>로그아웃</button>
-              </Link>
-            </div>
           </div>
         </div>
       </header>

@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './css/UsingAgreeModal.module.css';
+import style from './UsingAgreeModal.module.css';
 import PropTypes from 'prop-types';
-function UsingAgreeModal({ opneModalHandler }) {
+function UsingAgreeModal({ openModalHandler }) {
   return (
     <div className={style.container}>
-      <a href="#" className={style.close} onClick={opneModalHandler}>
+      <a href="#" className={style.close} onClick={openModalHandler}>
         &times;
       </a>
       <div>
@@ -280,6 +280,6 @@ function UsingAgreeModal({ opneModalHandler }) {
   );
 }
 UsingAgreeModal.propTypes = {
-  opneModalHandler: PropTypes.any
+  openModalHandler: PropTypes.any
 };
 export default UsingAgreeModal;

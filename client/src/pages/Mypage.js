@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
 import { Link } from 'react-router-dom';
-import style from './css/Mypage.module.css';
+import style from './Mypage.module.css';
 import userImage from '../images/user.png';
 import pencilImage from '../images/pencil.png';
 import SubButton from '../components/Mypage/SubButton.js';
@@ -114,7 +114,6 @@ const Mypage = () => {
           </div>
         </main>
       </section>
-      <footer className={style.footer} />
     </>
   );
 };
