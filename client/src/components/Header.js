@@ -8,7 +8,6 @@ import SignupModal from './Modal/SignupModal';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { profile, mypost, reset } from '../store/move-slice';
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
@@ -69,12 +68,18 @@ const Header = () => {
         </div>
       )}
 
-      <header className={style.header}>
-        <Logo />
-        <div className={style.navbar}>
-          <span>About</span>
-          <span>Board</span>
-          <Button> + Add Post</Button>
+
+        <header className={style.header}>
+          <Logo />
+          <div className={style.navbar}>
+            <span>About</span>
+            <Link to="/">
+              <span>Board</span>
+            </Link>
+            <Link to="/add-post">
+              <Button className={style.bump}> + Add Post</Button>
+            </Link>
+
 
           <img
             src={userImg}

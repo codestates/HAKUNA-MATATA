@@ -70,6 +70,7 @@
   /* flex-direction: ; */
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 
 .reactions p img {
@@ -86,6 +87,24 @@
   padding: 0 3px;
   position: relative;
   top: -3px;
+}
+
+.reactions div {
+  position: absolute;
+  color: #737373;
+  margin-left: 3px;
+  right: 15px;
+}
+
+.reactions div img {
+  margin-right: 3px;
+  position: relative;
+  top: -3px;
+  cursor: pointer;
+}
+
+.reactions div p {
+  cursor: pointer;
 }
 
 .dotBox {

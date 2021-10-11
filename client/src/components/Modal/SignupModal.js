@@ -76,7 +76,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
         <SignupModalInput placeholder={'비밀번호'} password />
         <SignupModalInput placeholder={'비밀번호 확인'} password />
         <ModalButton>회원가입</ModalButton>
-        <ModalButton oauth={true}>깃허브로 회원가입</ModalButton>
+        <ModalButton oauth>깃허브로 회원가입</ModalButton>
       </div>
       <div className={style.signup} onClick={openLoginModal}>
         하쿠나 마타타에 로그인 하세요.
