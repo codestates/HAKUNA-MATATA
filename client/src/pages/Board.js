@@ -1,15 +1,17 @@
 import React from 'react';
 import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
-import PostCard from '../components/Board/PostCard';
+import PostCards from '../components/Board/PostCards';
+import style from './Board.module.css'
 
 function Board() {
   return (
-    <div>
+    <section className={style.section}>
       <CategoryPost />
       <OrderPost />
-      <PostCard />
-    </div>
+      <PostCards />
+    </section>
+
   );
 }
 
