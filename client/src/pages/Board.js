@@ -1,20 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import style from './css/Mypage.module.css';
-import CategoryPost from '../components/Board/CategoryPost';
+// import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
-import PostCard from '../components/Board/PostCard';
+import PostCards from '../components/Board/PostCards';
+import style from './Board.module.css'
 
 function Board() {
   return (
-    <div>
-      <CategoryPost />
+    <section className={style.section}>
       <OrderPost />
-      <PostCard />
-        <Link to="/add-post">
-              <button className={style.addButton}>ADD POST</button>
-        </Link>
-    </div>
+      <PostCards />
+    </section>
   );
 }
 

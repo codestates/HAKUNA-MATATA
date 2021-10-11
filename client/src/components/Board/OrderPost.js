@@ -1,50 +1,24 @@
 import React from 'react';
-import style from '../Board/css/OrderPost.module.css';
+import style from './OrderPost.module.css';
+import heart from '../../images/heart.png'
 
 export default function OrderPosts() {
-  function OrderPost() {
-    console.log(0);
-  }
-
-  function SearchPost() {
-    console.log(0);
-  }
 
   return (
-    <div>
-      <div>
-        <button onClick={OrderPost}>
-          <div className={style.OrderPost}>최신순</div>
-        </button>
+    <div className={style.orderWrap}>
+      <div className={style.filterWrap}>
+        <ul>
+          <li><a>최신순</a></li>
+          <li><a>인기순</a></li>
+          <li><a>댓글순</a></li>
+          <li><a>조회순</a></li>
+        </ul>
       </div>
-
-      <div>
-        <button onClick={OrderPost}>
-          <div className={style.OrderPost2}>인기순</div>
-        </button>
-      </div>
-
-      <div>
-        <button onClick={OrderPost}>
-          <div className={style.OrderPost3}>댓글순</div>
-        </button>
-      </div>
-
-      <div>
-        <button onClick={OrderPost}>
-          <div className={style.OrderPost4}>조회순</div>
-        </button>
-      </div>
-
-      <div>
-        <div className={style.SearchPost}></div>
-        <div className={style.SearchPostInput}>검색하세요.</div>
-        <div className={style.SearchIcon}></div>
-
-        <button onClick={SearchPost}>
-          <div className={style.SearchInputIcon}></div>
-          <div className={style.SearchInputBar}></div>
-        </button>
+      <div className={style.searchWrap}>
+        <label>
+          <input type="text" placeholder="검색하세요."/>
+          <img src={heart} />
+        </label>
       </div>
     </div>
   );

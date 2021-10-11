@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from '../Board/css/CategoryPost.module.css';
+import style from './CategoryPost.module.css';
 
 export default function CategoryPosts() {
   const [onclick, setonclick] = useState({
