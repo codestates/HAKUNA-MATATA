@@ -18,6 +18,7 @@
   padding-left: 15px;
   border: 1px solid #f3887e;
   border-radius: 5px;
+  resize: none;
 }
 
 .textarea:focus {

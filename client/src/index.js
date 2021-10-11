@@ -5,13 +5,17 @@ import App from './App';
 import './reset.css';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import authSliceReducer from './store/index';
-import movePageReducer from './store/moveReducer';
+import authSlice from './store/login-slice';
+import movePage from './store/move-slice';
+import posts from './store/post-slice';
+import comments from './store/comments-slice';
 
 const store = configureStore({
   reducer: {
-    isLogin: authSliceReducer,
-    movePage: movePageReducer
+    isLogin: authSlice,
+    movePage: movePage,
+    posts: posts,
+    comments: comments
   }
 });
 

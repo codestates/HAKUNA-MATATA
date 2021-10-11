@@ -4,19 +4,51 @@ import style from './MainContent.module.css';
 import dotMenu from '../../images/dot-menu.png';
 import userImg from '../../images/user.png';
 import comments from '../../images/comments.png';
+import filledHeart from '../../images/filledheart.png';
 import eye from '../../images/eye.png';
 import like from '../../images/heart.png';
 
 const MainContent = () => {
   const [dotButton, setDotButton] = useState(false);
+  const [likeClicked, setLikeClicked] = useState(false);
+  // const [isShown, setIsShown] = useState();
+
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
 
+  const likeHandler = () => {
+    setLikeClicked(!likeClicked);
+  };
+
+  // const isShownHandler = () => {
+  //   setIsShown(null);
+  // };
+
+  document.addEventListener('click', (e) => {
+    if (
+      dotButton &&
+      e.target.className !==
+        'MainContent_dotBox__1WcjX MainContent_dotClick__2kD1_' &&
+      e.target.className !== 'MainContent_menuBox__35m8U'
+    ) {
+      setDotButton(false);
+    }
+  });
+
+  // useEffect(() => {
+  //   if (dotButton) {
+  //     const notiTimer = setTimeout(() => {
+  //       setDotButton(false);
+  //     }, 3000);
+  //     return () => clearTimeout(notiTimer);
+  //   }
+  // }, [dotButton]);
+
   return (
     <section className={style.section1}>
       <div className={style['section1-header']}>
-        <p>전체 연애 게시물 제목</p>
+        <p>전체 &gt; 연애 &gt; 게시물 &gt; 제목</p>
         <button
           className={
             dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
@@ -25,12 +57,14 @@ const MainContent = () => {
         >
           <img src={dotMenu} alt="dot-menu bar" />
         </button>
-        <div className={dotButton ? style.menuBox : style.hidden}>
-          <Link to="#">
-            <button className={style.modifyButton}>수정</button>
-          </Link>
-          <button className={style.deleteButton}>삭제</button>
-        </div>
+        {dotButton && (
+          <div className={style.menuBox}>
+            <Link to="#">
+              <button className={style.modifyButton}>수정</button>
+            </Link>
+            <button className={style.deleteButton}>삭제</button>
+          </div>
+        )}
       </div>
       <div className={style['section1-content']}>
         <h1>게시물 제목</h1>
@@ -62,6 +96,14 @@ const MainContent = () => {
             <img src={eye} />
             <span>1.3k</span>
           </p>
+          <div className={style.test}>
+            {likeClicked ? (
+              <img src={filledHeart} alt="likes" onClick={likeHandler} />
+            ) : (
+              <img src={like} alt="likes_none" onClick={likeHandler} />
+            )}
+            <p onClick={likeHandler}>공감</p>
+          </div>
         </div>
       </div>
     </section>

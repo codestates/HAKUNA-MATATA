@@ -11,6 +11,7 @@ function Board() {
       <OrderPost />
       <PostCards />
     </section>
+
   );
 }
 
