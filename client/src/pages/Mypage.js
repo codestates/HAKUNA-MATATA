@@ -9,7 +9,7 @@ import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
 import { useSelector, useDispatch } from 'react-redux';
-import { profile, mypost, setting } from '../store/moveReducer';
+import { profile, mypost, setting } from '../store/move-slice';
 const Mypage = () => {
   const [imgSrc, setImgSrc] = useState(userImage);
   const movePage = useSelector((state) => state.movePage);

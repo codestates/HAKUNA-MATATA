@@ -117,33 +117,4 @@
 .focus {
   color: #f3887e;
 }
-.test {
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
-  position: fixed;
-}
 
-/* .bump:active {
-  animation: bump 300ms ease-out;
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
-@keyframes bump {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
