@@ -3,7 +3,7 @@ import style from './ModalInput.module.css';
 import PropTypes from 'prop-types';
 // import ModalButton from './ModalButton';
 
-function ModalInput({ placeholder, password }) {
+function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
@@ -68,7 +68,7 @@ function ModalInput({ placeholder, password }) {
         </label>
         <input
           id="email"
-          type={password ? 'password' : 'text'}
+          type="email"
           placeholder={placeholder}
           className={style.modalInput}
           onChange={emailChangeHandler}
@@ -86,7 +86,7 @@ function ModalInput({ placeholder, password }) {
         </label>
         <input
           id="password"
-          type={password ? 'password' : 'text'}
+          type="password"
           placeholder="비밀번호"
           className={style.modalInput}
           onChange={passwordChangeHandler}
