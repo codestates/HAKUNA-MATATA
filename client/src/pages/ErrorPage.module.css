@@ -1,0 +1,81 @@
+.container {
+  background-color: #f4f4f2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  /* position: fixed; */
+  width: 80vw;
+  height: 100vh;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 280px;
+  overflow: hidden;
+  background-image: url('./men-4051253_960_720.jpg');
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.statusCode {
+  position: absolute;
+  top: 15%;
+  right: 25%;
+  font-size: 150px;
+  color: #f3887e;
+  font-weight: 1000;
+  text-align: center;
+  letter-spacing: 50px;
+  font-family: 'Exo', sans-serif;
+}
+.desc {
+  position: absolute;
+  top: 38%;
+  right: 12%;
+  font-size: 30px;
+  color: #000;
+  font-weight: 300;
+  text-align: left;
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+.desc:nth-child(3) {
+  margin-top: 30px;
+}
+
+.wrapper:nth-child(5) {
+  margin-top: 40px;
+}
+
+.goHome {
+  position: absolute;
+  bottom: 15%;
+  right: 45%;
+  display: block;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  cursor: pointer;
+  color: #f3887e;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+.goHome:hover {
+  transform: scale(1.1);
+  transition: all 500ms;
+}
+
+.test {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}

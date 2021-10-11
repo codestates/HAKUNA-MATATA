@@ -16,9 +16,12 @@ const movePage = createSlice({
     },
     setting: (state) => {
       (state.profile = false), (state.mypost = false), (state.setting = true);
+    },
+    reset: (state) => {
+      (state.profile = false), (state.mypost = false), (state.setting = false);
     }
   }
 });
 
-export const { profile, mypost, setting } = movePage.actions;
+export const { profile, mypost, setting, reset } = movePage.actions;
 export default movePage.reducer;

@@ -5,9 +5,12 @@ import dotMenu from '../../images/dot-menu.png';
 import comments from '../../images/comments.png';
 import heart from '../../images/heart.png';
 import eye from '../../images/eye.png';
+import { useSelector } from 'react-redux';
 
 const Mypost = () => {
   const [dotButton, setDotButton] = useState(false);
+  const posts = useSelector((state) => state.posts);
+  console.log('@@', posts);
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
