@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './ModalButton.module.css';
 
-function ModalButton({ children, oauth }) {
+function ModalButton({ oauth, children }) {
   return (
     <button className={oauth === true ? style.modalOauth : style.modalButton}>
       {children}
     </button>
   );
 }
+
 ModalButton.propTypes = {
   children: PropTypes.any.isRequired,
   oauth: PropTypes.any
