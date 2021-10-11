@@ -1,16 +1,25 @@
 require('dotenv').config();
+const fs = require('fs');
 const cors = require('cors');
 const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const router = require('./routers');
-
 const app = express();
 
 // Handling unexpected exceptions
 process.on('uncaughtException', (err) => {
   console.log('uncaughtException : ', err);
 });
+
+// Create uploads folder
+try {
+  fs.readdirSync('uploads');
+} catch (err) {
+  console.log('uploads/profile 폴더가 없어 uploads/profile 폴더를 생성합니다.');
+  fs.mkdirSync('uploads');
+  fs.mkdirSync('uploads/profile');
+}
 
 // Middleware
 app.use(morgan('dev'));
