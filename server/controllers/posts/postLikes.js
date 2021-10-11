@@ -2,6 +2,36 @@ const { post, like } = require('../../models');
 const userAuthen = require('../authentication/userAuthen');
 
 module.exports = {
+  get: async (req, res) => {
+    // 로그인 인증 검사
+    const userInfo = await userAuthen(req, res);
+
+    let postId = req.params.postId;
+
+    // 매개 변수가 숫자가 아니면 다음을 리턴한다.
+    if (isNaN(postId)) {
+      return res.status(400).json({ message: 'Bad Request!' });
+    }
+
+    postId = Number(postId);
+    const postInfo = await post.findOne({ where: { id: postId } });
+
+    // 게시물이 존재하지 않는 경우 다음을 리턴한다.
+    if (!postInfo) {
+      return res.status(404).json({ message: 'Not Found!' });
+    }
+
+    const likeInfo = await like.findOne({
+      where: { user_id: userInfo.id, post_id: postInfo.dataValues.id }
+    });
+
+    // 게시물이 존재하면 true를 존재하지 않는 경우 false를 리턴한다.
+    if (likeInfo) {
+      return res.status(200).json({ state: true });
+    }
+
+    res.status(200).json({ state: false });
+  },
   post: async (req, res) => {
     try {
       // 로그인 인증 검사

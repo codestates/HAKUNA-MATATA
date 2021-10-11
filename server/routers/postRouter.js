@@ -11,6 +11,7 @@ router
 
 router
   .route('/:postId/likes')
+  .get(posts.postLikes.get)
   .post(posts.postLikes.post)
   .delete(posts.postLikes.delete);
 
