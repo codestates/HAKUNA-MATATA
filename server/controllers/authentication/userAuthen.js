@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
     // 쿠키에 에세스 토큰이 있는지 확인한다.
     const { accessToken } = req.cookies;
     if (!accessToken) {
-      return res.status(401).json({ message: 'No access token provided!' });
+      return res.status(401).json({ message: 'Access token not provided!' });
     }
 
     // 에세스 토큰이 유효한지 확인한다.
