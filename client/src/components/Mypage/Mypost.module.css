@@ -1,8 +1,8 @@
-button {
+/* button {
   background: inherit;
   cursor: pointer;
   border: none;
-}
+} */
 .post {
   margin-top: 10px;
   padding: 15px 20px;
@@ -67,6 +67,9 @@ button {
   align-items: center;
   width: 35px;
   height: 35px;
+  background: inherit;
+  cursor: pointer;
+  border: none;
 }
 
 .dotBox.dotClick {

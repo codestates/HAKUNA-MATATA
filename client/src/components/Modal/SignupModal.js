@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import SignupModalInput from './SignupModalInput';
-import ModalButton from './ModalButton';
+// import SignupModalInput from './SignupModalInput';
+// import ModalButton from './ModalButton';
+import SignupInput from './SignupInput';
 import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
@@ -72,11 +73,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
       </div>
 
       <div className={style.inputBox}>
-        <SignupModalInput placeholder={'이메일'} />
-        <SignupModalInput placeholder={'비밀번호'} password />
-        <SignupModalInput placeholder={'비밀번호 확인'} password />
-        <ModalButton>회원가입</ModalButton>
-        <ModalButton oauth>깃허브로 회원가입</ModalButton>
+        <SignupInput />
       </div>
       <div className={style.signup} onClick={openLoginModal}>
         하쿠나 마타타에 로그인 하세요.
