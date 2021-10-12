@@ -25,7 +25,7 @@ const Main = () => {
         <Route path="/mypage">
           <MyPage />
         </Route>
-        <Route path="/post">
+        <Route path="/posts/:postId">
           <Post />
         </Route>
         <Route path="/add-post">
