@@ -135,4 +135,6 @@ hr {
   line-height: 1.2em;
   text-align: center;
   color: #fff;
+  cursor: pointer;
+  border: none;
 }

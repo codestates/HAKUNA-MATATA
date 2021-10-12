@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Profile.module.css';
 import Input from './Input';
 import MypageButton from './MypageButton';
+// import { useSelector } from 'react-redux';
 
 const Profile = () => {
   return (
