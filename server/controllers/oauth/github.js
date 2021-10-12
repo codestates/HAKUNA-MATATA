@@ -86,6 +86,6 @@ module.exports = async (req, res) => {
     res.status(200).json({ userInfo });
   } catch (err) {
     console.error(err);
-    res.status(401).json({ message: 'GitHub error!' });
+    res.status(500).json({ message: 'Server error!' });
   }
 };
