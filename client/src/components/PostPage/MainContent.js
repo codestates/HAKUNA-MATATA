@@ -7,23 +7,16 @@ import comments from '../../images/comments.png';
 import filledHeart from '../../images/filledheart.png';
 import eye from '../../images/eye.png';
 import like from '../../images/heart.png';
+import PropTypes from 'prop-types';
 
-const MainContent = () => {
+const MainContent = ({ liked, likeHandler, posts, author }) => {
   const [dotButton, setDotButton] = useState(false);
-  const [likeClicked, setLikeClicked] = useState(false);
-  // const [isShown, setIsShown] = useState();
+
+  // console.log(liked);
 
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
-
-  const likeHandler = () => {
-    setLikeClicked(!likeClicked);
-  };
-
-  // const isShownHandler = () => {
-  //   setIsShown(null);
-  // };
 
   document.addEventListener('click', (e) => {
     if (
@@ -67,37 +60,32 @@ const MainContent = () => {
         )}
       </div>
       <div className={style['section1-content']}>
-        <h1>게시물 제목</h1>
+        <h1>{posts.title}</h1>
         <div className={style.basicinfo}>
           <span>
             <img src={userImg} alt="user image" />
-            <span>nickname</span>
+            <span>{author.nickname}</span>
           </span>
-          <span>2021.09.22</span>
+          <span>{new Date(posts.created_at).toLocaleDateString('ko-KR')}</span>
         </div>
         <div className={style.maincontent}>
-          <div>
-            코드스테이츠 페어가 저를 너무 힘들게해요ㅜ ㅜ <br />
-            어떻게 하면 좋을지 모르겠어요. <br />
-            누가 나좀 도와주세요. <br />
-            댓글좀 남겨주십쇼!!
-          </div>
+          <div>{posts.content}</div>
         </div>
         <div className={style.reactions}>
           <p>
             <img src={comments} />
-            <span>128</span>
+            <span>{posts.comments}</span>
           </p>
           <p>
             <img src={like} />
-            <span>30</span>
+            <span>{posts.likes}</span>
           </p>
           <p>
             <img src={eye} />
-            <span>1.3k</span>
+            <span>{posts.views}</span>
           </p>
           <div className={style.test}>
-            {likeClicked ? (
+            {liked ? (
               <img src={filledHeart} alt="likes" onClick={likeHandler} />
             ) : (
               <img src={like} alt="likes_none" onClick={likeHandler} />
@@ -108,6 +96,13 @@ const MainContent = () => {
       </div>
     </section>
   );
+};
+
+MainContent.propTypes = {
+  liked: PropTypes.any,
+  likeHandler: PropTypes.any,
+  posts: PropTypes.any,
+  author: PropTypes.any
 };
 
 export default MainContent;
