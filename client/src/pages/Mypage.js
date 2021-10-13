@@ -14,10 +14,6 @@ import { getUserInfo, logout } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 
-// import commentPic from '../images/comments.png';
-// import heart from '../images/heart.png';
-// import eye from '../images/eye.png';
-// import dotMenu from '../images/dot-menu.png';
 const Mypage = () => {
   const history = useHistory();
   const [imgSrc, setImgSrc] = useState(userImage);
@@ -25,7 +21,6 @@ const Mypage = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
   const dispatch = useDispatch();
   const [userPosts, setUserPosts] = useState([]);
-
   useEffect(() => {
     userAutn();
   }, []);
@@ -46,9 +41,10 @@ const Mypage = () => {
   const getMypost = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/posts?user=${userInfo.login}`,
+        `http://localhost:4000/posts?user=${userInfo.nickname}`,
         { withCredentials: true }
       );
+
       setUserPosts(response.data.posts.rows);
     } catch (err) {
       console.log(err);
@@ -67,12 +63,13 @@ const Mypage = () => {
     if (imageFile) {
       const formdata = new FormData();
       formdata.append('file', imageFile);
+      formdata.append('fileName', imageFile.name);
 
       axios
         .post(
           'http://localhost:4000/users/profile',
           { image: formdata },
-          { withCredentials: true, 'content-type': 'multipart/form-data' }
+          { withCredentials: true, 'Content-Type': 'multipart/form-data' }
         )
         .then((res) => {
           userAutn();

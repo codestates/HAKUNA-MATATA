@@ -64,6 +64,7 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
 
   const EditPostHandler = () => {
     // 상위 App.js or Redux 관리
+
     history.push({ pathname: '/edit-post', state: posts });
   };
 

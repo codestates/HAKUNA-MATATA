@@ -85,6 +85,7 @@ const Header = () => {
           <SignupModal
             handleLoginModal={handleLoginModal}
             handleSignupModal={handleSignupModal}
+            setSignupModal={setSignupModal}
           />
         </div>
       )}
@@ -148,7 +149,6 @@ const Header = () => {
               }
               onClick={() => {
                 dispatch(mypost());
-
                 history.push('/mypage');
               }}
             >

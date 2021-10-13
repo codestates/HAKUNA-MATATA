@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import style from './Setting.module.css';
-// import { useDispatch } from 'react-redux';
-// import { logout } from '../../store/login-slice';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/login-slice';
+import { useHistory } from 'react-router';
 import axios from 'axios';
 
 const Setting = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [changePassword, setChangePassword] = useState({
     password: '',
     checkPassword: ''
@@ -13,13 +15,13 @@ const Setting = () => {
   const handleInputValue = (key) => (e) => {
     setChangePassword({ ...changePassword, [key]: e.target.value });
   };
-  // const withDrawal = () => {
-  //   axios.delete('http://localhost:4000/users/userinfo', {
-  //     withCredentials: true
-  //   });
-  //   dispatch(logout());
-  //   history.push('/');
-  // };
+  const withDrawal = () => {
+    axios.delete('http://localhost:4000/users/userinfo', {
+      withCredentials: true
+    });
+    dispatch(logout());
+    history.push('/');
+  };
 
   const handleSaveProfile = () => {
     const { password, checkPassword } = changePassword;
@@ -43,6 +45,10 @@ const Setting = () => {
           console.log(res, '성공적으로 비밀번호가 변경되었습니다.')
         );
     }
+    setChangePassword({
+      password: '',
+      checkPassword: ''
+    });
   };
   return (
     <>
@@ -52,12 +58,14 @@ const Setting = () => {
           type="password"
           placeholder="비밀번호 변경"
           className={style.input}
+          value={changePassword.password}
           onChange={handleInputValue('password')}
         />
         <input
           type="password"
           placeholder="비밀번호 변경 확인"
           className={style.input}
+          value={changePassword.checkPassword}
           onChange={handleInputValue('checkPassword')}
         />
         <button className={style.button} onClick={handleSaveProfile}>
@@ -69,7 +77,9 @@ const Setting = () => {
         <p className={style.explain}>
           탈퇴를 하셔도 삭제하지 않은 게시물과 댓글은 남아있게 됩니다.
         </p>
-        <button className={style.withdrawalButton}>회원 탈퇴하기</button>
+        <button className={style.withdrawalButton} onClick={withDrawal}>
+          회원 탈퇴하기
+        </button>
       </div>
     </>
   );
