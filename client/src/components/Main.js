@@ -7,6 +7,7 @@ import Post from '../pages/Post';
 import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
+import ErrorPage from '../pages/ErrorPage';
 import Banner from './Banner';
 
 const Main = () => {
