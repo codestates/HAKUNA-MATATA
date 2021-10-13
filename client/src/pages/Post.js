@@ -16,14 +16,12 @@ const Post = () => {
 
   const history = useHistory();
 
-  const errorRedirectHandler = () => {
-    history.push('/404');
-  };
-
   const getPosts = async () => {
     try {
       const path = window.location.pathname;
-      const response = await axios.get(`${REACT_APP_API_URL}${path}`);
+      const response = await axios.get(`${REACT_APP_API_URL}${path}`, {
+        withCredentials: true
+      });
       const postId = response.data.posts.id;
       setAuthor(response.data.posts.user);
       setPathName(postId);
@@ -32,17 +30,17 @@ const Post = () => {
       getComments(path);
     } catch (err) {
       console.log(err);
-      // errorRedirectHandler();
+      history.push('/404');
     }
   };
 
   const getComments = async (path) => {
     try {
       const response = await axios.get(`${REACT_APP_API_URL}${path}/comments`);
-
-      // console.log(response.data.comments);
-      // console.log(comments);
+      console.log(response.data.comments.length);
       setComments(response.data.comments);
+
+      // setPosts({ ...posts, comments: response.data.comments.length });
     } catch (err) {
       console.log(err);
     }
@@ -56,29 +54,49 @@ const Post = () => {
       setLiked(response.data.state);
     } catch (err) {
       console.log(err);
-      // errorRedirectHandler();
     }
   };
 
   const likeHandler = async () => {
     try {
       if (!liked) {
-        await axios.post(
+        const liked = await axios.post(
           `${REACT_APP_API_URL}/posts/${pathName}/likes`,
           {},
           { withCredentials: true }
         );
         setLiked(true);
-      } else {
-        await axios.delete(`${REACT_APP_API_URL}/posts/${pathName}/likes`, {
-          withCredentials: true
-        });
 
+        if (liked.data.id) {
+          const likeAdded = await axios.get(
+            `${REACT_APP_API_URL}/posts/${pathName}/likes`,
+            { withCredentials: true }
+          );
+          if (likeAdded.data.state) {
+            setPosts({ ...posts, likes: posts.likes + 1 });
+          }
+        }
+      } else {
+        const unliked = await axios.delete(
+          `${REACT_APP_API_URL}/posts/${pathName}/likes`,
+          {
+            withCredentials: true
+          }
+        );
+
+        if (unliked.data.id) {
+          const likeSub = await axios.get(
+            `${REACT_APP_API_URL}/posts/${pathName}/likes`,
+            { withCredentials: true }
+          );
+          if (!likeSub.data.state) {
+            setPosts({ ...posts, likes: posts.likes - 1 });
+          }
+        }
         setLiked(false);
       }
     } catch (err) {
       console.log(err);
-      errorRedirectHandler();
     }
   };
 
@@ -106,6 +124,8 @@ const Post = () => {
           likeHandler={likeHandler}
           posts={posts}
           author={author}
+          pathName={pathName}
+          setPosts={setPosts}
         />
 
         {comments.map((comment) => {

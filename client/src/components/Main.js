@@ -6,6 +6,7 @@ import Board from '../pages/Board';
 import Post from '../pages/Post';
 import About from '../pages/About';
 import AddPost from '../pages/AddPost';
+import EditPost from '../pages/EditPost';
 import Banner from './Banner';
 // import { useSelector } from 'react-redux';
 
@@ -30,6 +31,12 @@ const Main = () => {
         </Route>
         <Route path="/add-post">
           <AddPost />
+        </Route>
+        <Route path="/edit-post">
+          <EditPost />
+        </Route>
+        <Route path="/404">
+          <p>404 page!</p>
         </Route>
       </Switch>
     </main>

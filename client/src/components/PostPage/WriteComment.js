@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 const WriteComment = ({ pathName, setComments }) => {
   const [commentContent, setCommentContent] = useState({});
-  console.log(commentContent);
 
   const sendComment = async () => {
     try {

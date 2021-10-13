@@ -57,7 +57,7 @@ const CommentItem = ({ comment, pathName, setComments }) => {
         { withCredentials: true }
       );
 
-      console.log(updatedComments);
+      // console.log(updatedComments);
 
       if (updatedComments.data.newCommentInfo) {
         const newlyCreatedComments = await axios.get(url);
