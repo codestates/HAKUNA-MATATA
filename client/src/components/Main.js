@@ -12,7 +12,6 @@ import Banner from './Banner';
 const Main = () => {
   return (
     <main>
-      <Banner />
       <Switch>
         <Route path="/about">
           <About />
@@ -21,15 +20,19 @@ const Main = () => {
           <Board />
         </Route>
         <Route path="/mypage">
+          <Banner />
           <MyPage />
         </Route>
         <Route path="/posts/:postId">
+          <Banner />
           <Post />
         </Route>
         <Route path="/add-post">
+          <Banner />
           <AddPost />
         </Route>
         <Route path="/edit-post">
+          <Banner />
           <EditPost />
         </Route>
         <Route path="/404">

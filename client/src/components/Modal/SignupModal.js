@@ -23,7 +23,8 @@ function SignupModal({ handleLoginModal, handleSignupModal, setSignupModal }) {
     setPersonalOpen(!PersonalOpen);
   };
   return ReactDom.createPortal(
-    <div className={style.containerWrap} onClick={handleSignupModal}>
+    <div className={style.containerWrap}>
+      <div className={style.containerbg} onClick={handleSignupModal}></div>
       <div className={style.container}>
         {usingOpen && (
           <div className={style.modalBackDrop} onClick={openModalHandler}>
