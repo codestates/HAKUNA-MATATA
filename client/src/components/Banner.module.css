@@ -1,0 +1,22 @@
+.banner {
+  width: 100vw;
+  height: 318px;
+  text-align: center;
+  /* vertical-align: center; */
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 280px;
+  color: white;
+  z-index: 0;
+  overflow: hidden;
+  /* padding: 200px 0px; */
+  background-image: url('../images/desert.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* .banner img {
+  width: 100%;
+  max-width: 500px;
+  height: 80%;
+} */

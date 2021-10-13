@@ -1,0 +1,50 @@
+.writecomment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.writecomment img {
+  width: 60px;
+  height: 60px;
+}
+
+.textarea {
+  width: 661px;
+  height: 90px;
+  margin-top: 10px;
+  padding-top: 11px;
+  padding-left: 15px;
+  border: 1px solid #f3887e;
+  border-radius: 5px;
+  resize: none;
+}
+
+.textarea:focus {
+  outline: none;
+  border: 2px solid #f3887e;
+}
+
+.textarea::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.45em;
+  color: #f3887e;
+}
+
+.submitcom {
+  width: 120px;
+  height: 50px;
+  margin-top: 15px;
+  background-color: #f3887e;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45em;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 650px;
+}

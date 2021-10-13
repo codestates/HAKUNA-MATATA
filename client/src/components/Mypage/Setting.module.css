@@ -1,0 +1,70 @@
+.changePassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.45em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.explain {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45em;
+  color: #a4a4a4;
+}
+.withdrawal {
+  margin-top: 30px;
+}
+.withdrawalButton {
+  width: 414px;
+  padding: 20px;
+  background-color: #737373;
+  border-radius: 3px;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.45em;
+  padding: 20 0;
+  border: none;
+  cursor: pointer;
+}
+
+.input {
+  width: 414px;
+  height: 50px;
+  border: 1px solid #f3887e;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 11px 0 13px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.15em;
+  color: #404040;
+}
+
+.input:focus {
+  outline: none;
+  border: 3px solid #f3887e;
+}
+
+.button {
+  width: 414px;
+  padding: 20px;
+  background-color: #f3887e;
+  border-radius: 3px;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.45em;
+  padding: 20 0;
+  border: none;
+  cursor: pointer;
+}
