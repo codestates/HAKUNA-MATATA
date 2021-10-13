@@ -55,7 +55,6 @@ const Mypage = () => {
     try {
       const imageFile = e.target.files[0];
 
-
       const fileReader = new FileReader();
       if (imageFile) {
         fileReader.readAsDataURL(imageFile);
