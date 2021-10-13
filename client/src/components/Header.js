@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import style from './Header.module.css';
-// import Button from './Button';
 import Logo from './Logo';
 import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';

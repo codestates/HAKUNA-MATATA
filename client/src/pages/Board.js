@@ -6,7 +6,6 @@ import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
 import PageNation from '../components/Board/PageNation';
 import { REACT_APP_API_URL } from '../config';
-console.log(REACT_APP_API_URL);
 
 function Board() {
   const [isActive, setActive] = useState([]);

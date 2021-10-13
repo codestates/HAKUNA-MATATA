@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
   const [commentContent, setCommentContent] = useState({});
 
+  const { comment } = commentContent;
+
   const sendComment = async () => {
     try {
       const url = `http://localhost:4000/posts/${pathName}/comments`;
@@ -14,7 +16,6 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
         'Content-Type': 'application/json',
         withCredentials: true
       };
-      const { comment } = commentContent;
 
       const newCommentId = await axios.post(url, { content: comment }, config);
 
@@ -25,6 +26,9 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
         const newComments = await axios.get(url);
         setComments(newComments.data.comments);
       }
+
+      setCommentContent({});
+      console.log(comment);
     } catch (err) {
       console.log(err);
     }
@@ -42,6 +46,7 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
           placeholder="댓글을 입력하세요."
           className={style.textarea}
           onChange={handleInputValue('comment')}
+          value={comment}
         />
       </div>
 

@@ -20,7 +20,6 @@ const CommentItem = ({
 
   const url = `http://localhost:4000/posts/${pathName}/comments`;
 
-  // console.log(comment);
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
@@ -65,8 +64,6 @@ const CommentItem = ({
         body,
         { withCredentials: true }
       );
-
-      // console.log(updatedComments);
 
       if (updatedComments.data.newCommentInfo) {
         const newlyCreatedComments = await axios.get(url);
