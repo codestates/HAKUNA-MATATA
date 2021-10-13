@@ -26,6 +26,7 @@
   font-weight: 700;
   color: #404040;
   padding: 25px 30px;
+  cursor: pointer;
 }
 .categoryWrap ul li.addClass a {
   color: #fff;

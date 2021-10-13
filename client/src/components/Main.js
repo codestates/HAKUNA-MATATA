@@ -15,8 +15,6 @@ const Main = () => {
   return (
     <main>
       <Banner />
-
-
       <Switch>
         <Route path="/about">
           <About />
@@ -24,7 +22,6 @@ const Main = () => {
         <Route path="/" exact>
           <Board />
         </Route>
-
         <Route path="/mypage">
           <MyPage />
         </Route>

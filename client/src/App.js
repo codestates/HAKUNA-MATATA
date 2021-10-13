@@ -10,7 +10,6 @@ function App() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   console.log(posts);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     axios

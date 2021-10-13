@@ -11,7 +11,8 @@
 .itemImage {
   border-radius: 5px 5px 0 0;
   padding: 40px 0;
-  background: url('./images/postcardpicture.jpg') no-repeat 100% 50%;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
   background-size: cover;
 }
 .itemTitle {
