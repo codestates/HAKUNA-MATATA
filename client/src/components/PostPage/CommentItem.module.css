@@ -7,7 +7,8 @@
 .section2 h1 {
   font-size: 24px;
   line-height: 1.42em;
-  margin: 22px 0;
+  margin: 15px 0;
+  margin-bottom: 5px;
   color: #404040;
 }
 
@@ -21,7 +22,7 @@
 .section2 div:last-of-type {
   font-size: 16px;
   margin-top: 5px;
-  color: #404040;
+  /* color: #404040; */
 }
 
 .section2 > span {
@@ -49,7 +50,7 @@
 }
 
 .comments div {
-  padding: px 0;
+  padding: 13px 0;
 }
 
 .comments img {
@@ -57,7 +58,13 @@
   height: 24px;
 }
 
+.userImg {
+  margin-bottom: 10;
+}
+
 .dotBox {
+  border: none;
+  background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
@@ -99,6 +106,8 @@
 }
 
 .modifyButton {
+  border: none;
+  background-color: transparent;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.45em;
@@ -106,9 +115,39 @@
 }
 
 .deleteButton {
+  border: none;
+  background-color: transparent;
   margin-top: 10px;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.45em;
   color: #404040;
+}
+
+.modifyBox {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 70px;
+}
+
+.modifyBox button {
+  margin: 10px 5px;
+  width: 60px;
+  font-size: 15px;
+  height: 40px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+.modiInput {
+  width: 90%;
+  height: 10px;
+  padding: 60px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

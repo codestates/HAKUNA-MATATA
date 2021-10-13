@@ -4,7 +4,7 @@ import userImg from '../../images/user.png';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-const WriteComment = ({ pathName, setComments }) => {
+const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
   const [commentContent, setCommentContent] = useState({});
 
   const sendComment = async () => {
@@ -18,7 +18,8 @@ const WriteComment = ({ pathName, setComments }) => {
 
       const newCommentId = await axios.post(url, { content: comment }, config);
 
-      // console.log(newCommentId);
+      console.log(posts);
+      setPosts({ ...posts, comments: comments.length + 1 });
 
       if (newCommentId.data.id) {
         const newComments = await axios.get(url);
@@ -53,7 +54,10 @@ const WriteComment = ({ pathName, setComments }) => {
 
 WriteComment.propTypes = {
   pathName: PropTypes.any,
-  setComments: PropTypes.any
+  setComments: PropTypes.any,
+  comments: PropTypes.any,
+  setPosts: PropTypes.any,
+  posts: PropTypes.any
 };
 
 export default WriteComment;

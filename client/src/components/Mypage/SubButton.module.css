@@ -4,7 +4,6 @@
   background-color: #ebebeb;
   border-radius: 3px;
   border: none;
-  /* margin-right: 15px; */
   margin-top: 30px;
   font-size: 22px;
   font-weight: 700;
@@ -12,6 +11,7 @@
   color: #8f8f8f;
   cursor: pointer;
 }
+
 .button:first-child {
   margin-right: 15px;
 }

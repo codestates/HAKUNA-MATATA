@@ -135,11 +135,20 @@ const Post = () => {
               comment={comment}
               pathName={pathName}
               setComments={setComments}
+              setPosts={setPosts}
+              posts={posts}
+              comments={comments}
             />
           );
         })}
 
-        <WriteComment pathName={pathName} setComments={setComments} />
+        <WriteComment
+          pathName={pathName}
+          setComments={setComments}
+          comments={comments}
+          setPosts={setPosts}
+          posts={posts}
+        />
       </section>
     </div>
   );
