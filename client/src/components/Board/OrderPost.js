@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './OrderPost.module.css';
-import search from './images/search.png';
+import search from '../../images/search.png';
 import PropTypes from 'prop-types';
 
 export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {

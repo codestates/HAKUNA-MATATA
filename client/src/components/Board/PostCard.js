@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import style from './PostCard.module.css';
 import comments from '../../images/comments.png';
 import heart from '../../images/heart.png';
 import eye from '../../images/eye.png';
 import user from '../../images/user.png';
 import PropTypes from 'prop-types';
-import romantic from './images/thumbnail/romantic.jpg';
-import friends from './images/thumbnail/friends.jpg';
-import work from './images/thumbnail/work.jpg';
-import family from './images/thumbnail/family.jpg';
+import romantic from '../../images/thumbnail/romantic.jpg';
+import friends from '../../images/thumbnail/friends.jpg';
+import work from '../../images/thumbnail/work.jpg';
+import family from '../../images/thumbnail/family.jpg';
 
 export default function PostCard({ itemInfo }) {
   const [bgImage, setBgImage] = useState(romantic);
@@ -25,7 +26,7 @@ export default function PostCard({ itemInfo }) {
     <>
       {!itemInfo ? null : (
         <li className={style.item}>
-          <a>
+          <Link to={`/posts/${itemInfo.id}`}>
             <article>
               <div
                 style={{
@@ -68,7 +69,7 @@ export default function PostCard({ itemInfo }) {
                 </div>
               </div>
             </article>
-          </a>
+          </Link>
         </li>
       )}
     </>

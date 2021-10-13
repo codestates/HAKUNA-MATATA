@@ -1,4 +1,3 @@
-// import { Fragment } from 'react';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MyPage from '../pages/Mypage';
@@ -8,13 +7,12 @@ import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
-import Banner from './Banner';
+// import Banner from './Banner';
 
 const Main = () => {
-  // const isLogin = useSelector((state) => state.isLogin.value);
   return (
     <main>
-      <Banner />
+      {/* <Banner /> */}
       <Switch>
         <Route path="/about">
           <About />

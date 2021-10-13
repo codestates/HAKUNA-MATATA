@@ -1,6 +1,11 @@
 .item {
   width: 33.333333%;
   padding: 7.5px;
+  transition: 0.3s;
+}
+.item:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
 }
 .item > a {
   display: block;
