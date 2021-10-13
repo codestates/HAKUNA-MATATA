@@ -9,6 +9,7 @@ import { getposts } from './store/post-slice';
 function App() {
   const posts = useSelector((state) => state.posts);
   console.log(posts);
+
   const dispatch = useDispatch();
   useEffect(() => {
     axios
@@ -18,6 +19,7 @@ function App() {
       .then((data) => dispatch(getposts(data.data.posts.rows)))
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div className="box">
       <Fragment>

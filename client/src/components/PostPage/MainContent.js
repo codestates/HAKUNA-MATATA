@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import style from './MainContent.module.css';
 import dotMenu from '../../images/dot-menu.png';
 import userImg from '../../images/user.png';
@@ -7,43 +7,101 @@ import comments from '../../images/comments.png';
 import filledHeart from '../../images/filledheart.png';
 import eye from '../../images/eye.png';
 import like from '../../images/heart.png';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import { useHistory } from 'react-router';
 
-const MainContent = () => {
+const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   const [dotButton, setDotButton] = useState(false);
-  const [likeClicked, setLikeClicked] = useState(false);
-  // const [isShown, setIsShown] = useState();
+  const [modifyPost, setModifyPost] = useState({
+    title: '',
+    contents: ''
+  });
+  const [showModifyBox, setShowModifyBoxHandler] = useState(false);
 
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
 
-  const likeHandler = () => {
-    setLikeClicked(!likeClicked);
-  };
-
-  // const isShownHandler = () => {
-  //   setIsShown(null);
+  // const errorRedirectHandler = () => {
+  //   history.push('/');
   // };
 
-  document.addEventListener('click', (e) => {
-    if (
-      dotButton &&
-      e.target.className !==
-        'MainContent_dotBox__1WcjX MainContent_dotClick__2kD1_' &&
-      e.target.className !== 'MainContent_menuBox__35m8U'
-    ) {
-      setDotButton(false);
-    }
-  });
+  let history = useHistory();
 
-  // useEffect(() => {
-  //   if (dotButton) {
-  //     const notiTimer = setTimeout(() => {
-  //       setDotButton(false);
-  //     }, 3000);
-  //     return () => clearTimeout(notiTimer);
+  // document.addEventListener('click', (e) => {
+  //   if (
+  //     dotButton &&
+  //     e.target.className !==
+  //       'MainContent_dotBox__1WcjX MainContent_dotClick__2kD1_' &&
+  //     e.target.className !== 'MainContent_menuBox__35m8U'
+  //   ) {
+  //     setDotButton(false);
   //   }
-  // }, [dotButton]);
+  // });
+
+  const deletePostHandler = async (e) => {
+    const postId = e.target.id;
+
+    try {
+      const deletePostId = await axios.delete(
+        `http://localhost:4000/posts/${postId}`,
+        { withCredentials: true }
+      );
+
+      if (deletePostId.data.id) {
+        history.push('/');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const showHandler = (bool) => {
+    setShowModifyBoxHandler(bool);
+    setDotButton(false);
+  };
+
+  const EditPostHandler = () => {
+    // 상위 App.js or Redux 관리
+    history.push({ pathname: '/edit-post', state: posts });
+  };
+
+  const editPostTitle = (e) => {
+    const editPost = e.target.value;
+    setModifyPost(editPost.title);
+  };
+
+  const editPostContent = (e) => {
+    const editPost = e.target.value;
+    setModifyPost(editPost.content);
+  };
+
+  const modifyPostReq = async (e) => {
+    const body = { title: modifyPost.title, contents: modifyPost.contents };
+    const postId = e.target.id;
+
+    try {
+      const updatedPosts = await axios.patch(
+        `http://localhost:4000/posts/${postId}`,
+        body,
+        { withCredentials: true }
+      );
+
+      if (updatedPosts.data.id) {
+        const newlyUpdatedPosts = await axios.get(
+          `http://localhost:4000/posts/${postId}`
+        );
+        console.log(newlyUpdatedPosts);
+        setPosts(newlyUpdatedPosts);
+        setShowModifyBoxHandler(false);
+      }
+
+      // if(updatedPosts.data.)
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <section className={style.section1}>
@@ -59,45 +117,69 @@ const MainContent = () => {
         </button>
         {dotButton && (
           <div className={style.menuBox}>
-            <Link to="#">
-              <button className={style.modifyButton}>수정</button>
-            </Link>
-            <button className={style.deleteButton}>삭제</button>
+            <button
+              className={style.modifyButton}
+              onClick={() => EditPostHandler()}
+            >
+              수정
+            </button>
+            <button
+              id={posts.id}
+              className={style.deleteButton}
+              onClick={(e) => deletePostHandler(e)}
+            >
+              삭제
+            </button>
           </div>
         )}
       </div>
       <div className={style['section1-content']}>
-        <h1>게시물 제목</h1>
+        <h1>{posts.title}</h1>
         <div className={style.basicinfo}>
           <span>
             <img src={userImg} alt="user image" />
-            <span>nickname</span>
+            <span>{author.nickname}</span>
           </span>
-          <span>2021.09.22</span>
+          <span>{new Date(posts.created_at).toLocaleDateString('ko-KR')}</span>
+          {showModifyBox && (
+            <div className={style.modifyBox}>
+              <input
+                type="text"
+                name="content"
+                value={modifyPost.title}
+                onChange={(e) => editPostTitle(e)}
+              />
+              <input
+                type="text"
+                name="content"
+                value={modifyPost.content}
+                onChange={(e) => editPostContent(e)}
+              />
+              <button id={posts.id} onClick={(e) => modifyPostReq(e)}>
+                전송
+              </button>
+              <button onClick={() => showHandler(false)}>취소</button>
+            </div>
+          )}
         </div>
         <div className={style.maincontent}>
-          <div>
-            코드스테이츠 페어가 저를 너무 힘들게해요ㅜ ㅜ <br />
-            어떻게 하면 좋을지 모르겠어요. <br />
-            누가 나좀 도와주세요. <br />
-            댓글좀 남겨주십쇼!!
-          </div>
+          <div>{posts.content}</div>
         </div>
         <div className={style.reactions}>
           <p>
             <img src={comments} />
-            <span>128</span>
+            <span>{posts.comments}</span>
           </p>
           <p>
             <img src={like} />
-            <span>30</span>
+            <span>{posts.likes}</span>
           </p>
           <p>
             <img src={eye} />
-            <span>1.3k</span>
+            <span>{posts.views}</span>
           </p>
-          <div className={style.test}>
-            {likeClicked ? (
+          <div>
+            {liked ? (
               <img src={filledHeart} alt="likes" onClick={likeHandler} />
             ) : (
               <img src={like} alt="likes_none" onClick={likeHandler} />
@@ -108,6 +190,15 @@ const MainContent = () => {
       </div>
     </section>
   );
+};
+
+MainContent.propTypes = {
+  liked: PropTypes.any,
+  likeHandler: PropTypes.any,
+  posts: PropTypes.any,
+  author: PropTypes.any,
+  pathName: PropTypes.any,
+  setPosts: PropTypes.any
 };
 
 export default MainContent;
