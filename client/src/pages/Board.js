@@ -5,12 +5,14 @@ import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
 import PageNation from '../components/Board/PageNation';
+import { REACT_APP_API_URL } from '../config';
+console.log(REACT_APP_API_URL);
 
 function Board() {
   const [isActive, setActive] = useState([]);
   const [postItems, setPostItems] = useState([]);
   const [postPages, setPostPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [showPostPages, setShowPostPages] = useState(0);
   const [querys, setQuerys] = useState({
     user: '',
@@ -24,7 +26,7 @@ function Board() {
 
   const getPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/posts');
+      const response = await axios.get(`${REACT_APP_API_URL}/posts`);
       const { rows, count } = response.data.posts;
 
       let pageCount = Math.ceil(count / querys.limit);
@@ -54,7 +56,7 @@ function Board() {
         return a;
       }
     }, '');
-    // console.log(string);
+    //console.log(string);
 
     try {
       const response = await axios.get(`http://localhost:4000/posts?${string}`);
@@ -134,8 +136,7 @@ function Board() {
     let NextOffset = '';
 
     if (target === 'left') {
-      console.log('left');
-      NextOffset = querys.offset > 0 ? querys.offset - 1 : 1;
+      NextOffset = querys.offset > 1 ? querys.offset - 1 : 1;
     } else {
       NextOffset =
         querys.offset + 1 > postPages ? postPages : querys.offset + 1;
@@ -147,7 +148,7 @@ function Board() {
     };
 
     setQuerys(newQuerys);
-    // 여기서 GET 요청 후 postPages 업데이트 되면서 useEffect 발동
+    // 여기서 GET 요청 후 postPages 업데이트 되면서 useEffect 실행
     getPostsQuerys(newQuerys);
     setCurrentPage(newQuerys.offset);
   };
@@ -168,10 +169,13 @@ function Board() {
 
   // 수정 필요 (5의 배수로 증가함)
   useEffect(() => {
-    // console.log('postPages: ', postPages);
-    // console.log('currentPage: ', currentPage);
+    if (currentPage % 5 === 0 || currentPage === 1) {
+      console.log('postPages: ', postPages);
+      console.log('currentPage: ', currentPage);
+    }
+
     if (currentPage > 5) {
-      setShowPostPages(5);
+      setShowPostPages(currentPage - 1);
     }
     if (currentPage <= 5) {
       setShowPostPages(0);
