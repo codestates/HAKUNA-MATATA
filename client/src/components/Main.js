@@ -8,8 +8,6 @@ import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import Banner from './Banner';
-import ErrorPage from '../pages/ErrorPage';
-// import { useSelector } from 'react-redux';
 
 const Main = () => {
   // const isLogin = useSelector((state) => state.isLogin.value);

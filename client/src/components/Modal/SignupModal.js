@@ -8,7 +8,7 @@ import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 
-function SignupModal({ handleLoginModal, handleSignupModal }) {
+function SignupModal({ handleLoginModal, handleSignupModal, setSignupModal }) {
   const [usingOpen, setUsingOpen] = useState(false);
   const [PersonalOpen, setPersonalOpen] = useState(false);
   const openLoginModal = () => {
@@ -73,7 +73,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
       </div>
 
       <div className={style.inputBox}>
-        <SignupInput />
+        <SignupInput setSignupModal={setSignupModal} />
       </div>
       <div className={style.signup} onClick={openLoginModal}>
         하쿠나 마타타에 로그인 하세요.
@@ -83,6 +83,7 @@ function SignupModal({ handleLoginModal, handleSignupModal }) {
   );
 }
 SignupModal.propTypes = {
+  setSignupModal: PropTypes.any,
   handleLoginModal: PropTypes.any,
   handleSignupModal: PropTypes.any
 };

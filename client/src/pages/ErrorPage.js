@@ -24,7 +24,7 @@ function ErrorPage() {
         </p>
 
         <div className={style.wraaper}>
-          <a href="#" className={style.goHome}>
+          <a href="/" className={style.goHome}>
             Go Home
           </a>
         </div>
