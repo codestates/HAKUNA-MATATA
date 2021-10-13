@@ -16,10 +16,12 @@
   background-color: #fff;
   transform: translateY(-20px);
 }
+.categoryWrap ul li:hover {
+  background-color: #f8f8f8;
+}
 .categoryWrap ul li.addClass {
   background-color: #f3887e;
 }
-
 .categoryWrap ul li a {
   display: inline-block;
   font-size: 20px;
