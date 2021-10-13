@@ -16,19 +16,19 @@
   font-size: 28px;
   font-weight: 500;
   line-height: 1.45em;
-  margin: 23px 0;
+  margin: 5px 0 10px;
 }
 
 .section1-content {
-  margin: 20px 0;
-  padding: 20px 0;
+  margin: 5px 0 20px;
+  padding: 10px 0;
   border-top: 1px solid rgb(0, 0, 0, 0.2);
   border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 .basicinfo span img {
-  width: 21px;
-  height: 21px;
+  width: 30px;
+  height: 30px;
 }
 
 .basicinfo span span {
@@ -36,15 +36,17 @@
   font-weight: 500;
   line-height: 23.44px;
   color: #404040;
-  margin-left: 3px;
+  margin-left: 8px;
   position: relative;
-  top: -4px;
+  top: -9px;
 }
 
 .basicinfo span {
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
   color: #737373;
+  position: relative;
+  right: 5px;
 }
 
 .section1 img {
@@ -63,6 +65,7 @@
   margin: 42px 0px;
   line-height: 1.6em;
   color: #404040;
+  font-size: 1.25em;
 }
 
 .reactions {
@@ -80,7 +83,7 @@
 }
 
 .reactions p span {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: #737373;
   line-height: 1.45em;

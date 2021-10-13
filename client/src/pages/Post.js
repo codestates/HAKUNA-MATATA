@@ -37,10 +37,7 @@ const Post = () => {
   const getComments = async (path) => {
     try {
       const response = await axios.get(`${REACT_APP_API_URL}${path}/comments`);
-      console.log(response.data.comments.length);
       setComments(response.data.comments);
-
-      // setPosts({ ...posts, comments: response.data.comments.length });
     } catch (err) {
       console.log(err);
     }
@@ -106,18 +103,6 @@ const Post = () => {
 
   return (
     <div className={style.container}>
-      <div>
-        <form action="http://localhost:4000/users/signin" method="POST">
-          <input type="text" name="email" />
-          <input type="text" name="password" />
-          <button type="submit">Upload</button>
-        </form>
-      </div>
-      <div>
-        <form action="http://localhost:4000/users/logout" method="POST">
-          <button type="submit">Logout</button>
-        </form>
-      </div>
       <section>
         <MainContent
           liked={liked}
@@ -126,6 +111,7 @@ const Post = () => {
           author={author}
           pathName={pathName}
           setPosts={setPosts}
+          name={name}
         />
 
         {comments.map((comment) => {

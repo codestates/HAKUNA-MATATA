@@ -23,6 +23,7 @@ main {
   margin-top: 10px;
   padding: 0px 0px 150px;
   resize: none;
+  font-size: 20px;
 }
 
 .textarea::placeholder {
@@ -36,9 +37,10 @@ main {
   margin: 20px 0px;
   display: flex;
   align-items: center;
+  font-size: 30px;
+
   height: 47px;
   border: none;
-  /* border-bottom-style: solid; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 

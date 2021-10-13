@@ -39,7 +39,6 @@ const EditPost = () => {
   };
 
   const categoryHandler = (e) => {
-    // setCategory(e.target.options);
     setCategory(options.value);
     console.dir(e.value);
   };

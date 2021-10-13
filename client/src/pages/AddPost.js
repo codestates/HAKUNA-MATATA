@@ -37,16 +37,13 @@ const AddPost = () => {
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
-    // console.log(title);
   };
 
   const contentHandler = (e) => {
     setContents(e.target.value);
-    // console.log(content);
   };
 
   const categoryHandler = (e) => {
-    // setCategory(e.target.options);
     setCategory(e.value);
     console.dir(e.value);
   };
@@ -58,7 +55,6 @@ const AddPost = () => {
           options={options}
           value={category.value}
           placeholder="카테고리 선택"
-          // className={style.select}
           onChange={(e) => categoryHandler(e)}
           isClearable
         />
