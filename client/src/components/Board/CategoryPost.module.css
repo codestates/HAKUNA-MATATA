@@ -15,9 +15,12 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
   background-color: #fff;
   transform: translateY(-20px);
+  transition: all 0.3s;
 }
 .categoryWrap ul li:hover {
   background-color: #f8f8f8;
+  transform: translateY(-25px);
+  transition: all 0.3s;
 }
 .categoryWrap ul li.addClass {
   background-color: #f3887e;
