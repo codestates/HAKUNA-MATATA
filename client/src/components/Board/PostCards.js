@@ -11,7 +11,6 @@ export default function PostCards({ postItems }) {
           return <PostCard key={item.id} itemInfo={item} />;
         })}
       </ul>
-      {/* <div className={style.pageNation}></div> */}
     </div>
   );
 }
