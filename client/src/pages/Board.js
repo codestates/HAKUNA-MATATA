@@ -170,11 +170,6 @@ function Board() {
 
   // 수정 필요 (5의 배수로 증가함)
   useEffect(() => {
-    if (currentPage % 5 === 0 || currentPage === 1) {
-      console.log('postPages: ', postPages);
-      console.log('currentPage: ', currentPage);
-    }
-
     if (currentPage > 5) {
       setShowPostPages(currentPage - 1);
     }

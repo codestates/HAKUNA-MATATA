@@ -7,7 +7,7 @@ import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
-import style from './Banner.module.css';
+import Banner from './Banner';
 
 const Main = () => {
   return (
@@ -17,7 +17,6 @@ const Main = () => {
           <About />
         </Route>
         <Route path="/" exact>
-          <Banner title={''} />
           <Board />
         </Route>
         <Route path="/mypage">
