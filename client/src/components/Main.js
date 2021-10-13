@@ -16,6 +16,7 @@ const Main = () => {
     <main>
       <Banner />
 
+
       <Switch>
         <Route path="/about">
           <About />

@@ -4,40 +4,41 @@ import comments from '../../images/comments.png';
 import heart from '../../images/heart.png';
 import eye from '../../images/eye.png';
 import user from '../../images/user.png';
+import PropTypes from 'prop-types';
 
-export default function PostCard() {
+export default function PostCard({key,image,content,comment,likes,views,created,nickname}) {
   return (
-    <li className={style.item}>
+    <li className={style.item} key={key}>
       <a>
         <article>
-          <div className={style.itemImage}>text</div>
+          <div className={style.itemImage}>{image}</div>
           <div className={style.itemTitle}>
-            <h4>안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요</h4>
+            <h4>{content}</h4>
           </div>
           <div className={style.itemInfo}>
             <div className={style.subInfo}>
               <ul>
                 <li>
                   <img src={comments} />
-                  <span>500</span>
+                  <span>{comment}</span>
                 </li>
                 <li>
                   <img src={heart}/>
-                  <span>500</span>
+                  <span>{likes}</span>
                 </li>
                 <li>
                   <img src={eye}/>
-                  <span>500</span>
+                  <span>{views}</span>
                 </li>
               </ul>
             </div>
             <div className={style.mainInfo}>
               <div className={style.userInfo}>
                 <img src={user}/>
-                <span>nickname</span>
+                <span>{nickname}</span>
               </div>
               <div className={style.dateInfo}>
-                <span>2021.10.10</span>
+                <span>{created}</span>
               </div>
             </div>
           </div>
@@ -46,3 +47,15 @@ export default function PostCard() {
     </li>
   );
 }
+
+PostCard.propTypes = {
+  key: PropTypes.any,
+  content: PropTypes.any,
+  image: PropTypes.any,
+  comment: PropTypes.any,
+  likes: PropTypes.any,
+  views: PropTypes.any,
+  created: PropTypes.any,
+  nickname: PropTypes.any
+};
+
