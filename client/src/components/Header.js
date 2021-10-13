@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './Header.module.css';
-import Button from './Button';
+// import Button from './Button';
 import Logo from './Logo';
 import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';
@@ -85,6 +85,7 @@ const Header = () => {
           <SignupModal
             handleLoginModal={handleLoginModal}
             handleSignupModal={handleSignupModal}
+            setSignupModal={setSignupModal}
           />
         </div>
       )}
@@ -97,7 +98,10 @@ const Header = () => {
             <span>Board</span>
           </Link>
           <Link to="/add-post">
-            <Button className={style.bump}> + Add Post</Button>
+            <button className={`${style.bump} ${style.button}`}>
+              {' '}
+              + Add Post
+            </button>
           </Link>
 
           <img
@@ -148,7 +152,6 @@ const Header = () => {
               }
               onClick={() => {
                 dispatch(mypost());
-
                 history.push('/mypage');
               }}
             >

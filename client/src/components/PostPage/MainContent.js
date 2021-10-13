@@ -9,9 +9,16 @@ import eye from '../../images/eye.png';
 import like from '../../images/heart.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
 const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
+  const dispatch = useDispatch();
+  console.log(dispatch);
+  const loginState = useSelector((state) => state.isLogin);
+  const { isLogin } = loginState;
+  // console.log(isLogin);
+
   const [dotButton, setDotButton] = useState(false);
   const [modifyPost, setModifyPost] = useState({
     title: '',
@@ -64,6 +71,7 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
 
   const EditPostHandler = () => {
     // 상위 App.js or Redux 관리
+
     history.push({ pathname: '/edit-post', state: posts });
   };
 
@@ -179,12 +187,19 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
             <span>{posts.views}</span>
           </p>
           <div>
-            {liked ? (
-              <img src={filledHeart} alt="likes" onClick={likeHandler} />
-            ) : (
-              <img src={like} alt="likes_none" onClick={likeHandler} />
-            )}
-            <p onClick={likeHandler}>공감</p>
+            {isLogin && liked ? (
+              <>
+                <img src={filledHeart} alt="likes" onClick={likeHandler} />
+                <p onClick={likeHandler}>공감</p>
+              </>
+            ) : null}
+            {isLogin && !liked ? (
+              <>
+                <img src={like} alt="likes_none" onClick={likeHandler} />
+                <p onClick={likeHandler}>공감</p>
+              </>
+            ) : null}
+            {!isLogin && null}
           </div>
         </div>
       </div>

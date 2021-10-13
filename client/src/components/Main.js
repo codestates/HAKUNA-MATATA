@@ -8,7 +8,6 @@ import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import Banner from './Banner';
-// import { useSelector } from 'react-redux';
 
 const Main = () => {
   // const isLogin = useSelector((state) => state.isLogin.value);
@@ -35,7 +34,7 @@ const Main = () => {
           <EditPost />
         </Route>
         <Route path="/404">
-          <p>404 page!</p>
+          <ErrorPage />
         </Route>
       </Switch>
     </main>

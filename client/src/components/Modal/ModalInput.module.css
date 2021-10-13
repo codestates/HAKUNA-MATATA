@@ -50,7 +50,6 @@
 .form label {
   display: block;
 }
-
 .form input,
 .form select {
   font: inherit;
@@ -61,15 +60,14 @@
   max-width: 100%;
 }
 
-.form input:focus {
+/* .form input:focus {
   outline: none;
   border-color: #fbe8d2;
   background-color: #fffff9;
-}
+} */
 
 button:hover,
 button:active {
-  background-color: #fcf6e7;
   color: #f3887e;
 }
 

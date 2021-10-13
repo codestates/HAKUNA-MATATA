@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .img {
   /* position: fixed; */
@@ -14,7 +15,7 @@
   font-weight: 700;
   line-height: 280px;
   overflow: hidden;
-  background-image: url('./men-4051253_960_720.jpg');
+  background-image: url('../images/men-4051253_960_720.jpg');
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -22,7 +23,7 @@
 
 .statusCode {
   position: absolute;
-  top: 15%;
+  top: 22%;
   right: 25%;
   font-size: 150px;
   color: #f3887e;
@@ -33,7 +34,7 @@
 }
 .desc {
   position: absolute;
-  top: 38%;
+  top: 45%;
   right: 12%;
   font-size: 30px;
   color: #000;
@@ -74,8 +75,3 @@
   transition: all 500ms;
 }
 
-.test {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
