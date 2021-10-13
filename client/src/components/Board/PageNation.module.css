@@ -1,0 +1,56 @@
+.pageNationWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
+.pageNationWrap .arrowBox {
+  margin: 2.5px;
+}
+.pageNationWrap .arrowBox a.arrow {
+  cursor: pointer;
+  display: inline-block;
+  color: #9d9d9d;
+  height: 24px;
+  font-family: system-ui;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.pageNationWrap .arrowBox a.arrow img {
+  display: block;
+  width: auto;
+  height: 20px;
+}
+
+.pageNationWrap ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pageNationWrap ul li {
+  margin: 2.5px;
+}
+
+.pageNationWrap ul li a {
+  cursor: pointer;
+  display: inline-block;
+  color: #9d9d9d;
+  font-family: system-ui;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  background: #ededed;
+}
+
+.pageNationWrap ul li a.addClass {
+  color: #fff;
+  background: #f3887e;
+}

@@ -7,6 +7,8 @@
   max-width: 1000px;
   padding: 20px 15px 5px 15px;
 }
+
+/* 좌측 필터 */
 .filterWrap {
   width: auto;
 }
@@ -20,16 +22,24 @@
   margin-right: 0;
 }
 .filterWrap > ul > li > a {
+  cursor: pointer;
   font-size: 20px;
   font-weight: 600;
   color: #404040;
 }
+.filterWrap > ul > li > a:hover {
+  color: #737373;
+}
+.filterWrap > ul > li > a.addClass {
+  color: #f3887e;
+}
 
+/* 좌측 서치 */
 .searchWrap {
   width: auto;
 }
-
 .searchWrap > label {
+  cursor: pointer;
   display: inline-block;
   height: 47px;
   border-radius: 3px;
@@ -37,8 +47,8 @@
   border: 1px solid #f3887e;
 }
 .searchWrap > label > input {
-  font-size: 15px;
-  color: #333;
+  font-size: 16px;
+  color: #555;
   height: 45px;
   padding: 0 15px;
   border: 0;
@@ -50,7 +60,6 @@
   font-weight: 400;
   color: #f3887e;
 }
-
 .searchWrap > label > img {
   width: auto;
   height: 100%;
