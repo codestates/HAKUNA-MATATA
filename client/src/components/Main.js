@@ -15,7 +15,7 @@ const Main = () => {
   return (
     <main>
       <Banner />
-      <Switch>
+      <Switch> 
         <Route path="/about">
           <About />
         </Route>

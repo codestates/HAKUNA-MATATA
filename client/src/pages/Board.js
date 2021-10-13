@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
@@ -11,7 +12,6 @@ function Board() {
       <OrderPost />
       <PostCards />
     </section>
-
   );
 }
 
