@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import style from './ModalInput.module.css';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { getUserInfo } from '../../store/login-slice';
+import { useDispatch } from 'react-redux';
+import { login, getUserInfo } from '../../store/login-slice';
+import { profile } from '../../store/move-slice';
 
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -12,9 +14,8 @@ function ModalInput({ placeholder }) {
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
 
-  const userInfo = useSelector((state) => state.isLogin);
-  console.log(userInfo);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const enteredEmailIsValid = enteredEmail.trim() !== '';
   const emailIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
@@ -31,17 +32,21 @@ function ModalInput({ placeholder }) {
   const handleLogin = () => {
     axios
       .post(
-        'https://localhost:4000/users/signin',
+        'http://localhost:4000/users/signin',
         {
-          enteredEmail,
-          enteredPassword
+          email: enteredEmail,
+          password: enteredPassword
         },
-        {
-          withCredentials: true
-        }
+        { withCredentials: true }
       )
-      .then((res) => dispatch(getUserInfo(res)));
+      .then((res) => {
+        dispatch(profile());
+        history.push('/mypage');
+        dispatch(login());
+        dispatch(getUserInfo(res.data.userInfo));
+      });
   };
+
   const emailChangeHandler = (e) => {
     setEnteredEmail(e.target.value);
   };
@@ -67,8 +72,6 @@ function ModalInput({ placeholder }) {
     if (!enteredEmailIsValid || !enteredPwIsValid) {
       return;
     }
-
-    console.log(enteredPassword);
 
     setEnteredEmail('');
     setEnteredEmailTouched(false);

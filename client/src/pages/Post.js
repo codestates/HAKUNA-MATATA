@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import CommentItem from '../components/PostPage/CommentItem';
 import MainContent from '../components/PostPage/MainContent';
@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router';
 
 const Post = () => {
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
 
   let history = useHistory();
 
@@ -16,25 +16,25 @@ const Post = () => {
     history.push('/404');
   }
 
-  const likeHandler = () => {
-    axios
-      .post(
-        `http://localhost:4000/posts/${postId}/likes`,
-        {},
-        { withCredentials: true }
-      )
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        // console.log(err.response.data.message);
-        const errorMessage = err.response.data.message;
+  // const likeHandler = () => {
+  //   axios
+  //     .post(
+  //       `http://localhost:4000/posts/${postId}/likes`,
+  //       {},
+  //       { withCredentials: true }
+  //     )
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((err) => {
+  //       // console.log(err.response.data.message);
+  //       const errorMessage = err.response.data.message;
 
-        if (errorMessage === 'Already liked it!') {
-          setLiked(true);
-        }
-      });
-  };
+  //       if (errorMessage === 'Already liked it!') {
+  //         setLiked(true);
+  //       }
+  //     });
+  // };
 
   useEffect(() => {
     const test = window.location.pathname;
@@ -69,7 +69,7 @@ const Post = () => {
         </form>
       </div>
       <section>
-        <MainContent likeHandler={likeHandler} />
+        <MainContent />
         <CommentItem />
         <CommentItem />
         <WriteComment />

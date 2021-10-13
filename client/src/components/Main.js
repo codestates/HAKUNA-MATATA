@@ -1,6 +1,6 @@
 // import { Fragment } from 'react';
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import MyPage from '../pages/Mypage';
 import Board from '../pages/Board';
 import Post from '../pages/Post';
@@ -11,10 +11,10 @@ import Banner from './Banner';
 
 const Main = () => {
   // const isLogin = useSelector((state) => state.isLogin.value);
-
   return (
     <main>
       <Banner />
+
       <Switch>
         <Route path="/about">
           <About />
@@ -22,6 +22,7 @@ const Main = () => {
         <Route path="/" exact>
           <Board />
         </Route>
+
         <Route path="/mypage">
           <MyPage />
         </Route>
