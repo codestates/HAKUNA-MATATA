@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import style from './Mypage.module.css';
 import userImage from '../images/user.png';
 import pencilImage from '../images/pencil.png';
-// import SubButton from '../components/Mypage/SubButton.js';
 import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
@@ -54,12 +53,6 @@ const Mypage = () => {
   const processImage = (e) => {
     const imageFile = e.target.files[0];
 
-    // const fileReader = new FileReader();
-    // if (imageFile) {
-    //   fileReader.readAsDataURL(imageFile);
-    // }
-
-    // fileReader.onload = (e) => setImgSrc(e.target.result);
     if (imageFile) {
       const formdata = new FormData();
       formdata.append('file', imageFile);
@@ -88,12 +81,6 @@ const Mypage = () => {
   const settingPage = () => {
     dispatch(setting());
   };
-  // const [dotButton, setDotButton] = useState(false);
-  // const posts = useSelector((state) => state.posts);
-
-  // const handleDotButton = () => {
-  //   setDotButton(!dotButton);
-  // };
 
   return (
     <>
