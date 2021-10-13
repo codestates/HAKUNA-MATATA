@@ -171,13 +171,6 @@ module.exports = {
         return res.status(403).json({ message: 'Not authorized!' });
       }
 
-      const { content } = req.body;
-
-      // 요청이 잘못된 경우
-      if (!content) {
-        return res.status(400).json({ message: 'Bad Request!' });
-      }
-
       // 댓글을 삭제한다.
       const deleteCommentCount = await comment.destroy({
         where: { id: commentId }

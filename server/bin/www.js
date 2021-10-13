@@ -7,14 +7,14 @@ const { sequelize } = require('../models');
 const PORT = process.env.PORT_NUMVER || 4000;
 
 // Check DB connection
-// sequelize
-//   .sync({ force: false })
-//   .then(() => {
-//     console.log('👉👈 Database connection successfully!');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    console.log('👉👈 Database connection successfully!');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 // Server Running
 let server;

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import style from './ModalInput.module.css';
 import PropTypes from 'prop-types';
-// import ModalButton from './ModalButton';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login, getUserInfo } from '../../store/login-slice';
+import { profile } from '../../store/move-slice';
 
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -9,6 +13,9 @@ function ModalInput({ placeholder }) {
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const enteredEmailIsValid = enteredEmail.trim() !== '';
   const emailIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
@@ -22,6 +29,23 @@ function ModalInput({ placeholder }) {
       setFormIsValid(false);
     }
   }, [enteredEmailIsValid, enteredPwIsValid]);
+  const handleLogin = () => {
+    axios
+      .post(
+        'http://localhost:4000/users/signin',
+        {
+          email: enteredEmail,
+          password: enteredPassword
+        },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        dispatch(profile());
+        history.push('/mypage');
+        dispatch(login());
+        dispatch(getUserInfo(res.data.userInfo));
+      });
+  };
 
   const emailChangeHandler = (e) => {
     setEnteredEmail(e.target.value);
@@ -49,8 +73,6 @@ function ModalInput({ placeholder }) {
       return;
     }
 
-    console.log(enteredPassword);
-
     setEnteredEmail('');
     setEnteredEmailTouched(false);
     setEnteredPassword('');
@@ -59,7 +81,6 @@ function ModalInput({ placeholder }) {
 
   const emailInputClasses = emailIsInvalid ? style.invalid : style.form;
   const passwordInputClasses = passwordIsInvalid ? style.invalid : style.form;
-
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={emailInputClasses}>
@@ -99,21 +120,22 @@ function ModalInput({ placeholder }) {
       </div>
 
       <div>
-        <submit>
-          <button className={style.modalButton} disabled={!formIsValid}>
-            로그인
-          </button>
-        </submit>
-        <submit>
-          <button className={style.modalOauth}>깃허브로 로그인</button>
-        </submit>
+        <button
+          className={style.modalButton}
+          disabled={!formIsValid}
+          onClick={handleLogin}
+        >
+          로그인
+        </button>
+
+        <button className={style.modalOauth}>깃허브로 로그인</button>
       </div>
     </form>
   );
 }
 
 ModalInput.propTypes = {
-  placeholder: PropTypes.node.isRequired,
+  placeholder: PropTypes.any,
   password: PropTypes.any
 };
 export default ModalInput;

@@ -93,6 +93,8 @@ button:disabled:active {
   line-height: 1.45em;
   margin-top: 8px;
   margin-bottom: 20px;
+  cursor: pointer;
+  border: none;
 }
 
 .modalOauth {
@@ -104,4 +106,6 @@ button:disabled:active {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.45em;
+  border: none;
+  cursor: pointer;
 }

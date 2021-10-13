@@ -61,6 +61,9 @@
   font-weight: 500;
   line-height: 1.45em;
   color: #5b8593;
+  cursor: pointer;
+  border: none;
+  background: inherit;
 }
 
 .check + .checkbox {

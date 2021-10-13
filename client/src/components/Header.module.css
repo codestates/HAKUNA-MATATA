@@ -68,6 +68,9 @@
   font-weight: 700;
   line-height: 1.45em;
   color: #404040;
+  cursor: pointer;
+  border: none;
+  background: inherit;
 }
 
 /* 로그인, 회원가입 모달 */
@@ -92,6 +95,8 @@
   line-height: 1.45em;
   color: #404040;
   cursor: pointer;
+  border: none;
+  background: inherit;
 }
 
 .font:nth-child(2) {
@@ -117,4 +122,3 @@
 .focus {
   color: #f3887e;
 }
-
