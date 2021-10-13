@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import style from './MainContent.module.css';
 import dotMenu from '../../images/dot-menu.png';
 import userImg from '../../images/user.png';
@@ -9,15 +8,13 @@ import eye from '../../images/eye.png';
 import like from '../../images/heart.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
 const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
-  const dispatch = useDispatch();
-  console.log(dispatch);
   const loginState = useSelector((state) => state.isLogin);
   const { isLogin } = loginState;
-  // console.log(isLogin);
+  let history = useHistory();
 
   const [dotButton, setDotButton] = useState(false);
   const [modifyPost, setModifyPost] = useState({
@@ -29,23 +26,6 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
-
-  // const errorRedirectHandler = () => {
-  //   history.push('/');
-  // };
-
-  let history = useHistory();
-
-  // document.addEventListener('click', (e) => {
-  //   if (
-  //     dotButton &&
-  //     e.target.className !==
-  //       'MainContent_dotBox__1WcjX MainContent_dotClick__2kD1_' &&
-  //     e.target.className !== 'MainContent_menuBox__35m8U'
-  //   ) {
-  //     setDotButton(false);
-  //   }
-  // });
 
   const deletePostHandler = async (e) => {
     const postId = e.target.id;
@@ -70,8 +50,6 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   };
 
   const EditPostHandler = () => {
-    // 상위 App.js or Redux 관리
-
     history.push({ pathname: '/edit-post', state: posts });
   };
 
@@ -104,8 +82,6 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
         setPosts(newlyUpdatedPosts);
         setShowModifyBoxHandler(false);
       }
-
-      // if(updatedPosts.data.)
     } catch (err) {
       console.log(err);
     }
@@ -114,7 +90,7 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   return (
     <section className={style.section1}>
       <div className={style['section1-header']}>
-        <p>전체 &gt; 연애 &gt; 게시물 &gt; 제목</p>
+        <p>전체 &gt; 카테고리 &gt; {posts.title}</p>
         <button
           className={
             dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox

@@ -9,13 +9,10 @@ function SignupInput() {
     confirmPassword: ''
   });
 
-  // console.log(signupInfo);
-
   const [emailErr, setEmailErr] = useState('hidden');
   const [passwordErr, setPasswordErr] = useState('hidden');
   const [confirmPasswordErr, setConfirmPasswordErr] = useState('hidden');
   const { email, password, confirmPassword } = signupInfo;
-  // console.log(email, password);
 
   const handleInputValue = (key) => (e) => {
     const next = { ...signupInfo, [key]: e.target.value };
@@ -26,7 +23,6 @@ function SignupInput() {
 
   const isAllValid = (signupInfo) => {
     const { email, password, confirmPassword } = signupInfo;
-    // console.log(password);
 
     const isEmailValid = checkEmail(email);
     const isPasswordValid = checkPassword(password);
@@ -46,9 +42,9 @@ function SignupInput() {
       password: '',
       confirmPassword: ''
     });
-    // setEmailErr('hidden');
-    // setPasswordErr('hidden');
-    // setConfirmPasswordErr('hidden');
+    setEmailErr('hidden');
+    setPasswordErr('hidden');
+    setConfirmPasswordErr('hidden');
   };
 
   const isExist = () => {
@@ -69,7 +65,6 @@ function SignupInput() {
     }
     return true;
   };
-
   const checkEmail = (email) => {
     console.log(email);
     let emailExp =
@@ -113,7 +108,9 @@ function SignupInput() {
     return true;
   };
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
     if (isExist() && isAllValid(signupInfo)) {
       try {
         const response = await axios.post(
@@ -131,8 +128,6 @@ function SignupInput() {
         console.log(err);
         alert('회원가입에 실패하였습니다. 다시 시도해주세요🎯');
       }
-
-      // history.push('/');
     }
   };
   return (

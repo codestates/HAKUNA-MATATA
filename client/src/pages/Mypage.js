@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import style from './Mypage.module.css';
 import userImage from '../images/user.png';
 import pencilImage from '../images/pencil.png';
-// import SubButton from '../components/Mypage/SubButton.js';
 import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
@@ -14,6 +13,7 @@ import { getUserInfo, logout } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 
+axios.defaults.withCredentials = true;
 const Mypage = () => {
   const history = useHistory();
   const [imgSrc, setImgSrc] = useState(userImage);
@@ -51,31 +51,32 @@ const Mypage = () => {
     }
   };
 
-  const processImage = (e) => {
-    const imageFile = e.target.files[0];
+  const processImage = async (e) => {
+    try {
+      const imageFile = e.target.files[0];
 
-    // const fileReader = new FileReader();
-    // if (imageFile) {
-    //   fileReader.readAsDataURL(imageFile);
-    // }
 
-    // fileReader.onload = (e) => setImgSrc(e.target.result);
-    if (imageFile) {
-      const formdata = new FormData();
-      formdata.append('file', imageFile);
-      formdata.append('fileName', imageFile.name);
+      const fileReader = new FileReader();
+      if (imageFile) {
+        fileReader.readAsDataURL(imageFile);
+      }
 
-      axios
-        .post(
+      fileReader.onload = (e) => setImgSrc(e.target.result);
+
+      if (imageFile) {
+        const formdata = new FormData();
+        formdata.append('image', imageFile);
+        const response = await axios.post(
           'http://localhost:4000/users/profile',
           { image: formdata },
-          { withCredentials: true, 'Content-Type': 'multipart/form-data' }
-        )
-        .then((res) => {
-          userAutn();
-          setImgSrc(userInfo.image);
-          console.log(res);
-        });
+          { headers: { 'Content-Type': 'multipart/form-data' } }
+        );
+        console.log(response);
+        userAutn();
+        setImgSrc(response.data.location.image);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -88,12 +89,6 @@ const Mypage = () => {
   const settingPage = () => {
     dispatch(setting());
   };
-  // const [dotButton, setDotButton] = useState(false);
-  // const posts = useSelector((state) => state.posts);
-
-  // const handleDotButton = () => {
-  //   setDotButton(!dotButton);
-  // };
 
   return (
     <>
@@ -163,7 +158,13 @@ const Mypage = () => {
                 {movePage.mypost ? (
                   <ul className={style.overflow}>
                     {userPosts.map((post) => {
-                      return <Mypost key={post.id} postInfo={post} />;
+                      return (
+                        <Mypost
+                          key={post.id}
+                          postInfo={post}
+                          getMypost={getMypost}
+                        />
+                      );
                     })}
                   </ul>
                 ) : null}

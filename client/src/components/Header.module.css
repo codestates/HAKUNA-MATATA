@@ -15,8 +15,10 @@
   position: relative;
 }
 
-.navbar a span {
-  font-size: 25px;
+
+.navbar span {
+  font-size: 18px;
+
   font-weight: 500;
   color: #404040;
   margin-left: 15px;
@@ -136,7 +138,9 @@
   font-family: system-ui;
   border: 2px solid #f3887e;
 }
-
+span:hover {
+  color: #f3887e;
+}
 .button:hover,
 .button:active {
   background: #f3887e;

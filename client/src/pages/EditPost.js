@@ -16,7 +16,7 @@ const options = [
 const EditPost = () => {
   const location = useLocation();
   let history = useHistory();
-
+  // console.log('@@', location.state);
   const [content, setContent] = useState(location.state.content);
   const [title, setTitle] = useState(location.state.title);
   const [category, setCategory] = useState({
@@ -39,7 +39,6 @@ const EditPost = () => {
   };
 
   const categoryHandler = (e) => {
-    // setCategory(e.target.options);
     setCategory(options.value);
     console.dir(e.value);
   };

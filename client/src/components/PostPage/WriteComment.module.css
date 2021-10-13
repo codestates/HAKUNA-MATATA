@@ -1,5 +1,6 @@
 .writecomment {
   display: flex;
+  width: 97%;
   justify-content: space-between;
   align-items: center;
 }
@@ -46,5 +47,5 @@
   border: none;
   cursor: pointer;
   position: relative;
-  left: 650px;
+  left: 630px;
 }

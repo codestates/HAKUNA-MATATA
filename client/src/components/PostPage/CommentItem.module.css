@@ -5,10 +5,9 @@
 }
 
 .section2 h1 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.42em;
-  margin: 15px 0;
-  margin-bottom: 5px;
+  margin: 5px 0 10px;
   color: #404040;
 }
 
@@ -16,19 +15,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 0;
+  margin: 5px 0 10px;
 }
 
 .section2 div:last-of-type {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 5px;
   /* color: #404040; */
 }
 
 .section2 > span {
   font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   display: block;
   /* padding: 150px 0px; */
   color: #737373;

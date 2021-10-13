@@ -17,25 +17,27 @@ const Main = () => {
           <About />
         </Route>
         <Route path="/" exact>
+          <Banner title={''} />
           <Board />
         </Route>
         <Route path="/mypage">
-          <section className={style.banner}></section>
+          <Banner title={''} />
           <MyPage />
         </Route>
         <Route path="/posts/:postId">
-          <section className={style.banner}>고민글</section>
+          <Banner title={''} />
           <Post />
         </Route>
         <Route path="/add-post">
-          <section className={style.banner}>새 고민글 추가</section>
+          <Banner title={''} />
           <AddPost />
         </Route>
         <Route path="/edit-post">
-          <section className={style.banner}>고민글 수정</section>
+          <Banner title={''} />
           <EditPost />
         </Route>
         <Route path="/404">
+          <Banner title={''} />
           <ErrorPage />
         </Route>
       </Switch>
