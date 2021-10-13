@@ -20,8 +20,8 @@ const storage = multer.diskStorage({
       }
 
       // 에세스 토큰 정보가 유효한지 확인한다.
-      const { login } = accessTokenData;
-      const userInfo = await user.findOne({ where: { login } });
+      const { email } = accessTokenData;
+      const userInfo = await user.findOne({ where: { email } });
       if (!userInfo) {
         return done({ code: 403, message: 'Not authorized!' });
       }
@@ -37,7 +37,6 @@ const storage = multer.diskStorage({
       done(null, `uploads/profile/${userInfo.id}/`);
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Server error!' });
     }
   },
   filename(req, file, done) {

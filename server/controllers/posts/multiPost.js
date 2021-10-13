@@ -6,6 +6,8 @@ module.exports = {
     try {
       let { user, category, offset, limit, order, sort, content } = req.query;
 
+      if (category === '전체') category = null;
+
       // 정렬 : 기본 값은 id 기준 DESC 이다.
       if (order !== 'views' && order !== 'likes' && order !== 'comments') {
         order = null;
@@ -16,7 +18,7 @@ module.exports = {
         sort !== 'desc' &&
         sort !== 'asc'
       ) {
-        sort = null;
+        sort = 'ASC';
       }
 
       // 페이지네이션 : 리미트의 기본 조회 값은 9 이다.
@@ -66,19 +68,11 @@ module.exports = {
           },
           {
             model: models.user, // users 테이블 조인
-            attributes: ['login', 'nickname', 'image'],
-            where: user ? { login: user } : {}
+            attributes: ['nickname', 'image'],
+            where: user ? { nickname: user } : {}
           }
         ],
-        order: [
-          order
-            ? sort
-              ? ['' + order, sort]
-              : ['' + order, 'ASC']
-            : sort
-            ? ['id', sort]
-            : ['id', 'DESC']
-        ],
+        order: [order ? [order, 'DESC'] : ['id', 'DESC']],
         offset: (offset - 1) * limit,
         limit: limit
       });

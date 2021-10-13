@@ -18,8 +18,8 @@ module.exports = async (req, res) => {
     }
 
     // 에세스 토큰 정보가 유효한지 확인한다.
-    const { login } = accessTokenData;
-    const userInfo = await user.findOne({ where: { login } });
+    const { email } = accessTokenData;
+    const userInfo = await user.findOne({ where: { email } });
     if (!userInfo) {
       return res.status(403).json({ message: 'Not authorized!' });
     }

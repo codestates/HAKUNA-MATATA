@@ -6,7 +6,14 @@ import dotMenu from '../../images/dot-menu.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-const CommentItem = ({ comment, pathName, setComments }) => {
+const CommentItem = ({
+  comment,
+  comments,
+  pathName,
+  setComments,
+  setPosts,
+  posts
+}) => {
   const [dotButton, setDotButton] = useState(false);
   const [modifyContent, setModifyContent] = useState(comment.content);
   const [showModifyBox, setShowModifyBox] = useState(false);
@@ -31,6 +38,8 @@ const CommentItem = ({ comment, pathName, setComments }) => {
         `http://localhost:4000/posts/${pathName}/comments/${commentId}`,
         { withCredentials: true }
       );
+
+      setPosts({ ...posts, comments: comments.length - 1 });
 
       if (deleteCommentId.data.id) {
         const updatedComments = await axios.get(url);
@@ -74,7 +83,7 @@ const CommentItem = ({ comment, pathName, setComments }) => {
       <h1>댓글</h1>
       <div className={style.comments}>
         <p>
-          <img src={userImg} alt="user image" />
+          <img className={style.userImg} src={userImg} alt="user image" />
           <span>{comment.user.nickname}</span>
         </p>
         <button
@@ -85,6 +94,7 @@ const CommentItem = ({ comment, pathName, setComments }) => {
         >
           <img src={dotMenu} alt="dot-menu bar" />
         </button>
+
         <div className={dotButton ? style.menuBox : style.hidden}>
           <Link to="#">
             <button
@@ -106,17 +116,20 @@ const CommentItem = ({ comment, pathName, setComments }) => {
       <div>{comment.content}</div>
       <span>{new Date(comment.created_at).toLocaleDateString('ko-KR')}</span>
       {showModifyBox && (
-        <div className={style.modifyBox}>
+        <div>
           <input
+            className={style.modiInput}
             type="text"
             name="content"
             value={modifyContent}
             onChange={(e) => editComment(e)}
           />
-          <button id={comment.id} onClick={(e) => modifyCommentReq(e)}>
-            전송
-          </button>
-          <button onClick={() => showModifyBoxHandler(false)}>취소</button>
+          <div className={style.modifyBox}>
+            <button id={comment.id} onClick={(e) => modifyCommentReq(e)}>
+              수정
+            </button>
+            <button onClick={() => showModifyBoxHandler(false)}>취소</button>
+          </div>
         </div>
       )}
     </section>
@@ -126,7 +139,10 @@ const CommentItem = ({ comment, pathName, setComments }) => {
 CommentItem.propTypes = {
   comment: PropTypes.any,
   pathName: PropTypes.any,
-  setComments: PropTypes.any
+  setComments: PropTypes.any,
+  setPosts: PropTypes.any,
+  posts: PropTypes.any,
+  comments: PropTypes.any
 };
 
 export default CommentItem;

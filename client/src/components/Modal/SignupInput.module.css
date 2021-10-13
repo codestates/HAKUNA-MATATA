@@ -48,3 +48,12 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
+.errMessage {
+  margin-top: 15px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}

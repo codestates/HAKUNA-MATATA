@@ -67,7 +67,6 @@ module.exports = async (req, res) => {
 
     if (!userInfo) {
       userInfo = await user.create({
-        login: gitHubInfo.data.login,
         email: `${gitHubInfo.data.login}@github.com`
       });
     }

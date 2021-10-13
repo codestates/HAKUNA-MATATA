@@ -34,7 +34,7 @@ module.exports = {
           },
           {
             model: user, // users 테이블 조인
-            attributes: ['login', 'nickname', 'image']
+            attributes: ['nickname', 'image']
           }
         ]
       });
@@ -112,7 +112,7 @@ module.exports = {
           },
           {
             model: user, // users 테이블 조인
-            attributes: ['login', 'nickname', 'image']
+            attributes: ['nickname', 'image']
           }
         ]
       });

@@ -109,6 +109,8 @@
 
 .dotBox {
   position: absolute;
+  background-color: transparent;
+  border: none;
   top: 0;
   right: 0;
   display: flex;
@@ -141,6 +143,7 @@
   right: 15px;
   top: 20px;
   z-index: 10;
+
   background-color: #fff;
 }
 
@@ -149,6 +152,8 @@
 }
 
 .modifyButton {
+  border: none;
+  background-color: transparent;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.45em;
@@ -156,6 +161,8 @@
 }
 
 .deleteButton {
+  border: none;
+  background-color: transparent;
   margin-top: 10px;
   font-size: 16px;
   font-weight: 700;
