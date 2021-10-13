@@ -4,19 +4,23 @@ import Header from './components/Header';
 import Main from './components/Main';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { getposts } from './store/post-slice';
+import { getUserInfo, login } from './store/login-slice';
 
 function App() {
+  const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   console.log(posts);
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios
-      .get('http://localhost:4000/posts', {
+      .get('http://localhost:4000/users/userinfo', {
         withCredentials: true
       })
-      .then((data) => dispatch(getposts(data.data.posts.rows)))
+      .then((res) => {
+        dispatch(login());
+        dispatch(getUserInfo(res.data.userInfo));
+      })
       .catch((err) => console.log(err));
   }, []);
 

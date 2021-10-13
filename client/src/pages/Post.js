@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
+
 import CommentItem from '../components/PostPage/CommentItem';
 import MainContent from '../components/PostPage/MainContent';
 import WriteComment from '../components/PostPage/WriteComment';
@@ -13,6 +15,7 @@ const Post = () => {
   const [comments, setComments] = useState([]);
   const [author, setAuthor] = useState({});
   const [posts, setPosts] = useState({});
+
 
   const history = useHistory();
 
@@ -33,6 +36,7 @@ const Post = () => {
       history.push('/404');
     }
   };
+
 
   const getComments = async (path) => {
     try {
@@ -119,6 +123,7 @@ const Post = () => {
         </form>
       </div>
       <section>
+
         <MainContent
           liked={liked}
           likeHandler={likeHandler}

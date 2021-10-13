@@ -3,11 +3,11 @@ import style from './ErrorPage.module.css';
 
 function ErrorPage() {
   return (
-    <div class="container">
-      <div class="img"></div>
-      <div class="test">
-        <div class="statusCode">404</div>
-        <p class="desc">
+    <div className={style.container}>
+      <div className={style.img}></div>
+      <div className={style.test}>
+        <div className={style.statusCode}>404</div>
+        <p className={style.desc}>
           죄송합니다.
           <br />
           현재 찾을 수 없는 페이지를 요청 하셨습니다.
@@ -23,8 +23,8 @@ function ErrorPage() {
           감사합니다.
         </p>
 
-        <div class="wrapper">
-          <a href="#" class="goHome">
+        <div className={style.wraaper}>
+          <a href="#" className={style.goHome}>
             Go Home
           </a>
         </div>

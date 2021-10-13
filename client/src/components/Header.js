@@ -5,18 +5,23 @@ import Logo from './Logo';
 import userImg from '../images/user.png';
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { profile, mypost, reset } from '../store/move-slice';
+import { logout } from '../store/login-slice';
+import { useHistory } from 'react-router';
+
 const Header = () => {
+  const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
 
   const isLogin = useSelector((state) => state.isLogin.value);
+  const movePage = useSelector((state) => state.movePage);
 
   const dispatch = useDispatch();
-  const movePage = useSelector((state) => state.movePage);
 
   const handleMenu = () => {
     setIsOpen(!isOpen);
@@ -26,6 +31,22 @@ const Header = () => {
   };
   const handleSignupModal = () => {
     setSignupModal(!signupModal);
+  };
+  const handleLogout = () => {
+    axios
+      .post(
+        'http://localhost:4000/users/logout',
+        {},
+        {
+          withCredentials: true
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        dispatch(logout());
+
+        history.push('/');
+      });
   };
 
   document.addEventListener('click', (e) => {
@@ -43,7 +64,7 @@ const Header = () => {
 
   return (
     <>
-      {loginModal && (
+      {!isLogin && loginModal && (
         <div>
           <div
             className={loginModal && style.backDrop}
@@ -68,18 +89,16 @@ const Header = () => {
         </div>
       )}
 
-
-        <header className={style.header}>
-          <Logo />
-          <div className={style.navbar}>
-            <span>About</span>
-            <Link to="/">
-              <span>Board</span>
-            </Link>
-            <Link to="/add-post">
-              <Button className={style.bump}> + Add Post</Button>
-            </Link>
-
+      <header className={style.header}>
+        <Logo />
+        <div className={style.navbar}>
+          <span>About</span>
+          <Link to="/">
+            <span>Board</span>
+          </Link>
+          <Link to="/add-post">
+            <Button className={style.bump}> + Add Post</Button>
+          </Link>
 
           <img
             src={userImg}
@@ -87,10 +106,6 @@ const Header = () => {
             onClick={handleMenu}
             className={style.img}
           />
-          {/* 로그인이 되면 isLogin상태를 리덕스에서 가져와서 
-          isOpen && !isLogin ?style.menuBox : style.hidden 
-          즉 프로필버튼눌러서 isOpen=true가되고 isLogin도 true라면 클래스가 hidden이라가려짐
-           */}
           <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
             <button
               className={
@@ -111,33 +126,38 @@ const Header = () => {
           </div>
 
           <div className={isOpen && isLogin ? style.successMenu : style.hidden}>
-            <Link to="/mypage">
-              <button
-                className={
-                  movePage.profile
-                    ? `${style.modifyButton} ${style.focus}`
-                    : style.modifyButton
-                }
-                onClick={() => dispatch(profile())}
-              >
-                마이페이지
-              </button>
-            </Link>
-            <Link to="/mypage">
-              <button
-                className={
-                  movePage.mypost
-                    ? `${style.modifyButton} ${style.focus}`
-                    : style.modifyButton
-                }
-                onClick={() => dispatch(mypost())}
-              >
-                내 게시글
-              </button>
-            </Link>
-            <Link to="#">
-              <button className={style.modifyButton}>로그아웃</button>
-            </Link>
+            <button
+              className={
+                movePage.profile
+                  ? `${style.modifyButton} ${style.focus}`
+                  : style.modifyButton
+              }
+              onClick={() => {
+                dispatch(profile());
+                history.push('/mypage');
+              }}
+            >
+              마이페이지
+            </button>
+
+            <button
+              className={
+                movePage.mypost
+                  ? `${style.modifyButton} ${style.focus}`
+                  : style.modifyButton
+              }
+              onClick={() => {
+                dispatch(mypost());
+
+                history.push('/mypage');
+              }}
+            >
+              내 게시글
+            </button>
+
+            <button className={style.modifyButton} onClick={handleLogout}>
+              로그아웃
+            </button>
           </div>
         </div>
       </header>
