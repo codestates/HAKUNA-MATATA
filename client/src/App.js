@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import Footer from './components/Footer';
-// import Header from './components/Header';
+import Header from './components/Header';
 import Main from './components/Main';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="box">
       <Fragment>
-        {/* <Header /> */}
+        <Header />
         <Main />
         <Footer />
       </Fragment>

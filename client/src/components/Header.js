@@ -13,7 +13,6 @@ import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
 
 const Header = () => {
-  const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
@@ -21,17 +20,21 @@ const Header = () => {
   const isLogin = useSelector((state) => state.isLogin.value);
   const movePage = useSelector((state) => state.movePage);
 
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const handleLoginModal = () => {
     setLoginModal(!loginModal);
   };
+
   const handleSignupModal = () => {
     setSignupModal(!signupModal);
   };
+
   const handleLogout = () => {
     axios
       .post(
@@ -44,7 +47,6 @@ const Header = () => {
       .then((res) => {
         console.log(res);
         dispatch(logout());
-
         history.push('/');
       });
   };
@@ -64,40 +66,16 @@ const Header = () => {
 
   return (
     <>
-      {!isLogin && loginModal && (
-        <div>
-          <div
-            className={loginModal && style.backDrop}
-            onClick={handleLoginModal}
-          ></div>
-          <LoginModal
-            handleSignupModal={handleSignupModal}
-            handleLoginModal={handleLoginModal}
-          />
-        </div>
-      )}
-      {signupModal && (
-        <div>
-          <div
-            className={signupModal && style.backDrop}
-            onClick={handleSignupModal}
-          ></div>
-          <SignupModal
-            handleLoginModal={handleLoginModal}
-            handleSignupModal={handleSignupModal}
-            setSignupModal={setSignupModal}
-          />
-        </div>
-      )}
-
       <header className={style.header}>
         <Logo />
         <div className={style.navbar}>
-          <span>About</span>
+          <a href="https://github.com/codestates/HAKUNA-MATATA/wiki">
+            <span>About</span>
+          </a>
           <Link to="/">
             <span>Board</span>
           </Link>
-          <Link to="/add-post">
+          <Link to="/add-post" className={style.addButton}>
             <button className={`${style.bump} ${style.button}`}>
               {' '}
               + Add Post
@@ -164,6 +142,33 @@ const Header = () => {
           </div>
         </div>
       </header>
+
+      {!isLogin && loginModal && (
+        <>
+          <div
+            className={loginModal && style.backDrop}
+            onClick={handleLoginModal}
+          ></div>
+          <LoginModal
+            handleSignupModal={handleSignupModal}
+            handleLoginModal={handleLoginModal}
+          />
+        </>
+      )}
+
+      {signupModal && (
+        <div>
+          <div
+            className={signupModal && style.backDrop}
+            onClick={handleSignupModal}
+          ></div>
+          <SignupModal
+            handleLoginModal={handleLoginModal}
+            handleSignupModal={handleSignupModal}
+            setSignupModal={setSignupModal}
+          />
+        </div>
+      )}
     </>
   );
 };

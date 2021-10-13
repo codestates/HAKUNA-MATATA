@@ -1,5 +1,25 @@
-.logo {
-  padding: 0 15px;
+.logoWrap {
   width: auto;
-  height: 100px;
+}
+
+.logoWrap a {
+  display: block;
+  height: 80px;
+}
+
+.logoWrap a img {
+  width: auto;
+  height: 100%;
+}
+
+@media all and (max-width: 820px) {
+  .logoWrap a {
+    height: 60px;
+  }
+}
+
+@media all and (max-width: 820px) {
+  .logoWrap a {
+    height: 40px;
+  }
 }

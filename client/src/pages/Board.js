@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './Board.module.css';
 import bannerImg from '../images/thumbnail/moon.jpg';
-import logoTitle from '../images/thumbnail/logoTitle.png';
+import logoTitle from '../images/logoTitle.png';
 import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';

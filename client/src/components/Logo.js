@@ -5,7 +5,7 @@ import style from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <div>
+    <div className={style.logoWrap}>
       <Link to="/">
         <img src={logo} alt="logo image" className={style.logo} />
       </Link>

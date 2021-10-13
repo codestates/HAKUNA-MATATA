@@ -7,12 +7,12 @@ import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
-// import Banner from './Banner';
+import Banner from './Banner';
 
 const Main = () => {
   return (
     <main>
-      {/* <Banner /> */}
+      <Banner />
       <Switch>
         <Route path="/about">
           <About />
