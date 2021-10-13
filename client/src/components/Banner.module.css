@@ -20,3 +20,17 @@
   max-width: 500px;
   height: 80%;
 } */
+
+@media all and (max-width: 550px) {
+  .banner {
+    margin: 0 50px;
+  }
+}
+
+@media all and (max-width: 440px) {
+  .banner {
+    margin-right: -35%;
+    width: 80vw;
+    height: 318px;
+  }
+}
