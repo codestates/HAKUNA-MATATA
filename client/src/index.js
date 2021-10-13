@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './reset.css';
+import './index.css';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import authSlice from './store/login-slice';

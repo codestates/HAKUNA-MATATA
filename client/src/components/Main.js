@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MyPage from '../pages/Mypage';
-import Board from '../pages/Board';
 import Post from '../pages/Post';
+import Board from '../pages/Board';
 import About from '../pages/About';
 import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
-import Banner from './Banner';
+import style from './Banner.module.css';
 
 const Main = () => {
   return (

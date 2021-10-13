@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './Board.module.css';
+import bannerImg from '../images/thumbnail/moon.jpg';
+import logoTitle from '../images/logoTitle.png';
 import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
@@ -182,26 +184,35 @@ function Board() {
   }, [currentPage, postPages]);
 
   return (
-    <section className={style.section}>
-      <CategoryPost categoryOnclickFn={categoryOnclickFn} />
-      <OrderPost
-        filterOnclickFn={filterOnclickFn}
-        searchOnclickFn={searchOnclickFn}
-      />
-      {postItems.length ? (
-        <>
-          <PostCards postItems={postItems} />
-          <PageNation
-            isActive={isActive}
-            postPages={postPages}
-            showPostPages={showPostPages}
-            pageNumberOnclickFn={pageNumberOnclickFn}
-            pageArrowOnclickFn={pageArrowOnclickFn}
-            pageButtonCurrent={pageButtonCurrent}
-          />
-        </>
-      ) : null}
-    </section>
+    <>
+      <section
+        className={style.section1}
+        style={{ backgroundImage: `url(${bannerImg})` }}
+      >
+        <h1>HAKUNA MATATA 하쿠나 마타타</h1>
+        <img src={logoTitle} />
+      </section>
+      <section className={style.section2}>
+        <CategoryPost categoryOnclickFn={categoryOnclickFn} />
+        <OrderPost
+          filterOnclickFn={filterOnclickFn}
+          searchOnclickFn={searchOnclickFn}
+        />
+        {postItems.length ? (
+          <>
+            <PostCards postItems={postItems} />
+            <PageNation
+              isActive={isActive}
+              postPages={postPages}
+              showPostPages={showPostPages}
+              pageNumberOnclickFn={pageNumberOnclickFn}
+              pageArrowOnclickFn={pageArrowOnclickFn}
+              pageButtonCurrent={pageButtonCurrent}
+            />
+          </>
+        ) : null}
+      </section>
+    </>
   );
 }
 

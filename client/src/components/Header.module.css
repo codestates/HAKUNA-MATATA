@@ -3,32 +3,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 65px;
-  background-color: #ffffff;
-  color: #000;
+  padding: 0 30px;
+  background-color: #fff;
 }
 
 .navbar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 391px;
   position: relative;
-  left: -40px;
 }
+
 
 .navbar span {
   font-size: 18px;
+
   font-weight: 500;
+  color: #404040;
+  margin-left: 15px;
+}
+
+.navbar a:hover span {
+  color: #f3887e;
 }
 
 .navbar img {
   width: 45px;
   height: 45px;
-  margin-left: 20px;
 }
 
 .userImg {
@@ -75,18 +77,18 @@
 
 /* 로그인, 회원가입 모달 */
 .menuBox {
-  width: 114px;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px 27px 15px 28px;
   position: absolute;
-  right: 35px;
   top: 35px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  right: 25px;
+  width: 114px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  padding: 15px 27px 15px 28px;
+  background-color: #fff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .font {
@@ -109,9 +111,10 @@
 
 .backDrop {
   position: fixed;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -124,16 +127,16 @@
 }
 
 .button {
-  font: inherit;
-  border: 2px solid #f3887e;
+  cursor: pointer;
   background: #fcf6e7;
   color: #f3887e;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 20px;
   padding: 7px 10px;
+  margin: 0 25px;
   border-radius: 5px;
-  cursor: pointer;
-  /* left: 10px; */
+  font-family: system-ui;
+  border: 2px solid #f3887e;
 }
 span:hover {
   color: #f3887e;
@@ -165,5 +168,20 @@ span:hover {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media all and (max-width: 820px) {
+  .header {
+    padding: 5px 15px;
+  }
+  .navbar a span {
+    display: none;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .button {
+    display: none;
   }
 }

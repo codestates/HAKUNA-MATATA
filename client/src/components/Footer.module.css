@@ -1,19 +1,18 @@
 .footer {
-  height: 282px;
-  background-color: #404040;
   width: 100%;
+  padding: 80px 0;
+  background: #404040;
 }
 
 .images {
-  position: relative;
   display: flex;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   justify-content: center;
-  top: 35px;
-  margin: auto;
-  padding: 20px;
-  width: 85%;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
   border-bottom: 1px solid #636363;
-  text-align: center;
 }
 
 img {
@@ -22,10 +21,8 @@ img {
 }
 
 .copyright {
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 50px;
+  color: #d9d9d8;
+  text-align: center;
   line-height: 1.45rem;
+  font-weight: 300;
 }

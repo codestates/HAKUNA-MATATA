@@ -53,7 +53,7 @@
   padding: 0 15px;
   border: 0;
   background: none;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .searchWrap > label > input::placeholder {
   font-size: 15px;
@@ -63,7 +63,7 @@
 .searchWrap > label > img {
   width: auto;
   height: 100%;
-  vertical-align: middle;
+  vertical-align: top;
   background-color: #f3887e;
 }
 
