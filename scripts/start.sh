@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/HAKUNA-MATATA/server>bin
+cd /home/ubuntu/HAKUNA-MATATA/server
 
 export PORT_NUMVER=$(aws ssm get-parameters --region ap-northeast-2 --names PORT_NUMVER --query Parameters[0].Value | sed 's/"//g')
 
@@ -21,4 +21,4 @@ export NODEMAILER_PASSWD=$(aws ssm get-parameters --region ap-northeast-2 --name
 
 export CLIENT_ORIGIN=$(aws ssm get-parameters --region ap-northeast-2 --names CLIENT_ORIGIN --query Parameters[0].Value | sed 's/"//g')
 
-authbind --deep pm2 start www.js
+authbind --deep pm2 start bin>www.js
