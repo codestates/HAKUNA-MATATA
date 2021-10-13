@@ -14,7 +14,7 @@
   font-weight: 700;
   line-height: 280px;
   overflow: hidden;
-  background-image: url('./men-4051253_960_720.jpg');
+  background-image: url('../images/men-4051253_960_720.jpg');
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -74,8 +74,8 @@
   transition: all 500ms;
 }
 
-.test {
+/* .test {
   position: fixed;
   width: 100vw;
   height: 100vh;
-}
+} */
