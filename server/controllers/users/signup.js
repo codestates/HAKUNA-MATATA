@@ -37,9 +37,19 @@ module.exports = async (req, res) => {
       password: hash
     });
 
+    // 등록한 유저의 닉네임을 초기화 한다.
+    const updateUser = await newUser.update(
+      {
+        nickname: 'user' + newUser.dataValues.id
+      },
+      { where: { id: newUser.dataValues.id } }
+    );
+
+    console.log(newUser);
+
     // 토큰을 발급하고 쿠키에 저장한다.
-    const newAccessToken = generateAccessToken(newUser.dataValues);
-    sendAccessToken(res, newAccessToken);
+    //const newAccessToken = generateAccessToken(newUser.dataValues);
+    //sendAccessToken(res, newAccessToken);
 
     // 새로 생성한 회원의 아이디를 반환한다.
     res.status(201).json({ id: newUser.dataValues.id });
