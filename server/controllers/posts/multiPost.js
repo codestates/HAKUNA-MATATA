@@ -66,8 +66,8 @@ module.exports = {
           },
           {
             model: models.user, // users 테이블 조인
-            attributes: ['login', 'nickname', 'image'],
-            where: user ? { login: user } : {}
+            attributes: ['nickname', 'image'],
+            where: user ? { nickname: user } : {}
           }
         ],
         order: [
