@@ -37,7 +37,6 @@ const storage = multer.diskStorage({
       done(null, `uploads/profile/${userInfo.id}/`);
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Server error!' });
     }
   },
   filename(req, file, done) {
