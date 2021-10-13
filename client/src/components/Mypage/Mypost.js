@@ -7,43 +7,47 @@ import commentPic from '../../images/comments.png';
 import heart from '../../images/heart.png';
 import eye from '../../images/eye.png';
 import axios from 'axios';
-import { REACT_APP_API_URL } from '../../config';
+import { REACT_APP_API_URL } from '../../config.js';
 
 // import { useSelector } from 'react-redux';
 
-const Mypost = ({ postInfo }) => {
+const Mypost = ({ postInfo, getMypost }) => {
   const [dotButton, setDotButton] = useState(false);
   const [posts, setPosts] = useState([]);
+  console.log(posts);
   const history = useHistory();
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
-
   const handleDelete = async (e) => {
     const postId = e.target.id;
     try {
       const deletePost = await axios.delete(
-        `http://localhost:4000/posts/${postId}`,
+        `${REACT_APP_API_URL}/posts/${postId}`,
         { withCredentials: true }
       );
-      // getMypost();
+      getMypost();
       console.log(deletePost);
     } catch (err) {
       console.log(err);
     }
   };
-  const editPostHandler = async (e) => {
+  const getPostId = async () => {
     try {
-      const path = `/posts/${e.target.id}`;
-      const response = await axios.get(`${REACT_APP_API_URL}${path}`, {
+      const url = `${REACT_APP_API_URL}/posts/${postInfo.id}`;
+      console.log('path', url);
+      const response = await axios.get(url, {
         withCredentials: true
       });
-      console.log(response.data.posts);
+
       setPosts(response.data.posts);
-      history.push({ pathname: '/edit-post', state: posts });
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const modifyPost = () => {
+    history.push({ pathname: '/edit-post', state: posts });
   };
 
   return (
@@ -71,7 +75,11 @@ const Mypost = ({ postInfo }) => {
           className={
             dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
           }
-          onClick={handleDotButton}
+          id={postInfo.id}
+          onClick={(e) => {
+            handleDotButton();
+            getPostId(e);
+          }}
         >
           <img
             className={style.dotMenu}
@@ -83,7 +91,7 @@ const Mypost = ({ postInfo }) => {
         <div className={dotButton ? style.menuBox : style.hidden}>
           <button
             className={style.modifyButton}
-            onClick={(e) => editPostHandler(e)}
+            onClick={() => modifyPost()}
             id={postInfo.id}
           >
             수정
@@ -103,6 +111,7 @@ const Mypost = ({ postInfo }) => {
 };
 
 Mypost.propTypes = {
-  postInfo: PropTypes.any.isRequired
+  postInfo: PropTypes.any.isRequired,
+  getMypost: PropTypes.any.isRequired
 };
 export default Mypost;
