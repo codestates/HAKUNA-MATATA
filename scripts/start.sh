@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/HAKUNA-MATATA/server>din
+cd /home/ubuntu/HAKUNA-MATATA/server>bin
 
 export PORT_NUMVER=$(aws ssm get-parameters --region ap-northeast-2 --names PORT_NUMVER --query Parameters[0].Value | sed 's/"//g')
 
