@@ -138,6 +138,9 @@ hr {
   cursor: pointer;
   border: none;
 }
+.addButton:hover {
+  color: #fff;
+}
 .button {
   width: 121px;
   height: 59px;

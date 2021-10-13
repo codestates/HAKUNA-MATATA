@@ -16,7 +16,7 @@ const options = [
 const EditPost = () => {
   const location = useLocation();
   let history = useHistory();
-
+  // console.log('@@', location.state);
   const [content, setContent] = useState(location.state.content);
   const [title, setTitle] = useState(location.state.title);
   const [category, setCategory] = useState({

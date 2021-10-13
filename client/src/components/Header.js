@@ -7,7 +7,7 @@ import SignupModal from './Modal/SignupModal';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { profile, mypost, reset } from '../store/move-slice';
+import { profile, reset } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
 
@@ -141,20 +141,6 @@ const Header = () => {
               }}
             >
               마이페이지
-            </button>
-
-            <button
-              className={
-                movePage.mypost
-                  ? `${style.modifyButton} ${style.focus}`
-                  : style.modifyButton
-              }
-              onClick={() => {
-                dispatch(mypost());
-                history.push('/mypage');
-              }}
-            >
-              내 게시글
             </button>
 
             <button className={style.modifyButton} onClick={handleLogout}>
