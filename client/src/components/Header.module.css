@@ -21,7 +21,7 @@
 }
 
 .navbar span {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -135,7 +135,9 @@
   cursor: pointer;
   /* left: 10px; */
 }
-
+span:hover {
+  color: #f3887e;
+}
 .button:hover,
 .button:active {
   background: #f3887e;

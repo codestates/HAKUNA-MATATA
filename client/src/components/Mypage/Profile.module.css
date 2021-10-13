@@ -73,3 +73,9 @@
   border: none;
   cursor: pointer;
 }
+
+.button:hover {
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 300ms;
+}
