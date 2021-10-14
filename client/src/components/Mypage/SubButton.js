@@ -10,6 +10,7 @@ const Button = ({ children, movePage, focus, getMypost }) => {
         onClick={() => {
           movePage(children);
           getMypost();
+          alert();
         }}
       >
         {children}

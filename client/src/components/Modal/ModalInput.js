@@ -30,6 +30,7 @@ function ModalInput({ placeholder }) {
       setFormIsValid(false);
     }
   }, [enteredEmailIsValid, enteredPwIsValid]);
+
   const handleLogin = () => {
     axios
       .post(
@@ -41,10 +42,11 @@ function ModalInput({ placeholder }) {
         { withCredentials: true }
       )
       .then((res) => {
-        dispatch(profile());
-        history.push('/mypage');
-        dispatch(login());
+        console.log(res.data.userInfo);
         dispatch(getUserInfo(res.data.userInfo));
+        dispatch(profile());
+        dispatch(login());
+        history.push('/mypage');
       });
   };
 
@@ -82,6 +84,7 @@ function ModalInput({ placeholder }) {
 
   const emailInputClasses = emailIsInvalid ? style.invalid : style.form;
   const passwordInputClasses = passwordIsInvalid ? style.invalid : style.form;
+
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={emailInputClasses}>

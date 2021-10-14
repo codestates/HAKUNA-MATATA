@@ -9,10 +9,12 @@ import { REACT_APP_API_URL } from './config';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios
       .get(`${REACT_APP_API_URL}/users/userinfo`, { withCredentials: true })
       .then((res) => {
+        console.log(res.data.userInfo);
         dispatch(login());
         dispatch(getUserInfo(res.data.userInfo));
       })

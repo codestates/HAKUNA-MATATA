@@ -18,7 +18,6 @@ function SignupInput() {
   const handleInputValue = (key) => (e) => {
     const next = { ...signupInfo, [key]: e.target.value };
     setSignupInfo(next);
-
     isAllValid(next);
   };
 
@@ -66,6 +65,7 @@ function SignupInput() {
     }
     return true;
   };
+
   const checkEmail = (email) => {
     console.log(email);
     let emailExp =
@@ -131,6 +131,7 @@ function SignupInput() {
       }
     }
   };
+
   return (
     <>
       <form>
