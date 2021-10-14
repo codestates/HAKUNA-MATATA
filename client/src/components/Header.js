@@ -7,7 +7,7 @@ import SignupModal from './Modal/SignupModal';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { profile, reset } from '../store/move-slice';
+import { profile } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
 import { REACT_APP_API_URL } from '../config';
@@ -19,6 +19,7 @@ const Header = () => {
 
   const isLogin = useSelector((state) => state.isLogin.isLogin);
   const movePage = useSelector((state) => state.movePage);
+  console.log('@@', movePage);
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -59,9 +60,9 @@ const Header = () => {
     ) {
       setIsOpen(false);
     }
-    if (document.location.href !== '/mypage') {
-      dispatch(reset());
-    }
+    // if (document.location.href !== '/mypage') {
+    //   dispatch(reset());
+    // }
   });
 
   return (

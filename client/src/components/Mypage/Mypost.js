@@ -9,15 +9,13 @@ import eye from '../../images/icons/eye.png';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config.js';
 
+// import { useSelector } from 'react-redux';
+
 const Mypost = ({ postInfo, getMypost }) => {
   const [dotButton, setDotButton] = useState(false);
-  const [modalId, setModalId] = useState('');
   const [posts, setPosts] = useState([]);
+  console.log(posts);
   const history = useHistory();
-
-  const haneldModalId = (e) => {
-    setModalId(e.target.id);
-  };
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
@@ -37,6 +35,7 @@ const Mypost = ({ postInfo, getMypost }) => {
   const getPostId = async () => {
     try {
       const url = `${REACT_APP_API_URL}/posts/${postInfo.id}`;
+      console.log('path', url);
       const response = await axios.get(url, {
         withCredentials: true
       });
@@ -50,12 +49,6 @@ const Mypost = ({ postInfo, getMypost }) => {
   const modifyPost = () => {
     history.push({ pathname: '/edit-post', state: posts });
   };
-
-  document.addEventListener('click', (e) => {
-    if (dotButton && e.target.id !== modalId) {
-      setDotButton(false);
-    }
-  });
 
   return (
     <li className={style.post}>
@@ -86,14 +79,12 @@ const Mypost = ({ postInfo, getMypost }) => {
           onClick={(e) => {
             handleDotButton();
             getPostId(e);
-            haneldModalId(e);
           }}
         >
           <img
             className={style.dotMenu}
             src={dotMenu}
             alt="수정, 삭제 메뉴버튼"
-            id={postInfo.id}
           />
         </button>
         <div className={style.date}>{postInfo.created}</div>
