@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { login, getUserInfo } from '../../store/login-slice';
 import { profile } from '../../store/move-slice';
+import { REACT_APP_API_URL } from '../../config';
 
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -32,7 +33,7 @@ function ModalInput({ placeholder }) {
   const handleLogin = () => {
     axios
       .post(
-        'http://localhost:4000/users/signin',
+        `${REACT_APP_API_URL}/users/signin`,
         {
           email: enteredEmail,
           password: enteredPassword

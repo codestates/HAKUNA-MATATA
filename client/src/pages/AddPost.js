@@ -72,9 +72,11 @@ const AddPost = () => {
           onChange={(e) => contentHandler(e)}
         ></textarea>
       </div>
-      <button className={style.submit} onClick={addPostHandler}>
-        게시글 작성
-      </button>
+      <div className={style.submitWrap}>
+        <button className={style.submit} onClick={addPostHandler}>
+          게시글 작성
+        </button>
+      </div>
     </div>
   );
 };
