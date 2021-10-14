@@ -66,20 +66,6 @@
   background-color: #fffff9;
 } */
 
-button:hover,
-button:active {
-  color: #f3887e;
-}
-
-button:disabled,
-button:disabled:hover,
-button:disabled:active {
-  background-color: #ccc;
-  color: #292929;
-  border-color: #ccc;
-  cursor: not-allowed;
-}
-
 .modalButton {
   width: 300px;
   padding: 21px 0 21px 0;
@@ -109,4 +95,23 @@ button:disabled:active {
   line-height: 1.45em;
   border: none;
   cursor: pointer;
+}
+
+.modalOauth:hover,
+.modalOauth:active,
+.modalButton:hover,
+.modalButton:active {
+  color: #f3887e;
+}
+
+.modalOauth:disabled,
+.modalOauth:disabled:hover,
+.modalOauth:disabled:active,
+.modalButton:disabled,
+.modalButton:disabled:hover,
+.modalButton:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-color: #ccc;
+  cursor: not-allowed;
 }

@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../store/login-slice';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-import { REACT_APP_API_URL } from '../../config.js';
+import { REACT_APP_API_URL } from '../../config';
+
 
 const Setting = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const Setting = () => {
     } else {
       axios
         .patch(
-          'http://localhost:4000/users/userinfo',
+          `${REACT_APP_API_URL}/users/userinfo`,
           {
             password
           },

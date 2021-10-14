@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import dotMenu from '../../images/dot-menu.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { REACT_APP_API_URL } from '../../config.js';
+import { REACT_APP_API_URL } from '../../config';
+
 const CommentItem = ({
   comment,
   comments,
@@ -34,7 +35,7 @@ const CommentItem = ({
 
     try {
       const deleteCommentId = await axios.delete(
-        `http://localhost:4000/posts/${pathName}/comments/${commentId}`,
+        `${REACT_APP_API_URL}/posts/${pathName}/comments/${commentId}`,
         { withCredentials: true }
       );
 
@@ -60,7 +61,7 @@ const CommentItem = ({
 
     try {
       const updatedComments = await axios.patch(
-        `http://localhost:4000/posts/${pathName}/comments/${commentId}`,
+        `${REACT_APP_API_URL}/posts/${pathName}/comments/${commentId}`,
         body,
         { withCredentials: true }
       );

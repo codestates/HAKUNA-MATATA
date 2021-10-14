@@ -12,7 +12,8 @@ import { profile, mypost, setting } from '../store/move-slice';
 import { getUserInfo, logout } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
-import { REACT_APP_API_URL } from '../config.js';
+import { REACT_APP_API_URL } from '../config';
+
 axios.defaults.withCredentials = true;
 const Mypage = () => {
   const history = useHistory();

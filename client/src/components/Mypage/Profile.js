@@ -3,7 +3,8 @@ import style from './Profile.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getUserInfo } from '../../store/login-slice';
-import { REACT_APP_API_URL } from '../../config.js';
+import { REACT_APP_API_URL } from '../../config';
+
 const Profile = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
 

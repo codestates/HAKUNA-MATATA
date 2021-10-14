@@ -10,7 +10,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { profile, reset } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
-import { REACT_APP_API_URL } from '../config.js';
+import { REACT_APP_API_URL } from '../config';
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,7 @@ const Header = () => {
     ) {
       setIsOpen(false);
     }
-    if (document.location.href !== 'http://localhost:3000/mypage') {
+    if (document.location.href !== '/mypage') {
       dispatch(reset());
     }
   });
@@ -69,7 +70,11 @@ const Header = () => {
       <header className={style.header}>
         <Logo />
         <div className={style.navbar}>
-          <a href="https://github.com/codestates/HAKUNA-MATATA/wiki">
+          <a
+            href="https://github.com/codestates/HAKUNA-MATATA/wiki"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>About</span>
           </a>
           <Link to="/">

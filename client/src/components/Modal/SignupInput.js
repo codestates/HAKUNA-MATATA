@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import style from './SignupInput.module.css';
 import axios from 'axios';
-import { REACT_APP_API_URL } from '../../config.js';
+import { REACT_APP_API_URL } from '../../config';
+
 function SignupInput() {
   const [signupInfo, setSignupInfo] = useState({
     email: '',

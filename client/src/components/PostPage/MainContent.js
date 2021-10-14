@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { REACT_APP_API_URL } from '../../config.js';
+import { REACT_APP_API_URL } from '../../config';
 
 const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   const loginState = useSelector((state) => state.isLogin);

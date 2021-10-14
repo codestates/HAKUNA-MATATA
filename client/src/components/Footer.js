@@ -10,13 +10,25 @@ const Footer = () => {
     <Fragment>
       <footer className={style.footer}>
         <div className={style.images}>
-          <a href="https://instagram.com/">
+          <a
+            href="https://instagram.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img src={instagram} />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img src={github} />
           </a>
-          <a href="https://youtube.com">
+          <a
+            href="https://youtube.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img src={youtube} />
           </a>
         </div>

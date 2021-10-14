@@ -5,7 +5,8 @@ import Main from './components/Main';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getUserInfo, login, logout } from './store/login-slice';
-import { REACT_APP_API_URL } from './config.js';
+import { REACT_APP_API_URL } from './config';
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {

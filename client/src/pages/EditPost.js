@@ -5,7 +5,8 @@ import style from './EditPost.module.css';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-import { REACT_APP_API_URL } from '../config.js';
+import { REACT_APP_API_URL } from '../config';
+
 const options = [
   { value: '연애', label: '연애' },
   { value: '친구', label: '친구' },
