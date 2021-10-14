@@ -1,8 +1,9 @@
 .writecomment {
   display: flex;
-  width: 97%;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
+  margin: 30px 0;
 }
 
 .writecomment img {
@@ -11,11 +12,12 @@
 }
 
 .textarea {
-  width: 661px;
+  width: 100%;
   height: 90px;
-  margin-top: 10px;
-  padding-top: 11px;
-  padding-left: 15px;
+  margin-left: 20px;
+  padding: 20px;
+  font-size: 18px;
+  color: #737373;
   border: 1px solid #f3887e;
   border-radius: 5px;
   resize: none;
@@ -33,10 +35,14 @@
   color: #f3887e;
 }
 
+.submitWrap {
+  width: 100%;
+  text-align: right;
+}
+
 .submitcom {
   width: 120px;
   height: 50px;
-  margin-top: 15px;
   background-color: #f3887e;
   border-radius: 3px;
   color: #fff;
@@ -46,6 +52,4 @@
   line-height: 1.45em;
   border: none;
   cursor: pointer;
-  position: relative;
-  left: 630px;
 }
