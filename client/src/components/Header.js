@@ -86,12 +86,11 @@ const Header = () => {
               + Add Post
             </button>
           </Link>
-
           <img
             src={userImg}
+            className={style.img}
             alt="user image"
             onClick={handleMenu}
-            className={style.img}
           />
           <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
             <button
@@ -111,7 +110,6 @@ const Header = () => {
               회원가입
             </button>
           </div>
-
           <div className={isOpen && isLogin ? style.successMenu : style.hidden}>
             <button
               className={
