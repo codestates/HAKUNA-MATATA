@@ -25,7 +25,9 @@ const Mypage = () => {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
+    getMypost();
     userAutn();
+    dispatch(profile());
   }, []);
 
   const userAutn = async () => {
@@ -45,7 +47,9 @@ const Mypage = () => {
     try {
       const response = await axios.get(
         `${REACT_APP_API_URL}/posts?user=${userInfo.nickname}`,
-        { withCredentials: true }
+        {
+          withCredentials: true
+        }
       );
 
       setUserPosts(response.data.posts.rows);

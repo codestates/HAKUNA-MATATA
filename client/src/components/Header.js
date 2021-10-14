@@ -19,7 +19,6 @@ const Header = () => {
 
   const isLogin = useSelector((state) => state.isLogin.isLogin);
   const movePage = useSelector((state) => state.movePage);
-  console.log('@@', movePage);
 
   const history = useHistory();
   const dispatch = useDispatch();

@@ -24,7 +24,9 @@ const Mypost = ({ postInfo, getMypost }) => {
     try {
       const deletePost = await axios.delete(
         `${REACT_APP_API_URL}/posts/${postId}`,
-        { withCredentials: true }
+        {
+          withCredentials: true
+        }
       );
       getMypost();
       console.log(deletePost);
