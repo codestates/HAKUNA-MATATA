@@ -60,7 +60,7 @@ function Board() {
     //console.log(string);
 
     try {
-      const response = await axios.get(`http://localhost:4000/posts?${string}`);
+      const response = await axios.get(`${REACT_APP_API_URL}/posts?${string}`);
       const { rows, count, page } = response.data.posts;
       pageButtonCurrent(page - 1);
 

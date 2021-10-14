@@ -24,19 +24,18 @@ const Main = () => {
           <MyPage />
         </Route>
         <Route path="/posts/:postId">
-          <Banner title={''} />
+          <Banner title={'고민글'} />
           <Post />
         </Route>
         <Route path="/add-post">
-          <Banner title={''} />
+          <Banner title={'새로운 고민 추가'} />
           <AddPost />
         </Route>
         <Route path="/edit-post">
-          <Banner title={''} />
+          <Banner title={'고민글 수정'} />
           <EditPost />
         </Route>
         <Route path="/404">
-          <Banner title={''} />
           <ErrorPage />
         </Route>
       </Switch>

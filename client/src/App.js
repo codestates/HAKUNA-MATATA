@@ -5,12 +5,13 @@ import Main from './components/Main';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getUserInfo, login, logout } from './store/login-slice';
+import { REACT_APP_API_URL } from './config';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get('http://localhost:4000/users/userinfo', { withCredentials: true })
+      .get(`${REACT_APP_API_URL}/users/userinfo`, { withCredentials: true })
       .then((res) => {
         dispatch(login());
         dispatch(getUserInfo(res.data.userInfo));
