@@ -54,7 +54,7 @@ const Mypost = ({ postInfo, getMypost }) => {
 
   return (
     <li className={style.post}>
-      <div>
+      <div className={style.postInfo}>
         <div className={style.category}>{postInfo.category.name}</div>
         <div className={style.postTitle}>{postInfo.title}</div>
         <div className={style.subInfo}>

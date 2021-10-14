@@ -78,7 +78,6 @@ const CommentItem = ({
 
   return (
     <section className={style.section2}>
-      <h1>댓글</h1>
       <div className={style.comments}>
         <p>
           <img className={style.userImg} src={userImg} alt="user image" />

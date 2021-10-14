@@ -178,11 +178,11 @@ const Mypage = () => {
                 {movePage.setting ? <Setting /> : null}
               </div>
             </div>
-            <Link to="/add-post">
-              <button className={style.addButton}>ADD POST</button>
-            </Link>
           </div>
         </main>
+        <Link to="/add-post">
+          <button className={style.addButton}>ADD POST</button>
+        </Link>
       </section>
     </>
   );
