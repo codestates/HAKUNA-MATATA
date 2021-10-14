@@ -44,8 +44,7 @@ const Header = () => {
           withCredentials: true
         }
       )
-      .then((res) => {
-        console.log(res);
+      .then(() => {
         dispatch(logout());
         history.push('/');
       });

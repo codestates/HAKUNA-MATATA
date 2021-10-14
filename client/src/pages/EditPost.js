@@ -29,7 +29,7 @@ const EditPost = () => {
     history.push('/');
   }
 
-  console.log(title, content);
+  // console.log(title, content);
 
   const titleHandler = (e) => {
     setTitle(e.target.value);
@@ -48,12 +48,11 @@ const EditPost = () => {
     const url = `${REACT_APP_API_URL}/posts/${location.state.id}`;
 
     try {
-      const updatedPost = await axios.patch(
+      await axios.patch(
         url,
         { title, content, category },
         { withCredentials: true }
       );
-      console.log(updatedPost);
 
       history.push(`/posts/${location.state.id}`);
     } catch (err) {

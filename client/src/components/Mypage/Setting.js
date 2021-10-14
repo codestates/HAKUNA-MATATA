@@ -26,7 +26,7 @@ const Setting = () => {
 
   const handleSaveProfile = () => {
     const { password, checkPassword } = changePassword;
-    console.log(password, checkPassword);
+    // console.log(password, checkPassword);
     if (!password || !checkPassword) {
       console.log('빈칸을 채워주세요');
     } else if (password !== checkPassword) {

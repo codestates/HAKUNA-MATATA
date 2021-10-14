@@ -77,7 +77,7 @@ const Mypage = () => {
           { image: formdata },
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );
-        console.log(response);
+        // console.log(response);
         userAutn();
         setImgSrc(response.data.location.image);
       }

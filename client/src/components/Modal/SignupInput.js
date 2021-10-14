@@ -113,7 +113,7 @@ function SignupInput() {
 
     if (isExist() && isAllValid(signupInfo)) {
       try {
-        const response = await axios.post(
+        await axios.post(
           `${REACT_APP_API_URL}/users/signup`,
           { email, password },
           {
@@ -121,7 +121,6 @@ function SignupInput() {
           }
         );
 
-        console.log(response);
         alert('하쿠나마타타! 환영합니다🎉');
         resetInfo();
       } catch (err) {

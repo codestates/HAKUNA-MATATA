@@ -79,7 +79,7 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
         const newlyUpdatedPosts = await axios.get(
           `${REACT_APP_API_URL}/posts/${postId}`
         );
-        console.log(newlyUpdatedPosts);
+        // console.log(newlyUpdatedPosts);
         setPosts(newlyUpdatedPosts);
         setShowModifyBoxHandler(false);
       }

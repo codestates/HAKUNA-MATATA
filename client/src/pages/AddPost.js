@@ -27,9 +27,9 @@ const AddPost = () => {
         withCredentials: true
       });
 
-      console.log(addpost);
+      // console.log(addpost);
 
-      history.push('/');
+      history.push(`/posts/${addpost.data.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -45,7 +45,7 @@ const AddPost = () => {
 
   const categoryHandler = (e) => {
     setCategory(e.value);
-    console.dir(e.value);
+    // console.dir(e.value);
   };
 
   return (
