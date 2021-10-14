@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config';
 
-
 const Setting = () => {
   const dispatch = useDispatch();
   const history = useHistory();

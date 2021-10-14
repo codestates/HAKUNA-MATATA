@@ -8,6 +8,8 @@ import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
 import PageNation from '../components/Board/PageNation';
 import { REACT_APP_API_URL } from '../config';
+import { useDispatch } from 'react-redux';
+import { reset } from '../store/move-slice';
 
 function Board() {
   const [isActive, setActive] = useState([]);
@@ -24,7 +26,10 @@ function Board() {
     sort: '',
     content: ''
   });
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(reset());
+  }, []);
   const getPosts = async () => {
     try {
       const response = await axios.get(`${REACT_APP_API_URL}/posts`);
