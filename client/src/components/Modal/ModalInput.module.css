@@ -94,6 +94,9 @@ button:disabled:active {
   cursor: pointer;
   border: none;
 }
+.modalButton:hover {
+  color: #000;
+}
 
 .modalOauth {
   width: 300px;

@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { profile, reset } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
+import { REACT_APP_API_URL } from '../config.js';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +38,7 @@ const Header = () => {
   const handleLogout = () => {
     axios
       .post(
-        'http://localhost:4000/users/logout',
+        `${REACT_APP_API_URL}/users/logout`,
         {},
         {
           withCredentials: true

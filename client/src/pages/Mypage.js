@@ -12,7 +12,7 @@ import { profile, mypost, setting } from '../store/move-slice';
 import { getUserInfo, logout } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
-
+import { REACT_APP_API_URL } from '../config.js';
 axios.defaults.withCredentials = true;
 const Mypage = () => {
   const history = useHistory();
@@ -27,7 +27,7 @@ const Mypage = () => {
 
   const userAutn = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/users/userinfo', {
+      const response = await axios.get(`${REACT_APP_API_URL}/users/userinfo`, {
         withCredentials: true
       });
       dispatch(getUserInfo(response.data.userInfo));
@@ -41,7 +41,7 @@ const Mypage = () => {
   const getMypost = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/posts?user=${userInfo.nickname}`,
+        `${REACT_APP_API_URL}/posts?user=${userInfo.nickname}`,
         { withCredentials: true }
       );
 
@@ -66,7 +66,7 @@ const Mypage = () => {
         const formdata = new FormData();
         formdata.append('image', imageFile);
         const response = await axios.post(
-          'http://localhost:4000/users/profile',
+          `${REACT_APP_API_URL}/users/profile`,
           { image: formdata },
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );

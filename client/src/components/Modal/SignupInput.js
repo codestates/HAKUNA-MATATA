@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './SignupInput.module.css';
 import axios from 'axios';
-
+import { REACT_APP_API_URL } from '../../config.js';
 function SignupInput() {
   const [signupInfo, setSignupInfo] = useState({
     email: '',
@@ -114,7 +114,7 @@ function SignupInput() {
     if (isExist() && isAllValid(signupInfo)) {
       try {
         const response = await axios.post(
-          'http://localhost:4000/users/signup',
+          `${REACT_APP_API_URL}/users/signup`,
           { email, password },
           {
             withCredentials: true

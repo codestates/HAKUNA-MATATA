@@ -5,7 +5,7 @@ import style from './EditPost.module.css';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-
+import { REACT_APP_API_URL } from '../config.js';
 const options = [
   { value: '연애', label: '연애' },
   { value: '친구', label: '친구' },
@@ -44,7 +44,7 @@ const EditPost = () => {
   };
 
   const editPostHandler = async () => {
-    const url = `http://localhost:4000/posts/${location.state.id}`;
+    const url = `${REACT_APP_API_URL}/posts/${location.state.id}`;
 
     try {
       const updatedPost = await axios.patch(

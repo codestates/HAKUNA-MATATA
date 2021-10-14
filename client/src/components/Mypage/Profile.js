@@ -3,7 +3,7 @@ import style from './Profile.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getUserInfo } from '../../store/login-slice';
-
+import { REACT_APP_API_URL } from '../../config.js';
 const Profile = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
 
@@ -25,7 +25,7 @@ const Profile = () => {
 
     axios
       .patch(
-        'http://localhost:4000/users/userinfo',
+        `${REACT_APP_API_URL}/users/userinfo`,
         {
           nickname,
           userBio

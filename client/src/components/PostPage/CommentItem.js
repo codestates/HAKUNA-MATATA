@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import dotMenu from '../../images/dot-menu.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
+import { REACT_APP_API_URL } from '../../config.js';
 const CommentItem = ({
   comment,
   comments,
@@ -18,7 +18,7 @@ const CommentItem = ({
   const [modifyContent, setModifyContent] = useState(comment.content);
   const [showModifyBox, setShowModifyBox] = useState(false);
 
-  const url = `http://localhost:4000/posts/${pathName}/comments`;
+  const url = `${REACT_APP_API_URL}/posts/${pathName}/comments`;
 
   const handleDotButton = () => {
     setDotButton(!dotButton);

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { REACT_APP_API_URL } from '../../config.js';
 
 const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   const loginState = useSelector((state) => state.isLogin);
@@ -32,7 +33,7 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
 
     try {
       const deletePostId = await axios.delete(
-        `http://localhost:4000/posts/${postId}`,
+        `${REACT_APP_API_URL}/posts/${postId}`,
         { withCredentials: true }
       );
 
@@ -69,14 +70,14 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
 
     try {
       const updatedPosts = await axios.patch(
-        `http://localhost:4000/posts/${postId}`,
+        `${REACT_APP_API_URL}/posts/${postId}`,
         body,
         { withCredentials: true }
       );
 
       if (updatedPosts.data.id) {
         const newlyUpdatedPosts = await axios.get(
-          `http://localhost:4000/posts/${postId}`
+          `${REACT_APP_API_URL}/posts/${postId}`
         );
         console.log(newlyUpdatedPosts);
         setPosts(newlyUpdatedPosts);

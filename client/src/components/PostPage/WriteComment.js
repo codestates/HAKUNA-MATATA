@@ -3,6 +3,7 @@ import style from './WriteComment.module.css';
 import userImg from '../../images/user.png';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { REACT_APP_API_URL } from '../../config.js';
 
 const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
   const [commentContent, setCommentContent] = useState({});
@@ -11,7 +12,7 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
 
   const sendComment = async () => {
     try {
-      const url = `http://localhost:4000/posts/${pathName}/comments`;
+      const url = `${REACT_APP_API_URL}/posts/${pathName}/comments`;
       const config = {
         'Content-Type': 'application/json',
         withCredentials: true
