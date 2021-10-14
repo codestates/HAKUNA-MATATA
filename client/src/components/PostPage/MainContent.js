@@ -151,19 +151,21 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
           <div>{posts.content}</div>
         </div>
         <div className={style.reactions}>
-          <p>
-            <img src={comments} />
-            <span>{posts.comments}</span>
-          </p>
-          <p>
-            <img src={like} />
-            <span>{posts.likes}</span>
-          </p>
-          <p>
-            <img src={eye} />
-            <span>{posts.views}</span>
-          </p>
-          <div>
+          <div className={style.iconWrap}>
+            <p>
+              <img src={comments} />
+              <span>{posts.comments}</span>
+            </p>
+            <p>
+              <img src={like} />
+              <span>{posts.likes}</span>
+            </p>
+            <p>
+              <img src={eye} />
+              <span>{posts.views}</span>
+            </p>
+          </div>
+          <div className={style.likeWrap}>
             {isLogin && liked ? (
               <>
                 <img src={filledHeart} alt="likes" onClick={likeHandler} />

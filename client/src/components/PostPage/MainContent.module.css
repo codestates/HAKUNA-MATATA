@@ -1,52 +1,48 @@
 .section1-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  /* padding: 0px 5px; */
+  width: 100%;
 }
 
 .section1-header p {
-  color: #7b7b7b;
-  font-weight: 400;
   font-size: 14px;
+  font-weight: 400;
+  color: #7b7b7b;
+  line-height: 160%;
 }
 
 .section1-content h1 {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.45em;
-  margin: 5px 0 10px;
+  padding-bottom: 20px;
 }
 
 .section1-content {
-  margin: 5px 0 20px;
-  padding: 10px 0;
-  border-top: 1px solid rgb(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  margin: 20px 0 40px 0;
+  padding: 20px 5px;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
 }
 
-.basicinfo span img {
-  width: 30px;
-  height: 30px;
-}
-
-.basicinfo span span {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 23.44px;
-  color: #404040;
-  margin-left: 8px;
-  position: relative;
-  top: -9px;
-}
-
-.basicinfo span {
+.basicinfo > span {
   font-size: 17px;
   font-weight: 400;
   color: #737373;
-  position: relative;
-  right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.basicinfo > span > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.basicinfo > span > span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.44px;
+  color: #404040;
 }
 
 .section1 img {
@@ -58,55 +54,53 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 20px 0px; */
 }
 
 .maincontent {
-  margin: 42px 0px;
-  line-height: 1.6em;
-  color: #404040;
   font-size: 1.25em;
+  color: #404040;
+  line-height: 1.6em;
+  padding: 45px 0 60px 0;
 }
 
 .reactions {
   display: flex;
-  /* flex-direction: ; */
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-.reactions p img {
-  width: 16px;
-  height: 16px;
-  margin: 0px 1px;
+.reactions .iconWrap p {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
-.reactions p span {
+.reactions .iconWrap p img {
+  width: 16px;
+  height: 16px;
+  margin-right: 2.5px;
+}
+
+.reactions .iconWrap p span {
   font-size: 15px;
   font-weight: 500;
   color: #737373;
   line-height: 1.45em;
-  padding: 0 3px;
-  position: relative;
-  top: -3px;
 }
 
-.reactions div {
-  position: absolute;
+.reactions .likeWrap {
+  display: flex;
+  align-items: center;
   color: #737373;
-  margin-left: 3px;
-  right: 15px;
 }
 
-.reactions div img {
+.reactions .likeWrap img {
   margin-right: 3px;
-  position: relative;
-  top: -3px;
   cursor: pointer;
 }
 
-.reactions div p {
+.reactions .likeWrap p {
   cursor: pointer;
 }
 
@@ -124,7 +118,7 @@
 }
 
 .dotBox.dotClick {
-  border: 2px solid #404040;
+  border: 2px solid #555;
   border-radius: 50%;
 }
 

@@ -50,10 +50,11 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
           value={comment}
         />
       </div>
-
-      <button type="submit" className={style.submitcom} onClick={sendComment}>
-        댓글 쓰기
-      </button>
+      <div className={style.submitcomWrap}>
+        <button type="submit" className={style.submitcom} onClick={sendComment}>
+          댓글 쓰기
+        </button>
+      </div>
     </section>
   );
 };
