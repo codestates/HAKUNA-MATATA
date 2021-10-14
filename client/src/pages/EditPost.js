@@ -86,9 +86,11 @@ const EditPost = () => {
           onChange={(e) => contentHandler(e)}
         ></textarea>
       </div>
-      <button className={style.submit} onClick={editPostHandler}>
-        게시글 수정
-      </button>
+      <div className={style.editBtnWrap}>
+        <button className={style.submit} onClick={editPostHandler}>
+          게시글 수정
+        </button>
+      </div>
     </div>
   );
 };

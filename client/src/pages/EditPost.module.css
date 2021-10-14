@@ -14,34 +14,37 @@ main {
 }
 
 .select {
-  width: 30%;
-}
-
-.textarea {
-  border: none;
-  width: 80%;
-  margin-top: 10px;
-  padding: 0px 0px 150px;
-  resize: none;
-  font-size: 20px;
-}
-
-.textarea::placeholder {
-  color: #bfbfbf;
-  font-size: 20px;
-  font-weight: 300;
+  width: 100%;
 }
 
 .title {
   width: 100%;
-  margin: 20px 0px;
+  margin: 20px 0;
+  padding: 20px 0px;
   display: flex;
+  color: #404040;
   align-items: center;
-  font-size: 30px;
-
-  height: 47px;
+  font-size: 24px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.textarea {
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #404040;
+  line-height: 160%;
+  padding: 0px 0px 150px;
+  resize: none;
+}
+
+.textarea::placeholder {
+  color: #bfbfbf;
+  font-size: 18px;
+  color: #737373;
+  font-weight: 300;
 }
 
 textarea:focus,
@@ -55,10 +58,14 @@ textarea:focus,
   font-weight: 300;
 }
 
+.editBtnWrap {
+  width: 100%;
+  text-align: right;
+}
+
 .submit {
   width: 120px;
   height: 50px;
-  margin-top: 15px;
   background-color: #f3887e;
   border-radius: 3px;
   color: #fff;
@@ -68,6 +75,10 @@ textarea:focus,
   line-height: 1.45em;
   border: none;
   cursor: pointer;
-  position: relative;
-  left: 650px;
+}
+
+@media all and (max-width: 480px) {
+  .container {
+    padding: 30px;
+  }
 }
