@@ -14,7 +14,6 @@ function App() {
     axios
       .get(`${REACT_APP_API_URL}/users/userinfo`, { withCredentials: true })
       .then((res) => {
-        console.log(res.data.userInfo);
         dispatch(login());
         dispatch(getUserInfo(res.data.userInfo));
       })
