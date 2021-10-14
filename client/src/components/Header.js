@@ -12,6 +12,7 @@ import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
 import { REACT_APP_API_URL } from '../config';
 
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
