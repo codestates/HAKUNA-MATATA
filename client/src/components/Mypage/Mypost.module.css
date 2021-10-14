@@ -1,18 +1,14 @@
-/* button {
-  background: inherit;
-  cursor: pointer;
-  border: none;
-} */
 .post {
-  margin-top: 10px;
-  padding: 15px 20px;
-  width: 580px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
+
 /* post Left */
 .category {
   font-weight: 700;

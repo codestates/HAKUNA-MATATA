@@ -32,6 +32,7 @@ const AddPost = () => {
       history.push('/');
     } catch (err) {
       console.log(err);
+      alert('로그인 해주세요.');
     }
   };
 
