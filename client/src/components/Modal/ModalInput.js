@@ -8,7 +8,6 @@ import { login, getUserInfo } from '../../store/login-slice';
 import { profile } from '../../store/move-slice';
 import { REACT_APP_API_URL } from '../../config';
 
-
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');

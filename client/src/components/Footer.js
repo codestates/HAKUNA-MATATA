@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import React from 'react';
 import style from './Footer.module.css';
-import youtube from '../images/youtube.png';
-import github from '../images/github.png';
-import instagram from '../images/instagram.png';
+import youtube from '../images/icons/youtube.png';
+import github from '../images/icons/github.png';
+import instagram from '../images/icons/instagram.png';
 
 const Footer = () => {
   return (

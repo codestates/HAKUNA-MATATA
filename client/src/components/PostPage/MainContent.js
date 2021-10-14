@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import style from './MainContent.module.css';
-import dotMenu from '../../images/dot-menu.png';
-import userImg from '../../images/user.png';
-import comments from '../../images/comments.png';
-import filledHeart from '../../images/filledheart.png';
-import eye from '../../images/eye.png';
-import like from '../../images/heart.png';
+import dotMenu from '../../images/icons/dot-menu.png';
+import userImg from '../../images/icons/user.png';
+import comments from '../../images/icons/comments.png';
+import filledHeart from '../../images/icons/filledheart.png';
+import eye from '../../images/icons/eye.png';
+import like from '../../images/icons/heart.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useSelector } from 'react-redux';

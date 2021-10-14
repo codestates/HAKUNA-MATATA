@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './PageNation.module.css';
 import PageNationButton from './PageNationButton';
-import arrowLeft from '../..//images/arrow-left.png';
-import arrowRight from '../../images/arrow-right.png';
+import arrowLeft from '../..//images/icons/arrow-left.png';
+import arrowRight from '../../images/icons/arrow-right.png';
 import PropTypes from 'prop-types';
 
 export default function PageNation({

@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import style from './OrderPost.module.css';
-import search from '../../images/search.png';
+import search from '../../images/icons/search.png';
 import PropTypes from 'prop-types';
 
-export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
+export default function OrderPosts({
+  filterOnclickFn,
+  searchTextHandler,
+  searchText,
+  searchOnclickFn
+}) {
   const [isActive, setActive] = useState([true, false, false, false]);
-  const [searchText, setSearchText] = useState('');
 
-  const toggleClass = (index) => {
+  const pageButtonCurrent = (index) => {
     const newActive = [false, false, false, false];
     newActive[index] = !newActive[index];
     setActive(newActive);
-  };
-
-  const searchTextHandler = (e) => {
-    setSearchText(e.target.value);
   };
 
   return (
@@ -26,7 +26,7 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
               name=""
               className={isActive[0] ? style.addClass : null}
               onClick={(e) => {
-                toggleClass(0);
+                pageButtonCurrent(0);
                 filterOnclickFn(e);
               }}
             >
@@ -38,7 +38,7 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
               name="likes"
               className={isActive[1] ? style.addClass : null}
               onClick={(e) => {
-                toggleClass(1);
+                pageButtonCurrent(1);
                 filterOnclickFn(e);
               }}
             >
@@ -50,7 +50,7 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
               name="comments"
               className={isActive[2] ? style.addClass : null}
               onClick={(e) => {
-                toggleClass(2);
+                pageButtonCurrent(2);
                 filterOnclickFn(e);
               }}
             >
@@ -62,7 +62,7 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
               name="views"
               className={isActive[3] ? style.addClass : null}
               onClick={(e) => {
-                toggleClass(3);
+                pageButtonCurrent(3);
                 filterOnclickFn(e);
               }}
             >
@@ -79,7 +79,12 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
             onChange={searchTextHandler}
             placeholder="검색하세요."
           />
-          <img src={search} onClick={() => searchOnclickFn(searchText)} />
+          <img
+            src={search}
+            onClick={() => {
+              searchOnclickFn(searchText);
+            }}
+          />
         </label>
       </div>
     </div>
@@ -88,5 +93,7 @@ export default function OrderPosts({ filterOnclickFn, searchOnclickFn }) {
 
 OrderPosts.propTypes = {
   filterOnclickFn: PropTypes.any,
+  searchText: PropTypes.any,
+  searchTextHandler: PropTypes.any,
   searchOnclickFn: PropTypes.any
 };

@@ -3,6 +3,7 @@ import axios from 'axios';
 import style from './Board.module.css';
 import bannerImg from '../images/thumbnail/moon.jpg';
 import logoTitle from '../images/logoTitle.png';
+import emptyImg from '../images/empty.jpeg';
 import CategoryPost from '../components/Board/CategoryPost';
 import OrderPost from '../components/Board/OrderPost';
 import PostCards from '../components/Board/PostCards';
@@ -11,6 +12,7 @@ import { REACT_APP_API_URL } from '../config';
 
 function Board() {
   const [isActive, setActive] = useState([]);
+  const [searchText, setSearchText] = useState('');
   const [postItems, setPostItems] = useState([]);
   const [postPages, setPostPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,13 +34,11 @@ function Board() {
 
       let pageCount = Math.ceil(count / querys.limit);
       setPostPages(pageCount);
-
       const newPostPages = new Array(pageCount).fill(false).map((el, idx) => {
         if (idx === 0) return !el;
         return el;
       });
       setActive(newPostPages);
-
       setPostItems(rows);
     } catch (err) {
       console.log(err);
@@ -63,11 +63,10 @@ function Board() {
       const response = await axios.get(`${REACT_APP_API_URL}/posts?${string}`);
       const { rows, count, page } = response.data.posts;
       pageButtonCurrent(page - 1);
-
       let pageCount = Math.ceil(count / querys.limit);
       setPostPages(pageCount);
-
       setPostItems(rows);
+      searchClearFn();
     } catch (err) {
       console.log(err);
     }
@@ -92,13 +91,11 @@ function Board() {
       order: e.target.name
     };
     setQuerys(newQuerys);
-
     const newPostPages = new Array(postPages).fill(false).map((el, idx) => {
       if (idx === 0) return !el;
       return el;
     });
     setActive(newPostPages);
-
     getPostsQuerys(newQuerys);
   };
 
@@ -113,14 +110,20 @@ function Board() {
       content: searchText
     };
     setQuerys(newQuerys);
-
     const newPostPages = new Array(postPages).fill(false).map((el, idx) => {
       if (idx === 0) return !el;
       return el;
     });
     setActive(newPostPages);
-
     getPostsQuerys(newQuerys);
+  };
+
+  const searchTextHandler = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const searchClearFn = () => {
+    setSearchText('');
   };
 
   const pageNumberOnclickFn = (e) => {
@@ -168,13 +171,23 @@ function Board() {
     pageButtonCurrent(0);
   }, [postPages]);
 
-  // 수정 필요 (5의 배수로 증가함)
   useEffect(() => {
-    if (currentPage > 5) {
-      setShowPostPages(currentPage - 1);
-    }
     if (currentPage <= 5) {
       setShowPostPages(0);
+    } else {
+      // current page 5의 배수로 증가
+      if ((currentPage - 1) % 5 === 0 || currentPage % 5 === 0) {
+        if (currentPage % 5 === 0) {
+          // arrow left
+          setShowPostPages(currentPage - 5);
+          // console.log(currentPage);
+        }
+        if ((currentPage - 1) % 5 === 0) {
+          // arrow right
+          setShowPostPages(currentPage - 1);
+          // console.log(currentPage);
+        }
+      }
     }
   }, [currentPage, postPages]);
 
@@ -191,6 +204,9 @@ function Board() {
         <CategoryPost categoryOnclickFn={categoryOnclickFn} />
         <OrderPost
           filterOnclickFn={filterOnclickFn}
+          searchText={searchText}
+          searchTextHandler={searchTextHandler}
+          setSearchText={setSearchText}
           searchOnclickFn={searchOnclickFn}
         />
         {postItems.length ? (
@@ -205,7 +221,12 @@ function Board() {
               pageButtonCurrent={pageButtonCurrent}
             />
           </>
-        ) : null}
+        ) : (
+          <div className={style.emplyBox}>
+            <img src={emptyImg} />
+            <p>컨텐츠가 비었습니다.</p>
+          </div>
+        )}
       </section>
     </>
   );
