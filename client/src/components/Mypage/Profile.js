@@ -7,18 +7,19 @@ import { REACT_APP_API_URL } from '../../config';
 
 const Profile = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
+  const dispatch = useDispatch();
 
   const [profileInfo, setProfileInfo] = useState({
     nickname: '',
     userBio: ''
   });
-  const dispatch = useDispatch();
+
   const onChangeInput = (key) => (e) => {
     setProfileInfo({ ...profileInfo, [key]: e.target.value });
   };
+
   const handleSaveProfile = () => {
     const { nickname, userBio } = profileInfo;
-    // console.log('@@@@', userInfo.nickname);
     if (!nickname) {
       console.log('닉네임 칸을 입력해주세요.');
       return;
@@ -43,6 +44,7 @@ const Profile = () => {
         dispatch(getUserInfo(res.data.userInfo));
       });
   };
+
   return (
     <>
       <input className={style.disabled} placeholder={userInfo.email} disabled />

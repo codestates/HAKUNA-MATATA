@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import style from './CommentItem.module.css';
-import userImg from '../../images/user.png';
+import userImg from '../../images/icons/user.png';
 import { Link } from 'react-router-dom';
-import dotMenu from '../../images/dot-menu.png';
+import dotMenu from '../../images/icons/dot-menu.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config';

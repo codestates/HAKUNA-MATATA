@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './Header.module.css';
 import Logo from './Logo';
-import userImg from '../images/user.png';
+import userImg from '../images/icons/user.png';
 import LoginModal from './Modal/LoginModal';
 import SignupModal from './Modal/SignupModal';
 import axios from 'axios';
@@ -11,7 +11,6 @@ import { profile, reset } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
 import { REACT_APP_API_URL } from '../config';
-
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './PostCard.module.css';
-import comments from '../../images/comments.png';
-import heart from '../../images/heart.png';
-import eye from '../../images/eye.png';
-import user from '../../images/user.png';
+import comments from '../../images/icons/comments.png';
+import heart from '../../images/icons/heart.png';
+import eye from '../../images/icons/eye.png';
+import user from '../../images/icons/user.png';
 import PropTypes from 'prop-types';
 import romantic from '../../images/thumbnail/romantic.jpg';
 import friends from '../../images/thumbnail/friends.jpg';

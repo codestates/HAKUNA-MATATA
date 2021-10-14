@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import style from './Mypost.module.css';
-import dotMenu from '../../images/dot-menu.png';
+import dotMenu from '../../images/icons/dot-menu.png';
 import PropTypes from 'prop-types';
-import commentPic from '../../images/comments.png';
-import heart from '../../images/heart.png';
-import eye from '../../images/eye.png';
+import commentPic from '../../images/icons/comments.png';
+import heart from '../../images/icons/heart.png';
+import eye from '../../images/icons/eye.png';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config.js';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './WriteComment.module.css';
-import userImg from '../../images/user.png';
+import userImg from '../../images/icons/user.png';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { REACT_APP_API_URL } from '../../config';

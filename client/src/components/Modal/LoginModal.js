@@ -10,6 +10,7 @@ function LoginModal({ handleSignupModal, handleLoginModal }) {
     handleLoginModal();
     handleSignupModal();
   };
+
   return ReactDOM.createPortal(
     <div className={style.containerWrap}>
       <div className={style.containerbg} onClick={handleLoginModal}></div>
