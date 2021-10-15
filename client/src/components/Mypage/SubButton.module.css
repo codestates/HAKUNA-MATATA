@@ -1,0 +1,38 @@
+.button {
+  width: 121px;
+  height: 59px;
+  background-color: #ebebeb;
+  border-radius: 3px;
+  border: none;
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+.button:first-child {
+  margin-right: 15px;
+}
+.button:nth-child(2) {
+  margin-right: 15px;
+}
+
+.button.click {
+  width: 121px;
+  height: 59px;
+  background-color: #ebebeb;
+  border-radius: 3px;
+  border: none;
+  /* margin-right: 15px; */
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #8f8f8f;
+  cursor: pointer;
+  background-color: #fbf6e7;
+  border: 1px solid #f3887e;
+  color: #f3887e;
+}

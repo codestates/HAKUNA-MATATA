@@ -1,0 +1,11 @@
+.itemsWrap {
+  width: 100%;
+}
+ul.itemsBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 7.5px;
+}

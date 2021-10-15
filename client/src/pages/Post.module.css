@@ -1,0 +1,41 @@
+main {
+  background-color: #fffff9;
+}
+
+.container {
+  width: 100%;
+  max-width: 875px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  transform: translateY(-80px);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.commentTitle {
+  font-size: 26px;
+  line-height: 1.42em;
+  margin: 20px 5px;
+  color: #404040;
+}
+
+.addButton {
+  position: fixed;
+  width: 100px;
+  padding: 13px 12px 15px 12px;
+  border-radius: 10px;
+  background-color: #f3887e;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2em;
+  text-align: center;
+  color: #fff;
+  right: -110px;
+}
+
+@media all and (max-width: 480px) {
+  .container {
+    padding: 30px;
+  }
+}

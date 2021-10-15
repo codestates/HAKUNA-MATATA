@@ -1,0 +1,62 @@
+.containerWrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.containerbg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 100px 40px 100px;
+  border-radius: 15px;
+  background-color: #fffff9;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.45em;
+  text-align: center;
+  color: #444444;
+  cursor: pointer;
+}
+
+.modalExplain {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45em;
+  text-align: center;
+  color: #5b5b5b;
+  margin-top: 5px;
+}
+
+.inputBox {
+  margin-top: 22px;
+}
+
+.signup {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45em;
+  text-align: center;
+  color: #5b8593;
+  cursor: pointer;
+}
+
+.signup:hover {
+  text-decoration: underline;
+}

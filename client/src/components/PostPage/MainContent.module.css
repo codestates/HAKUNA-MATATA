@@ -1,0 +1,174 @@
+.section1-header {
+  width: 100%;
+  position: relative;
+}
+
+.section1-header p {
+  width: 80%;
+  color: #7b7b7b;
+  font-weight: 400;
+  font-size: 14px;
+  padding-bottom: 25px;
+}
+
+.section1-content {
+  padding: 25px 0;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.section1-content h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #404040;
+  line-height: 1.45em;
+  padding-bottom: 20px;
+}
+
+.basicinfo span {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 400;
+  color: #737373;
+}
+
+.basicinfo > span > span {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #404040;
+}
+
+.basicinfo > span > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.section1-content div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maincontent {
+  margin: 42px 0px;
+  line-height: 1.6em;
+  color: #404040;
+  font-size: 1.25em;
+}
+
+.reactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reactions .iconWrap p {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.reactions .iconWrap p img {
+  width: 16px;
+  height: 16px;
+  margin-right: 2.5px;
+}
+
+.reactions .iconWrap p span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #737373;
+  line-height: 1.45em;
+}
+
+.reactions .likesWrap {
+  display: flex;
+  align-items: center;
+  color: #737373;
+}
+
+.reactions .likesWrap img {
+  position: relative;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.reactions .likesWrap p {
+  cursor: pointer;
+  line-height: 120%;
+}
+
+.dotBox {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: -8px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.dotBox img {
+  opacity: 0.8;
+  width: 24px;
+  height: 24px;
+}
+
+.dotBox.dotClick {
+  border: 2px solid #404040;
+  border-radius: 50%;
+}
+
+.dotMenu {
+  width: 24px;
+  height: 24px;
+}
+
+.menuBox {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  z-index: 10;
+
+  background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.modifyButton {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
+
+.deleteButton {
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45em;
+  color: #404040;
+}
