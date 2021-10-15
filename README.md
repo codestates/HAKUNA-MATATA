@@ -1,5 +1,7 @@
 ## Project HAKUNA-MATATA
 
+https://hakunamatata.kr/
+
 ***하쿠나마타타(Hakuna Matata)**: 스와힐리어로 _"문제없어" "모든 것이 잘 될거야"_ 라는 뜻을 가진 긍정과 격려의 말
 
 ![Logo](https://user-images.githubusercontent.com/83806948/136054959-f58c3d1c-b209-4e34-9fe2-3aae9e7311ee.png)
