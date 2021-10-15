@@ -5,51 +5,39 @@
 }
 
 section {
-  position: relative;
+  padding: 0 60px 30px 30px;
 }
 
 .mypage {
-  height: 743px;
-  background-color: #fffff9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  width: 685px;
-  height: 759px;
-  background-color: #fff;
-  position: absolute;
-  top: -106px;
+  width: 100%;
+  max-width: 685px;
+  margin: 0 auto;
   border-radius: 20px;
+  padding: 0 60px;
+  transform: translateY(-120px);
+  background-color: #fff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Header*/
+.container {
+  transform: translateY(-80px);
+}
 
 .profileHeader {
-  border-radius: 20px;
-  height: 165px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .imageContainer {
+  display: block;
   width: 120px;
   height: 120px;
+  margin: 0 auto;
+  position: relative;
   border-radius: 50%;
   background: #ebebeb;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -77px;
   border: none;
   cursor: pointer;
+  box-shadow: 0px 0 10px rgb(0 0 0 / 10%);
 }
 
 .userImage {
@@ -68,20 +56,20 @@ section {
   right: -5px;
   bottom: 2px;
 }
+
 .hide {
   display: none;
 }
 
 .username {
-  margin-top: 15px;
   font-weight: 700;
   color: #404040;
   font-size: 32px;
+  padding: 20px 0 5px 0;
   line-height: 1.45em;
 }
 
 .introduce {
-  margin-top: 5px;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.45em;
@@ -90,24 +78,27 @@ section {
 }
 
 hr {
-  width: 580px;
-  position: absolute;
-  left: 52px;
+  width: 100%;
+  margin: 30px 0;
   border: 1px solid #eaeaea;
 }
 
-/* Profile Body */
+.buttonContainer {
+  width: 100%;
+  text-align: center;
+}
 
 .inputContainer {
-  height: 384px;
+  width: 100%;
+  max-width: 420px;
+  height: 400px;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .overflow {
   overflow: auto;
+  height: 400px;
+  padding: 5px;
   -ms-overflow-style: none;
 }
 
@@ -118,11 +109,11 @@ hr {
 .profileBody {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .addButton {
+  z-index: 2;
   width: 100px;
   position: fixed;
   right: 30px;
@@ -136,6 +127,7 @@ hr {
   text-align: center;
   color: #fff;
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border: none;
 }
 .addButton:hover {
@@ -149,33 +141,33 @@ hr {
   background-color: #ebebeb;
   border-radius: 3px;
   border: none;
-  margin-top: 30px;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.45em;
   color: #8f8f8f;
   cursor: pointer;
-}
-.button:first-child {
-  margin-right: 15px;
-}
-.button:nth-child(2) {
-  margin-right: 15px;
+  margin: 0 10px;
 }
 
 .button.click {
-  width: 121px;
-  height: 59px;
-  background-color: #ebebeb;
-  border-radius: 3px;
-  border: none;
-  margin-top: 30px;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.45em;
-  color: #8f8f8f;
-  cursor: pointer;
   background-color: #fbf6e7;
   border: 1px solid #f3887e;
   color: #f3887e;
+}
+
+@media all and (max-width: 640px) {
+  .mypage {
+    padding: 0 30px;
+  }
+  .addButton {
+    display: none;
+  }
+  .buttonContainer {
+    max-width: 400px;
+  }
+  .button {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
 }

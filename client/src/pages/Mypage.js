@@ -77,7 +77,7 @@ const Mypage = () => {
           { image: formdata },
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );
-        console.log(response);
+        // console.log(response);
         userAutn();
         setImgSrc(response.data.location.image);
       }
@@ -178,11 +178,11 @@ const Mypage = () => {
                 {movePage.setting ? <Setting /> : null}
               </div>
             </div>
-            <Link to="/add-post">
-              <button className={style.addButton}>ADD POST</button>
-            </Link>
           </div>
         </main>
+        <Link to="/add-post">
+          <button className={style.addButton}>ADD POST</button>
+        </Link>
       </section>
     </>
   );

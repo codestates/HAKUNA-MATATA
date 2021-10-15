@@ -22,7 +22,7 @@
   margin-top: 30px;
 }
 .withdrawalButton {
-  width: 414px;
+  width: 100%;
   padding: 20px;
   background-color: #737373;
   border-radius: 3px;
@@ -31,7 +31,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 1.45em;
-  padding: 20 0;
+  padding: 20px 0;
   border: none;
   cursor: pointer;
 }
@@ -42,7 +42,7 @@
 }
 
 .input {
-  width: 414px;
+  width: 100%;
   height: 50px;
   border: 1px solid #f3887e;
   border-radius: 3px;
@@ -60,7 +60,7 @@
 }
 
 .button {
-  width: 414px;
+  width: 100%;
   padding: 20px;
   background-color: #f3887e;
   border-radius: 3px;
@@ -69,7 +69,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 1.45em;
-  padding: 20 0;
+  padding: 20px 0;
   border: none;
   cursor: pointer;
 }

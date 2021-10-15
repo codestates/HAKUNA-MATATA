@@ -21,7 +21,7 @@ const Profile = () => {
   const handleSaveProfile = () => {
     const { nickname, userBio } = profileInfo;
     if (!nickname) {
-      console.log('닉네임 칸을 입력해주세요.');
+      // console.log('닉네임 칸을 입력해주세요.');
       return;
     }
 

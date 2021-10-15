@@ -42,7 +42,7 @@ function ModalInput({ placeholder }) {
         { withCredentials: true }
       )
       .then((res) => {
-        console.log(res.data.userInfo);
+        // console.log(res.data.userInfo);
         dispatch(getUserInfo(res.data.userInfo));
         dispatch(profile());
         dispatch(login());

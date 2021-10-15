@@ -14,7 +14,7 @@ import { REACT_APP_API_URL } from '../../config.js';
 const Mypost = ({ postInfo, getMypost }) => {
   const [dotButton, setDotButton] = useState(false);
   const [posts, setPosts] = useState([]);
-  console.log(posts);
+  // console.log(posts);
   const history = useHistory();
   const handleDotButton = () => {
     setDotButton(!dotButton);
@@ -22,14 +22,10 @@ const Mypost = ({ postInfo, getMypost }) => {
   const handleDelete = async (e) => {
     const postId = e.target.id;
     try {
-      const deletePost = await axios.delete(
-        `${REACT_APP_API_URL}/posts/${postId}`,
-        {
-          withCredentials: true
-        }
-      );
+      await axios.delete(`${REACT_APP_API_URL}/posts/${postId}`, {
+        withCredentials: true
+      });
       getMypost();
-      console.log(deletePost);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +33,7 @@ const Mypost = ({ postInfo, getMypost }) => {
   const getPostId = async () => {
     try {
       const url = `${REACT_APP_API_URL}/posts/${postInfo.id}`;
-      console.log('path', url);
+      // console.log('path', url);
       const response = await axios.get(url, {
         withCredentials: true
       });
@@ -54,7 +50,7 @@ const Mypost = ({ postInfo, getMypost }) => {
 
   return (
     <li className={style.post}>
-      <div>
+      <div className={style.postInfo}>
         <div className={style.category}>{postInfo.category.name}</div>
         <div className={style.postTitle}>{postInfo.title}</div>
         <div className={style.subInfo}>

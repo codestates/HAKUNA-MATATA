@@ -20,7 +20,7 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
 
       const newCommentId = await axios.post(url, { content: comment }, config);
 
-      console.log(posts);
+      // console.log(posts);
       setPosts({ ...posts, comments: comments.length + 1 });
 
       if (newCommentId.data.id) {
@@ -29,7 +29,7 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
       }
 
       setCommentContent({});
-      console.log(comment);
+      // console.log(comment);
     } catch (err) {
       console.log(err);
     }

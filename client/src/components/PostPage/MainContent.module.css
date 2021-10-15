@@ -1,5 +1,6 @@
 .section1-header {
   width: 100%;
+  position: relative;
 }
 
 .section1-header p {
@@ -67,7 +68,7 @@
 .reactions .iconWrap p {
   display: flex;
   align-items: center;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .reactions .iconWrap p img {
@@ -106,13 +107,14 @@
   position: absolute;
   background-color: transparent;
   border: none;
-  top: 0;
+  top: -8px;
   right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35px;
   height: 35px;
+  cursor: pointer;
 }
 
 .dotBox img {
@@ -142,7 +144,7 @@
   border-radius: 5px;
   position: absolute;
   right: 20px;
-  top: 25px;
+  top: 17px;
   z-index: 10;
 
   background-color: #fff;

@@ -113,7 +113,7 @@ const Post = () => {
           setPosts={setPosts}
           name={name}
         />
-
+        <h4 className={style.commentTitle}>댓글</h4>
         {comments.map((comment) => {
           return (
             <CommentItem
