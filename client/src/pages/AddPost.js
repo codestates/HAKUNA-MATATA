@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { showLoginModal } from '../store/modal-slice';
 import axios from 'axios';
 import Select from 'react-select';
 import style from './AddPost.module.css';
@@ -13,7 +15,11 @@ const options = [
 ];
 
 const AddPost = () => {
-  let history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const loginState = useSelector((state) => state.isLogin);
+  const { isLogin } = loginState;
 
   const [content, setContents] = useState('');
   const [title, setTitle] = useState('');
@@ -23,15 +29,20 @@ const AddPost = () => {
 
   const addPostHandler = async () => {
     try {
-      const addpost = await axios.post(`${REACT_APP_API_URL}/posts`, body, {
-        withCredentials: true
-      });
+      if (!isLogin) {
+        dispatch(showLoginModal(true));
+      }
+      if (title && content && isLogin) {
+        const addpost = await axios.post(`${REACT_APP_API_URL}/posts`, body, {
+          withCredentials: true
+        });
 
-      // console.log(addpost);
-
-      history.push(`/posts/${addpost.data.id}`);
+        history.push(`/posts/${addpost.data.id}`);
+      }
     } catch (err) {
-      console.log(err);
+      if (!isLogin) {
+        if (!isLogin) dispatch(showLoginModal(true));
+      }
     }
   };
 

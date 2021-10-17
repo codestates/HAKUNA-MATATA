@@ -155,6 +155,21 @@ hr {
   color: #f3887e;
 }
 
+.emplyBox {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emplyBox img {
+  width: auto;
+  height: auto;
+}
+.emplyBox p {
+  font-weight: 600;
+}
+
 @media all and (max-width: 640px) {
   .mypage {
     padding: 0 30px;

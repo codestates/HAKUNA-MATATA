@@ -12,9 +12,9 @@ module.exports = {
       // 이미지 파일 존재 확인 후 리턴
       try {
         fs.readFileSync(path.join(__dirname, `../../${userInfo.image}`));
-        res.sendFile(path.join(__dirname, `../../${userInfo.image}`));
+        return res.sendFile(path.join(__dirname, `../../${userInfo.image}`));
       } catch (err) {
-        res.status(404).json({ message: 'Not Found!' });
+        return res.status(404).json({ message: 'Not Found!' });
       }
     } catch (err) {
       console.error(err);
@@ -26,11 +26,11 @@ module.exports = {
       uploadProfile(req, res, (err) => {
         // upload 권한이 없는 경우
         if (err) {
-          return res.status(err.code).json({ message: err.message });
+          return res.status(400).json({ message: err.message });
         }
         // upload 할 파일이 존재하지 않는 경우
         if (req.file === undefined) {
-          return res.status(400).json({ message: 'Bad Request!' });
+          return res.status(400).json({ message: 'Bad Request! 존재안함' });
         }
         req.file = req.file;
         next();

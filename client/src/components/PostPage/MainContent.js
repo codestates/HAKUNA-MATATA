@@ -12,17 +12,25 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { REACT_APP_API_URL } from '../../config';
 
-const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
+const MainContent = ({
+  liked,
+  likeHandler,
+  posts,
+  author,
+  category,
+  setPosts
+}) => {
+  const history = useHistory();
+
   const loginState = useSelector((state) => state.isLogin);
   const { isLogin } = loginState;
-  let history = useHistory();
 
+  const [showModifyBox, setShowModifyBoxHandler] = useState(false);
   const [dotButton, setDotButton] = useState(false);
   const [modifyPost, setModifyPost] = useState({
     title: '',
     contents: ''
   });
-  const [showModifyBox, setShowModifyBoxHandler] = useState(false);
 
   const handleDotButton = () => {
     setDotButton(!dotButton);
@@ -79,7 +87,6 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
         const newlyUpdatedPosts = await axios.get(
           `${REACT_APP_API_URL}/posts/${postId}`
         );
-        // console.log(newlyUpdatedPosts);
         setPosts(newlyUpdatedPosts);
         setShowModifyBoxHandler(false);
       }
@@ -91,15 +98,19 @@ const MainContent = ({ liked, likeHandler, posts, author, setPosts }) => {
   return (
     <section className={style.section1}>
       <div className={style['section1-header']}>
-        <p>전체 &gt; 카테고리 &gt; {posts.title}</p>
-        <button
-          className={
-            dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
-          }
-          onClick={handleDotButton}
-        >
-          <img src={dotMenu} alt="dot-menu bar" />
-        </button>
+        <p>
+          전체 &gt; {category.name} &gt; {posts.title}
+        </p>
+        {isLogin && (
+          <button
+            className={
+              dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
+            }
+            onClick={handleDotButton}
+          >
+            <img src={dotMenu} alt="dot-menu bar" />
+          </button>
+        )}
         {dotButton && (
           <div className={style.menuBox}>
             <button
@@ -191,6 +202,7 @@ MainContent.propTypes = {
   likeHandler: PropTypes.any,
   posts: PropTypes.any,
   author: PropTypes.any,
+  category: PropTypes.any,
   pathName: PropTypes.any,
   setPosts: PropTypes.any
 };

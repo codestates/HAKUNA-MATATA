@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import style from './Mypage.module.css';
 import userImage from '../images/icons/user.png';
 import pencilImage from '../images/icons/pencil.png';
+import emptyImg from '../images/empty.jpeg';
 import Profile from '../components/Mypage/Profile';
 import Mypost from '../components/Mypage/Mypost';
 import Setting from '../components/Mypage/Setting';
 import { useSelector, useDispatch } from 'react-redux';
 import { profile, mypost, setting } from '../store/move-slice';
-import { getUserInfo, logout } from '../store/login-slice';
+import { getUserInfo } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { REACT_APP_API_URL } from '../config';
 
 axios.defaults.withCredentials = true;
 
 const Mypage = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const dispatch = useDispatch();
   const movePage = useSelector((state) => state.movePage);
   const userInfo = useSelector((state) => state.isLogin.userInfo);
@@ -32,14 +33,23 @@ const Mypage = () => {
 
   const userAutn = async () => {
     try {
-      const response = await axios.get(`${REACT_APP_API_URL}/users/userinfo`, {
+      const url = `${REACT_APP_API_URL}/users/`;
+      const res = await axios.get(url + 'userinfo', { withCredentials: true });
+      dispatch(getUserInfo(res.data.userInfo));
+
+      const profileImg = await axios.get(url + 'profile', {
         withCredentials: true
       });
-      dispatch(getUserInfo(response.data.userInfo));
+      console.log(profileImg);
+
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(profileImg.data);
+      // fileReader.onload = (e) => {
+      //   console.log(e.target);
+      // };
     } catch (err) {
-      console.log(err);
-      dispatch(logout());
-      history.push('/');
+      //dispatch(logout());
+      //history.push('/');
     }
   };
 
@@ -61,26 +71,26 @@ const Mypage = () => {
   const processImage = async (e) => {
     try {
       const imageFile = e.target.files[0];
+      if (!imageFile) return;
 
+      // 프로필 이미지 상태 변경
       const fileReader = new FileReader();
-      if (imageFile) {
-        fileReader.readAsDataURL(imageFile);
-      }
+      fileReader.readAsDataURL(e.target.files[0]);
+      fileReader.onload = (e) => {
+        setImgSrc(e.target.result);
+      };
 
-      fileReader.onload = (e) => setImgSrc(e.target.result);
+      // POST 요청을 위한 formData 생성
+      const formData = new FormData();
+      formData.append('image', imageFile);
 
-      if (imageFile) {
-        const formdata = new FormData();
-        formdata.append('image', imageFile);
-        const response = await axios.post(
-          `${REACT_APP_API_URL}/users/profile`,
-          { image: formdata },
-          { headers: { 'Content-Type': 'multipart/form-data' } }
-        );
-        // console.log(response);
-        userAutn();
-        setImgSrc(response.data.location.image);
-      }
+      const url = `${REACT_APP_API_URL}/users/profile`;
+      const response = await axios.post(url, formData, {
+        withCredentials: true
+      });
+      console.log('업로드 성공');
+      console.log(response);
+      userAutn();
     } catch (err) {
       console.log(err);
     }
@@ -108,11 +118,11 @@ const Mypage = () => {
               </label>
               <input
                 type="file"
+                name="image"
                 id="fileUpload"
                 className={style.hide}
                 onChange={processImage}
               />
-
               <div>
                 <div className={style.username}>{userInfo.nickname}</div>
                 <div className={style.introduce}>{userInfo.bio}</div>
@@ -160,22 +170,28 @@ const Mypage = () => {
                 </button>
               </div>
               <div className={style.inputContainer}>
-                {movePage.profile ? <Profile /> : null}
-                {movePage.mypost ? (
+                {movePage.profile && <Profile />}
+                {movePage.mypost && (
                   <ul className={style.overflow}>
-                    {userPosts.map((post) => {
-                      return (
-                        <Mypost
-                          key={post.id}
-                          postInfo={post}
-                          getMypost={getMypost}
-                        />
-                      );
-                    })}
+                    {userPosts.length ? (
+                      userPosts.map((post) => {
+                        return (
+                          <Mypost
+                            key={post.id}
+                            postInfo={post}
+                            getMypost={getMypost}
+                          />
+                        );
+                      })
+                    ) : (
+                      <div className={style.emplyBox}>
+                        <img src={emptyImg} />
+                        <p>컨텐츠가 비었습니다.</p>
+                      </div>
+                    )}
                   </ul>
-                ) : null}
-
-                {movePage.setting ? <Setting /> : null}
+                )}
+                {movePage.setting && <Setting />}
               </div>
             </div>
           </div>

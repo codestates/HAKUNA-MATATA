@@ -8,9 +8,9 @@ module.exports = {
   sendAccessToken: (res, accessToken) => {
     const cookieOptions = {
       maxAge: 1000 * 60 * 60 * 24 * 7,
-      secure: true,
-      httpOnly: true,
-      sameSite: 'none'
+      // secure: true,
+      httpOnly: true
+      // sameSite: 'none'
     };
     res.cookie('accessToken', accessToken, cookieOptions);
   },

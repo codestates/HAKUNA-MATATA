@@ -6,6 +6,7 @@ import './reset.css';
 import './index.css';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import modalSlice from './store/modal-slice';
 import authSlice from './store/login-slice';
 import movePage from './store/move-slice';
 import posts from './store/post-slice';
@@ -13,6 +14,7 @@ import comments from './store/comments-slice';
 import filterpost from './store/filterpost-slice';
 const store = configureStore({
   reducer: {
+    modal: modalSlice,
     isLogin: authSlice,
     movePage: movePage,
     posts: posts,

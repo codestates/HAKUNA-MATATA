@@ -11,21 +11,21 @@ const Footer = () => {
       <footer className={style.footer}>
         <div className={style.images}>
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/thehada___official/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <img src={instagram} />
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/codestates/HAKUNA-MATATA"
             rel="noopener noreferrer"
             target="_blank"
           >
             <img src={github} />
           </a>
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/channel/UCPq9cHp36WkxVWRyVghkPhQ"
             rel="noopener noreferrer"
             target="_blank"
           >
