@@ -39,9 +39,8 @@ const EditPost = () => {
     setContent(e.target.value);
   };
 
-  const categoryHandler = (e) => {
+  const categoryHandler = () => {
     setCategory(options.value);
-    console.dir(e.value);
   };
 
   const editPostHandler = async () => {

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-// import SignupModalInput from './SignupModalInput';
-// import ModalButton from './ModalButton';
 import SignupInput from './SignupInput';
 import style from './SignupModal.module.css';
 import UsingAgreeModal from './UsingAgreeModal';
 import PersonalAgree from './PersonalAgree';
 import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
+import { useDispatch } from 'react-redux';
+import { showLoginModal, showSignupModal } from '../../store/modal-slice';
 
-function SignupModal({ handleLoginModal, handleSignupModal, setSignupModal }) {
+function SignupModal({ setSignupModal }) {
+  const dispatch = useDispatch();
+
   const [usingOpen, setUsingOpen] = useState(false);
   const [PersonalOpen, setPersonalOpen] = useState(false);
-  const openLoginModal = () => {
-    handleSignupModal();
-    handleLoginModal();
-  };
+
   const openModalHandler = () => {
     setUsingOpen(!usingOpen);
   };
@@ -22,9 +21,15 @@ function SignupModal({ handleLoginModal, handleSignupModal, setSignupModal }) {
   const openPersonalHandler = () => {
     setPersonalOpen(!PersonalOpen);
   };
+
   return ReactDom.createPortal(
     <div className={style.containerWrap}>
-      <div className={style.containerbg} onClick={handleSignupModal}></div>
+      <div
+        className={style.containerbg}
+        onClick={() => {
+          dispatch(showSignupModal(false));
+        }}
+      ></div>
       <div className={style.container}>
         {usingOpen && (
           <div className={style.modalBackDrop} onClick={openModalHandler}>
@@ -77,7 +82,13 @@ function SignupModal({ handleLoginModal, handleSignupModal, setSignupModal }) {
         <div className={style.inputBox}>
           <SignupInput setSignupModal={setSignupModal} />
         </div>
-        <div className={style.signup} onClick={openLoginModal}>
+        <div
+          className={style.signup}
+          onClick={() => {
+            dispatch(showLoginModal(true));
+            dispatch(showSignupModal(false));
+          }}
+        >
           하쿠나 마타타에 로그인 하세요.
         </div>
       </div>

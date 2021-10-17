@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { showLoginModal, showSignupModal } from '../../store/modal-slice';
 import style from './SignupInput.module.css';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config';
 
 function SignupInput() {
+  const dispatch = useDispatch();
+
   const [signupInfo, setSignupInfo] = useState({
     email: '',
     password: '',
     confirmPassword: ''
   });
-
   const [emailErr, setEmailErr] = useState('hidden');
   const [passwordErr, setPasswordErr] = useState('hidden');
   const [confirmPasswordErr, setConfirmPasswordErr] = useState('hidden');
@@ -116,13 +119,12 @@ function SignupInput() {
         await axios.post(
           `${REACT_APP_API_URL}/users/signup`,
           { email, password },
-          {
-            withCredentials: true
-          }
+          { withCredentials: true }
         );
-
-        alert('하쿠나마타타! 환영합니다🎉');
         resetInfo();
+        dispatch(showLoginModal(true));
+        dispatch(showSignupModal(false));
+        alert('하쿠나마타타! 환영합니다🎉');
       } catch (err) {
         console.log(err);
         alert('회원가입에 실패하였습니다. 다시 시도해주세요🎯');

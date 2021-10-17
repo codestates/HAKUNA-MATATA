@@ -1,53 +1,43 @@
 import React, { useState } from 'react';
-import style from './Header.module.css';
-import Logo from './Logo';
-import userImg from '../images/icons/user.png';
-import LoginModal from './Modal/LoginModal';
-import SignupModal from './Modal/SignupModal';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { profile } from '../store/move-slice';
 import { logout } from '../store/login-slice';
 import { useHistory } from 'react-router';
+import style from './Header.module.css';
+import Logo from './Logo';
+import userImg from '../images/icons/user.png';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { showLoginModal, showSignupModal } from '../store/modal-slice';
 import { REACT_APP_API_URL } from '../config';
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [loginModal, setLoginModal] = useState(false);
-  const [signupModal, setSignupModal] = useState(false);
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const isLogin = useSelector((state) => state.isLogin.isLogin);
   const movePage = useSelector((state) => state.movePage);
+  const modal = useSelector((state) => state.modal);
+  const { loginModal, signupModal } = modal;
 
-  const history = useHistory();
-  const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLoginModal = () => {
-    setLoginModal(!loginModal);
-  };
-
-  const handleSignupModal = () => {
-    setSignupModal(!signupModal);
-  };
-
-  const handleLogout = () => {
-    axios
-      .post(
+  const handleLogout = async () => {
+    try {
+      await axios.post(
         `${REACT_APP_API_URL}/users/logout`,
         {},
-        {
-          withCredentials: true
-        }
-      )
-      .then(() => {
-        dispatch(logout());
-        history.push('/');
-      });
+        { withCredentials: true }
+      );
+      dispatch(logout());
+      history.push('/');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   document.addEventListener('click', (e) => {
@@ -58,105 +48,73 @@ const Header = () => {
     ) {
       setIsOpen(false);
     }
-    // if (document.location.href !== '/mypage') {
-    //   dispatch(reset());
-    // }
   });
 
   return (
-    <>
-      <header className={style.header}>
-        <Logo />
-        <div className={style.navbar}>
-          <a
-            href="https://github.com/codestates/HAKUNA-MATATA/wiki"
-            target="_blank"
-            rel="noopener noreferrer"
+    <header className={style.header}>
+      <Logo />
+      <div className={style.navbar}>
+        <a
+          href="https://www.youtube.com/channel/UCPq9cHp36WkxVWRyVghkPhQ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>About</span>
+        </a>
+        <Link to="/">
+          <span>Board</span>
+        </Link>
+        <Link to="/add-post" className={style.addButton}>
+          <button className={`${style.bump} ${style.button}`}>
+            {' '}
+            + Add Post
+          </button>
+        </Link>
+        <img
+          src={userImg}
+          className={style.img}
+          alt="user image"
+          onClick={handleMenu}
+        />
+        <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
+          <button
+            className={loginModal ? `${style.font} ${style.focus}` : style.font}
+            onClick={() => dispatch(showLoginModal(true))}
           >
-            <span>About</span>
-          </a>
-          <Link to="/">
-            <span>Board</span>
-          </Link>
-          <Link to="/add-post" className={style.addButton}>
-            <button className={`${style.bump} ${style.button}`}>
-              {' '}
-              + Add Post
-            </button>
-          </Link>
-          <img
-            src={userImg}
-            className={style.img}
-            alt="user image"
-            onClick={handleMenu}
-          />
-          <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
-            <button
-              className={
-                loginModal ? `${style.font} ${style.focus}` : style.font
-              }
-              onClick={handleLoginModal}
-            >
-              로그인
-            </button>
-            <button
-              className={
-                signupModal ? `${style.font} ${style.focus}` : style.font
-              }
-              onClick={handleSignupModal}
-            >
-              회원가입
-            </button>
-          </div>
-          <div className={isOpen && isLogin ? style.successMenu : style.hidden}>
-            <button
-              className={
-                movePage.profile
-                  ? `${style.modifyButton} ${style.focus}`
-                  : style.modifyButton
-              }
-              onClick={() => {
-                dispatch(profile());
-                history.push('/mypage');
-              }}
-            >
-              마이페이지
-            </button>
-
-            <button className={style.modifyButton} onClick={handleLogout}>
-              로그아웃
-            </button>
-          </div>
+            로그인
+          </button>
+          <button
+            className={
+              signupModal ? `${style.font} ${style.focus}` : style.font
+            }
+            onClick={() => {
+              dispatch(showSignupModal(true));
+            }}
+          >
+            회원가입
+          </button>
         </div>
-      </header>
+        <div className={isOpen && isLogin ? style.successMenu : style.hidden}>
+          <button
+            className={
+              movePage.profile
+                ? `${style.modifyButton} ${style.focus}`
+                : style.modifyButton
+            }
+            onClick={() => {
+              dispatch(profile());
+              history.push('/mypage');
+            }}
+          >
+            마이페이지
+          </button>
 
-      {!isLogin && loginModal && (
-        <>
-          <div
-            className={loginModal && style.backDrop}
-            onClick={handleLoginModal}
-          ></div>
-          <LoginModal
-            handleSignupModal={handleSignupModal}
-            handleLoginModal={handleLoginModal}
-          />
-        </>
-      )}
-
-      {signupModal && (
-        <div>
-          <div
-            className={signupModal && style.backDrop}
-            onClick={handleSignupModal}
-          ></div>
-          <SignupModal
-            handleLoginModal={handleLoginModal}
-            handleSignupModal={handleSignupModal}
-            setSignupModal={setSignupModal}
-          />
+          <button className={style.modifyButton} onClick={handleLogout}>
+            로그아웃
+          </button>
         </div>
-      )}
-    </>
+      </div>
+    </header>
   );
 };
 

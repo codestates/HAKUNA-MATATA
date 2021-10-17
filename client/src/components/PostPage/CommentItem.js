@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import style from './CommentItem.module.css';
 import userImg from '../../images/icons/user.png';
-import { Link } from 'react-router-dom';
 import dotMenu from '../../images/icons/dot-menu.png';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -18,6 +19,9 @@ const CommentItem = ({
   const [dotButton, setDotButton] = useState(false);
   const [modifyContent, setModifyContent] = useState(comment.content);
   const [showModifyBox, setShowModifyBox] = useState(false);
+
+  const loginState = useSelector((state) => state.isLogin);
+  const { isLogin } = loginState;
 
   const url = `${REACT_APP_API_URL}/posts/${pathName}/comments`;
 
@@ -83,15 +87,16 @@ const CommentItem = ({
           <img className={style.userImg} src={userImg} alt="user image" />
           <span>{comment.user.nickname}</span>
         </p>
-        <button
-          className={
-            dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
-          }
-          onClick={handleDotButton}
-        >
-          <img src={dotMenu} alt="dot-menu bar" />
-        </button>
-
+        {isLogin && (
+          <button
+            className={
+              dotButton ? `${style.dotBox} ${style.dotClick}` : style.dotBox
+            }
+            onClick={handleDotButton}
+          >
+            <img src={dotMenu} alt="dot-menu bar" />
+          </button>
+        )}
         <div className={dotButton ? style.menuBox : style.hidden}>
           <Link to="#">
             <button
@@ -139,7 +144,8 @@ CommentItem.propTypes = {
   setComments: PropTypes.any,
   setPosts: PropTypes.any,
   posts: PropTypes.any,
-  comments: PropTypes.any
+  comments: PropTypes.any,
+  handleLoginModal: PropTypes.any
 };
 
 export default CommentItem;
