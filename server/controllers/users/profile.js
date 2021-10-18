@@ -12,7 +12,7 @@ module.exports = {
       // 이미지 파일 존재 확인 후 리턴
       try {
         fs.readFileSync(path.join(__dirname, `../../${userInfo.image}`));
-        return res.sendFile(path.join(__dirname, `../../${userInfo.image}`));
+        return res.send(path.join(__dirname, `../../${userInfo.image}`));
       } catch (err) {
         return res.status(404).json({ message: 'Not Found!' });
       }
