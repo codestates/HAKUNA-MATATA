@@ -12,6 +12,7 @@ import movePage from './store/move-slice';
 import posts from './store/post-slice';
 import comments from './store/comments-slice';
 import filterpost from './store/filterpost-slice';
+
 const store = configureStore({
   reducer: {
     modal: modalSlice,
