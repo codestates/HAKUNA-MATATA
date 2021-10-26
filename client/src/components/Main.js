@@ -9,10 +9,11 @@ import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
 import Banner from './Banner';
-
+import Callback from './Mypage/Callback';
 const Main = () => {
   const loginState = useSelector((state) => state.isLogin);
   const { isLogin } = loginState;
+  console.log(isLogin);
 
   return (
     <main>
@@ -25,7 +26,7 @@ const Main = () => {
         </Route>
         <Route path="/mypage">
           <Banner title={''} />
-          {!isLogin ? <Redirect to="/" /> : <MyPage />}
+          {isLogin ? <MyPage /> : <Redirect to="/" />}
         </Route>
         <Route path="/posts/:postId">
           <Banner title={'고민글'} />
@@ -41,6 +42,9 @@ const Main = () => {
         </Route>
         <Route path="/404">
           <ErrorPage />
+        </Route>
+        <Route path="/callback">
+          <Callback />
         </Route>
       </Switch>
     </main>

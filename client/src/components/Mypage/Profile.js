@@ -21,7 +21,9 @@ const Profile = () => {
   const handleSaveProfile = async () => {
     try {
       const { nickname, userBio } = profileInfo;
-      if (!nickname) return;
+      if (!nickname) {
+        alert('닉네임을 입력해주세요');
+      }
       const response = await axios.patch(
         `${REACT_APP_API_URL}/users/userinfo`,
         { nickname, userBio },
@@ -44,7 +46,7 @@ const Profile = () => {
       <input className={style.disabled} placeholder={userInfo.email} disabled />
       <input
         placeholder="닉네임을 입력하세요."
-        value={profileInfo.nickname}
+        value={profileInfo.nickname || ''}
         className={style.input}
         onChange={onChangeInput('nickname')}
       />
@@ -52,7 +54,7 @@ const Profile = () => {
         placeholder="소개를 입력하세요."
         className={style.textarea}
         onChange={onChangeInput('userBio')}
-        value={'' || profileInfo.userBio}
+        value={profileInfo.userBio || ''}
       ></textarea>
       <button className={style.button} onClick={handleSaveProfile}>
         프로필 저장
