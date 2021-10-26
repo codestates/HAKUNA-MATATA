@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { login, getUserInfo } from '../../store/login-slice';
 import { profile } from '../../store/move-slice';
 import { REACT_APP_API_URL } from '../../config';
+import github from '../../images/icons/github.png';
 
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -30,6 +31,12 @@ function ModalInput({ placeholder }) {
       setFormIsValid(false);
     }
   }, [enteredEmailIsValid, enteredPwIsValid]);
+
+  const socialLoginHandler = () => {
+    window.location.assign(
+      'https://github.com/login/oauth/authorize?client_id=17c8170cceb9ae757d2e'
+    );
+  };
 
   const handleLogin = () => {
     axios
@@ -132,7 +139,12 @@ function ModalInput({ placeholder }) {
           로그인
         </button>
 
-        <button className={style.modalOauth}>깃허브로 로그인</button>
+        <button className={style.modalOauth} onClick={socialLoginHandler}>
+          <div className={style.gihubLogin}>
+            <img src={github} />
+            깃허브로 로그인
+          </div>
+        </button>
       </div>
     </form>
   );

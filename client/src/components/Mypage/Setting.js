@@ -28,9 +28,9 @@ const Setting = () => {
     const { password, checkPassword } = changePassword;
     // console.log(password, checkPassword);
     if (!password || !checkPassword) {
-      console.log('빈칸을 채워주세요');
+      alert('빈칸을 채워주세요');
     } else if (password !== checkPassword) {
-      console.log('비밀번호가 일치하지 않습니다.');
+      alert('비밀번호가 일치하지 않습니다.');
     } else {
       axios
         .patch(
@@ -42,9 +42,7 @@ const Setting = () => {
             withCredentials: true
           }
         )
-        .then((res) =>
-          console.log(res, '성공적으로 비밀번호가 변경되었습니다.')
-        );
+        .then(() => alert('성공적으로 비밀번호가 변경되었습니다.'));
     }
     setChangePassword({
       password: '',
