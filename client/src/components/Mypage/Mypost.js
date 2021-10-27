@@ -9,16 +9,16 @@ import eye from '../../images/icons/eye.png';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config.js';
 
-// import { useSelector } from 'react-redux';
-
 const Mypost = ({ postInfo, getMypost }) => {
+  const history = useHistory();
+
   const [dotButton, setDotButton] = useState(false);
   const [posts, setPosts] = useState([]);
-  // console.log(posts);
-  const history = useHistory();
+
   const handleDotButton = () => {
     setDotButton(!dotButton);
   };
+
   const handleDelete = async (e) => {
     const postId = e.target.id;
     try {
@@ -30,10 +30,10 @@ const Mypost = ({ postInfo, getMypost }) => {
       console.log(err);
     }
   };
+
   const getPostId = async () => {
     try {
       const url = `${REACT_APP_API_URL}/posts/${postInfo.id}`;
-      // console.log('path', url);
       const response = await axios.get(url, {
         withCredentials: true
       });

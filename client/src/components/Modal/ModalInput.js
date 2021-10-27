@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { login, getUserInfo } from '../../store/login-slice';
 import { profile } from '../../store/move-slice';
 import { REACT_APP_API_URL } from '../../config';
+import github from '../../images/icons/github.png';
+// import GoogleLogin from 'react-google-login';
 
 function ModalInput({ placeholder }) {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -30,6 +32,25 @@ function ModalInput({ placeholder }) {
       setFormIsValid(false);
     }
   }, [enteredEmailIsValid, enteredPwIsValid]);
+  // const onSuccessGoogle = (res) => {
+  //   console.log(res);
+  //   console.log('로그인성공');
+  //   dispatch(login());
+  //   history.push('/mypage');
+  // };
+  // const onFailureGoogle = () => {
+  //   console.log('로그인 실패');
+  // };
+  const socialLoginHandler = () => {
+    window.location.assign(
+      'https://github.com/login/oauth/authorize?client_id=17c8170cceb9ae757d2e'
+    );
+  };
+  // const kakaoHandler = () => {
+  //   window.location.assign(
+  //     'https://kauth.kakao.com/oauth/authorize?client_id=75011143644a81f5cebbd1fcd73a2abe&redirect_uri=http://localhost:3000/callback&response_type=code'
+  //   );
+  // };
 
   const handleLogin = () => {
     axios
@@ -132,7 +153,24 @@ function ModalInput({ placeholder }) {
           로그인
         </button>
 
-        <button className={style.modalOauth}>깃허브로 로그인</button>
+        <button className={style.modalOauth} onClick={socialLoginHandler}>
+          <div className={style.gihubLogin}>
+            <img src={github} />
+            깃허브로 로그인
+          </div>
+        </button>
+        {/* <button className={style.modalOauth} onClick={kakaoHandler}>
+          <div className={style.gihubLogin}>
+            <img src={github} />
+            카카오톡으로 로그인
+          </div>
+        </button>
+        <GoogleLogin
+          clientId="832180924318-udhdrarrb2drp04jtkgolpal7kj5q0gn.apps.googleusercontent.com"
+          onSuccess={onSuccessGoogle}
+          onFailure={onFailureGoogle}
+          cookiePolicy="single_host_origin"
+        /> */}
       </div>
     </form>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import MyPage from '../pages/Mypage';
 import Post from '../pages/Post';
 import Board from '../pages/Board';
@@ -8,8 +9,12 @@ import AddPost from '../pages/AddPost';
 import EditPost from '../pages/EditPost';
 import ErrorPage from '../pages/ErrorPage';
 import Banner from './Banner';
-
+import Callback from './Mypage/Callback';
 const Main = () => {
+  const loginState = useSelector((state) => state.isLogin);
+  const { isLogin } = loginState;
+  console.log(isLogin);
+
   return (
     <main>
       <Switch>
@@ -21,7 +26,7 @@ const Main = () => {
         </Route>
         <Route path="/mypage">
           <Banner title={''} />
-          <MyPage />
+          {isLogin ? <MyPage /> : <Redirect to="/" />}
         </Route>
         <Route path="/posts/:postId">
           <Banner title={'고민글'} />
@@ -37,6 +42,9 @@ const Main = () => {
         </Route>
         <Route path="/404">
           <ErrorPage />
+        </Route>
+        <Route path="/callback">
+          <Callback />
         </Route>
       </Switch>
     </main>

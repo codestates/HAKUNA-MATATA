@@ -13,13 +13,13 @@ process.on('uncaughtException', (err) => {
 });
 
 // Create uploads folder
-try {
-  fs.readdirSync('uploads');
-} catch (err) {
-  console.log('uploads/profile 폴더가 없어 uploads/profile 폴더를 생성합니다.');
-  fs.mkdirSync('uploads');
-  fs.mkdirSync('uploads/profile');
-}
+// try {
+//   fs.readdirSync('uploads');
+// } catch (err) {
+//   console.log('uploads/profile 폴더가 없어 uploads/profile 폴더를 생성합니다.');
+//   fs.mkdirSync('uploads');
+//   fs.mkdirSync('uploads/profile');
+// }
 
 // Middleware
 app.use(morgan('dev'));
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: [process.env.CLIENT_ORIGIN],
+    origin: [process.env.CLIENT_ORIGIN, process.env.CLIENT_ORIGIN_SUB],
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS']
   })

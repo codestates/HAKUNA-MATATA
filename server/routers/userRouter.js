@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { users, oauth } = require('../controllers');
+const uploadProfile = require('../middlewares/uploadProfile');
 
-router.post('/signup', users.signup);
-router.post('/signin', users.signin);
-router.post('/logout', users.logout);
-router.post('/oauth/github', oauth.github);
+router.get('/auth', users.auth);
 
 router
   .route('/userinfo')
@@ -12,7 +10,16 @@ router
   .patch(users.userinfo.patch)
   .delete(users.userinfo.delete);
 
-router.get('/profile', users.profile.get);
-router.post('/profile', users.profile.errhandle, users.profile.upload);
+router.post('/signup', users.signup);
+router.post('/signin', users.signin);
+router.post('/logout', users.logout);
+router.post('/oauth/github', oauth.github);
+
+router.post(
+  '/profile',
+  users.profile.validation,
+  uploadProfile.single('image'),
+  users.profile.upload
+);
 
 module.exports = router;

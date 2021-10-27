@@ -11,8 +11,9 @@ const Post = () => {
   const [liked, setLiked] = useState(false);
   const [pathName, setPathName] = useState('');
   const [comments, setComments] = useState([]);
-  const [author, setAuthor] = useState({});
   const [posts, setPosts] = useState({});
+  const [author, setAuthor] = useState({});
+  const [category, setCategory] = useState({});
 
   const history = useHistory();
 
@@ -23,6 +24,7 @@ const Post = () => {
         withCredentials: true
       });
       const postId = response.data.posts.id;
+      setCategory(response.data.posts.category);
       setAuthor(response.data.posts.user);
       setPathName(postId);
       setPosts(response.data.posts);
@@ -50,7 +52,7 @@ const Post = () => {
       });
       setLiked(response.data.state);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -109,6 +111,7 @@ const Post = () => {
           likeHandler={likeHandler}
           posts={posts}
           author={author}
+          category={category}
           pathName={pathName}
           setPosts={setPosts}
           name={name}
