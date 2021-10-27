@@ -13,13 +13,13 @@ process.on('uncaughtException', (err) => {
 });
 
 // Create uploads folder
-try {
-  fs.readdirSync('uploads');
-} catch (err) {
-  console.log('uploads/profile 폴더가 없어 uploads/profile 폴더를 생성합니다.');
-  fs.mkdirSync('uploads');
-  fs.mkdirSync('uploads/profile');
-}
+// try {
+//   fs.readdirSync('uploads');
+// } catch (err) {
+//   console.log('uploads/profile 폴더가 없어 uploads/profile 폴더를 생성합니다.');
+//   fs.mkdirSync('uploads');
+//   fs.mkdirSync('uploads/profile');
+// }
 
 // Middleware
 app.use(morgan('dev'));
