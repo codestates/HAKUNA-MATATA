@@ -180,7 +180,12 @@ span:hover {
 }
 
 @media all and (max-width: 420px) {
+  .navbar img {
+    width: 30px;
+    height: 30px;
+  }
   .button {
-    display: none;
+    font-size: 12px;
+    margin: 0 10px 0 0;
   }
 }

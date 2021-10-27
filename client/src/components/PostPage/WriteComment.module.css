@@ -6,9 +6,17 @@
   margin: 30px 0;
 }
 
-.writecomment img {
-  width: 60px;
-  height: 60px;
+.userProfile {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+}
+
+.userProfile img {
+  width: auto;
+  height: 100%;
 }
 
 .textarea {
