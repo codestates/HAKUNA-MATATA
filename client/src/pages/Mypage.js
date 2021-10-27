@@ -40,13 +40,8 @@ const Mypage = () => {
       const profileImg = await axios.get(url + 'profile', {
         withCredentials: true
       });
-      console.log(profileImg);
-
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(profileImg.data);
-      // fileReader.onload = (e) => {
-      //   console.log(e.target);
-      // };
+      console.log(profileImg.data);
+      setImgSrc(profileImg.data);
     } catch (err) {
       //dispatch(logout());
       //history.push('/');
