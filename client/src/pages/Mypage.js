@@ -14,19 +14,18 @@ import { profile, mypost, setting } from '../store/move-slice';
 import { getUserInfo } from '../store/login-slice';
 import PropTypes from 'prop-types';
 import { REACT_APP_API_URL } from '../config';
+import { logout } from '../store/login-slice';
 
 axios.defaults.withCredentials = true;
 
 const Mypage = () => {
-  // const history = useHistory();
   const dispatch = useDispatch();
   const movePage = useSelector((state) => state.movePage);
   const userInfo = useSelector((state) => state.isLogin.userInfo);
   const [imgSrc, setImgSrc] = useState(userImage);
   const [userPosts, setUserPosts] = useState([]);
-
+  console.log(setUserPosts);
   useEffect(() => {
-    getMypost();
     userAutn();
     dispatch(profile());
   }, []);
@@ -36,30 +35,9 @@ const Mypage = () => {
       const url = `${REACT_APP_API_URL}/users/`;
       const res = await axios.get(url + 'userinfo', { withCredentials: true });
       dispatch(getUserInfo(res.data.userInfo));
-
-      const profileImg = await axios.get(url + 'profile', {
-        withCredentials: true
-      });
-      console.log(profileImg.data);
-      setImgSrc(profileImg.data);
     } catch (err) {
-      //dispatch(logout());
-      //history.push('/');
-    }
-  };
-
-  const getMypost = async () => {
-    try {
-      const response = await axios.get(
-        `${REACT_APP_API_URL}/posts?user=${userInfo.nickname}`,
-        {
-          withCredentials: true
-        }
-      );
-
-      setUserPosts(response.data.posts.rows);
-    } catch (err) {
-      console.log(err);
+      dispatch(logout());
+      history.push('/');
     }
   };
 
@@ -108,7 +86,14 @@ const Mypage = () => {
           <div className={style.container}>
             <div className={style.profileHeader}>
               <label htmlFor="fileUpload" className={style.imageContainer}>
-                <img src={imgSrc} className={style.userImage} />
+                <img
+                  src={
+                    userInfo.image
+                      ? `https://hakunamatata.kr${userInfo.image}`
+                      : imgSrc
+                  }
+                  className={style.userImage}
+                />
                 <img src={pencilImage} className={style.modifyImg} />
               </label>
               <input
@@ -140,7 +125,7 @@ const Mypage = () => {
                 </button>
                 <button
                   onClick={(e) => {
-                    getMypost();
+                    // getMypost();
                     mypostPage(e);
                   }}
                   className={
@@ -174,7 +159,7 @@ const Mypage = () => {
                           <Mypost
                             key={post.id}
                             postInfo={post}
-                            getMypost={getMypost}
+                            // getMypost={getMypost}
                           />
                         );
                       })
