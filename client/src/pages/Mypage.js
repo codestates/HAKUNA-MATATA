@@ -34,7 +34,7 @@ const Mypage = () => {
   const getMyPost = async () => {
     try {
       const response = await axios.get(
-        `${REACT_APP_API_URL}/posts?user=${userInfo.nickname}`,
+        `${REACT_APP_API_URL}/posts?user=${userInfo.id}`,
         { withCredentials: true }
       );
 

@@ -45,7 +45,6 @@ function Board() {
       });
       setActive(newPostPages);
       setPostItems(rows);
-      console.log(rows);
     } catch (err) {
       console.log(err);
     }
