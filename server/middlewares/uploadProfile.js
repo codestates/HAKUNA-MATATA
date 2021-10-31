@@ -15,7 +15,6 @@ const uploadProfile = multer({
     s3: s3,
     bucket: 'hakunamatata.kr',
     key: function (req, file, done) {
-      const ext = path.extname(file.originalname);
       done(null, 'resource/' + Date.now() + '-' + file.originalname);
     },
     acl: 'public-read',
