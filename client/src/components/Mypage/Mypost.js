@@ -110,6 +110,6 @@ const Mypost = ({ postInfo, getMypost }) => {
 
 Mypost.propTypes = {
   postInfo: PropTypes.any.isRequired,
-  getMypost: PropTypes.any.isRequired
+  getMypost: PropTypes.any
 };
 export default Mypost;
