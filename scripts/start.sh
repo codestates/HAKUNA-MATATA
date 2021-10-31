@@ -22,5 +22,8 @@ export AWS_S3_ACCESS_KEY_ID=$(aws ssm get-parameters --region ap-northeast-2 --n
 export AWS_S3_SECRET_ACCESS_KEY=$(aws ssm get-parameters --region ap-northeast-2 --names S3_SECRET_ACCESS_KEY --query Parameters[0].Value | sed 's/"//g')
 export AWS_S3_REGION=$(aws ssm get-parameters --region ap-northeast-2 --names S3_REGION --query Parameters[0].Value | sed 's/"//g')
 
+export GITHUB_CLIENT_ID=$(aws ssm get-parameters --region ap-northeast-2 --names HAKU_GITHUB_CLIENT_ID --query Parameters[0].Value | sed 's/"//g')
+export GITHUB_CLIENT_SECRET=$(aws ssm get-parameters --region ap-northeast-2 --names HAKU_GITHUB_CLIENT_SECRET --query Parameters[0].Value | sed 's/"//g')
+
 cd bin
 authbind --deep pm2 start www.js

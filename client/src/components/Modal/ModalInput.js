@@ -43,7 +43,7 @@ function ModalInput() {
   // };
   const socialLoginHandler = () => {
     window.location.assign(
-      'https://github.com/login/oauth/authorize?client_id=17c8170cceb9ae757d2e'
+      'https://github.com/login/oauth/authorize?client_id=29b9f52f3c23931924ee'
     );
   };
   // const kakaoHandler = () => {
