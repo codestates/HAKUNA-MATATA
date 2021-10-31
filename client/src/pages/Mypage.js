@@ -43,6 +43,7 @@ const Mypage = () => {
       console.log(err);
     }
   };
+
   const userAutn = async () => {
     try {
       const url = `${REACT_APP_API_URL}/users/`;
@@ -172,7 +173,7 @@ const Mypage = () => {
                           <Mypost
                             key={post.id}
                             postInfo={post}
-                            // getMypost={getMypost}
+                            getMyPost={getMyPost}
                           />
                         );
                       })

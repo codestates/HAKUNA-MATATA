@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
     // 등록한 유저의 닉네임을 초기화 한다.
     const updateUser = await newUser.update(
       {
-        nickname: 'user' + newUser.dataValues.id
+        nickname: 'user' + Date.now()
       },
       { where: { id: newUser.dataValues.id } }
     );
