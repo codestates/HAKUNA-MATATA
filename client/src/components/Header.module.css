@@ -27,9 +27,18 @@
   color: #f3887e;
 }
 
-.navbar img {
+.profileWrap {
   width: 45px;
   height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  margin-right: 10px;
+}
+
+.profileWrap img {
+  width: auto;
+  height: 100%;
 }
 
 .userImg {
@@ -180,7 +189,7 @@ span:hover {
 }
 
 @media all and (max-width: 420px) {
-  .navbar img {
+  .profileWrap {
     width: 30px;
     height: 30px;
   }
