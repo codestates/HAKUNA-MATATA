@@ -13,7 +13,6 @@ import Callback from './Mypage/Callback';
 const Main = () => {
   const loginState = useSelector((state) => state.isLogin);
   const { isLogin } = loginState;
-  console.log(isLogin);
 
   return (
     <main>

@@ -16,6 +16,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const isLogin = useSelector((state) => state.isLogin.isLogin);
+  const userInfo = useSelector((state) => state.isLogin.userInfo);
   const movePage = useSelector((state) => state.movePage);
   const modal = useSelector((state) => state.modal);
   const { loginModal, signupModal } = modal;
@@ -70,12 +71,18 @@ const Header = () => {
             + Add Post
           </button>
         </Link>
-        <img
-          src={userImg}
-          className={style.img}
-          alt="user image"
-          onClick={handleMenu}
-        />
+        <div className={style.profileWrap}>
+          <img
+            src={
+              userInfo.image
+                ? `https://hakunamatata.kr${userInfo.image}`
+                : userImg
+            }
+            className={style.img}
+            alt="user image"
+            onClick={handleMenu}
+          />
+        </div>
         <div className={isOpen && !isLogin ? style.menuBox : style.hidden}>
           <button
             className={loginModal ? `${style.font} ${style.focus}` : style.font}

@@ -12,6 +12,6 @@ const comments = createSlice({
   }
 });
 
-export const { addpost, logout, getposts } = comments.actions;
+export const { getposts } = comments.actions;
 
 export default comments.reducer;

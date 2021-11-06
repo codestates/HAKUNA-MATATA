@@ -9,7 +9,7 @@ import eye from '../../images/icons/eye.png';
 import axios from 'axios';
 import { REACT_APP_API_URL } from '../../config.js';
 
-const Mypost = ({ postInfo, getMypost }) => {
+const Mypost = ({ postInfo, getMyPost }) => {
   const history = useHistory();
 
   const [dotButton, setDotButton] = useState(false);
@@ -25,7 +25,7 @@ const Mypost = ({ postInfo, getMypost }) => {
       await axios.delete(`${REACT_APP_API_URL}/posts/${postId}`, {
         withCredentials: true
       });
-      getMypost();
+      getMyPost();
     } catch (err) {
       console.log(err);
     }
@@ -110,6 +110,6 @@ const Mypost = ({ postInfo, getMypost }) => {
 
 Mypost.propTypes = {
   postInfo: PropTypes.any.isRequired,
-  getMypost: PropTypes.any.isRequired
+  getMyPost: PropTypes.any
 };
 export default Mypost;

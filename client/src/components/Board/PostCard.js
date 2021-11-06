@@ -56,7 +56,15 @@ export default function PostCard({ itemInfo }) {
                 </div>
                 <div className={style.mainInfo}>
                   <div className={style.userInfo}>
-                    <img src={user} />
+                    <div className={style.userProfile}>
+                      <img
+                        src={
+                          itemInfo.user.image
+                            ? `https://hakunamatata.kr${itemInfo.user.image}`
+                            : user
+                        }
+                      />
+                    </div>
                     <span>{itemInfo.user.nickname}</span>
                   </div>
                   <div className={style.dateInfo}>

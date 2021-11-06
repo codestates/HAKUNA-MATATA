@@ -10,7 +10,7 @@ import { REACT_APP_API_URL } from '../../config';
 import github from '../../images/icons/github.png';
 // import GoogleLogin from 'react-google-login';
 
-function ModalInput({ placeholder }) {
+function ModalInput() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
@@ -43,7 +43,7 @@ function ModalInput({ placeholder }) {
   // };
   const socialLoginHandler = () => {
     window.location.assign(
-      'https://github.com/login/oauth/authorize?client_id=17c8170cceb9ae757d2e'
+      'https://github.com/login/oauth/authorize?client_id=29b9f52f3c23931924ee'
     );
   };
   // const kakaoHandler = () => {
@@ -115,7 +115,7 @@ function ModalInput({ placeholder }) {
         <input
           id="email"
           type="email"
-          placeholder={placeholder}
+          placeholder="이메일"
           className={style.modalInput}
           onChange={emailChangeHandler}
           onBlur={emailInputBlurHandler}
@@ -144,7 +144,7 @@ function ModalInput({ placeholder }) {
         )}
       </div>
 
-      <div>
+      <div className={style.buttonWrap}>
         <button
           className={style.modalButton}
           disabled={!formIsValid}
@@ -154,9 +154,9 @@ function ModalInput({ placeholder }) {
         </button>
 
         <button className={style.modalOauth} onClick={socialLoginHandler}>
-          <div className={style.gihubLogin}>
+          <div className={style.githubLogin}>
             <img src={github} />
-            깃허브로 로그인
+            <span>깃허브로 로그인</span>
           </div>
         </button>
         {/* <button className={style.modalOauth} onClick={kakaoHandler}>
@@ -177,7 +177,6 @@ function ModalInput({ placeholder }) {
 }
 
 ModalInput.propTypes = {
-  placeholder: PropTypes.any,
   password: PropTypes.any
 };
 export default ModalInput;

@@ -16,19 +16,23 @@ function LoginModal() {
         onClick={() => dispatch(showLoginModal(false))}
       ></div>
       <div className={style.container}>
-        <h2 className={style.title}>로그인</h2>
-        <div className={style.modalExplain}>하쿠나 마타타에 로그인 하세요.</div>
-        <div className={style.inputBox}>
-          <ModalInput />
-        </div>
-        <div
-          className={style.signup}
-          onClick={() => {
-            dispatch(showLoginModal(false));
-            dispatch(showSignupModal(true));
-          }}
-        >
-          하쿠나 마타타에 회원가입 하세요.
+        <div>
+          <h2 className={style.title}>로그인</h2>
+          <div className={style.modalExplain}>
+            하쿠나 마타타에 로그인 하세요.
+          </div>
+          <div className={style.inputBox}>
+            <ModalInput />
+          </div>
+          <div
+            className={style.signup}
+            onClick={() => {
+              dispatch(showLoginModal(false));
+              dispatch(showSignupModal(true));
+            }}
+          >
+            하쿠나 마타타에 회원가입 하세요.
+          </div>
         </div>
       </div>
     </div>,
