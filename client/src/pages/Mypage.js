@@ -24,11 +24,25 @@ const Mypage = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
   const [imgSrc, setImgSrc] = useState(userImage);
   const [userPosts, setUserPosts] = useState([]);
-  console.log('setUserPosts', setUserPosts);
+
   useEffect(() => {
     userAutn();
     dispatch(profile());
+    getMyPost();
   }, []);
+
+  const getMyPost = async () => {
+    try {
+      const response = await axios.get(
+        `${REACT_APP_API_URL}/posts?user=${userInfo.id}`,
+        { withCredentials: true }
+      );
+
+      setUserPosts(response.data.posts.rows);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const userAutn = async () => {
     try {
@@ -159,7 +173,7 @@ const Mypage = () => {
                           <Mypost
                             key={post.id}
                             postInfo={post}
-                            // getMypost={getMypost}
+                            getMyPost={getMyPost}
                           />
                         );
                       })

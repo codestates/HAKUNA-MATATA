@@ -87,13 +87,24 @@
   padding-top: 10px;
 }
 .userInfo {
+  display: flex;
+  align-items: center;
   width: 100%;
 }
-.userInfo > img {
-  width: auto;
+
+.userProfile {
+  width: 20px;
   height: 20px;
+  overflow: hidden;
   margin-right: 5px;
-  vertical-align: middle;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+}
+
+.userProfile > img {
+  display: block;
+  width: auto;
+  height: 100%;
 }
 .userInfo > span {
   font-size: 12px;
