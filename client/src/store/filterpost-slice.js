@@ -12,6 +12,6 @@ const filterPost = createSlice({
   }
 });
 
-export const { addpost, logout, filterpost } = filterPost.actions;
+export const { filterpost } = filterPost.actions;
 
 export default filterPost.reducer;

@@ -133,7 +133,16 @@ const MainContent = ({
         <h1>{posts.title}</h1>
         <div className={style.basicinfo}>
           <span>
-            <img src={userImg} alt="user image" />
+            <div>
+              <img
+                src={
+                  author.image
+                    ? `https://hakunamatata.kr${author.image}`
+                    : userImg
+                }
+                alt="user image"
+              />
+            </div>
             <span>{author.nickname}</span>
           </span>
           <span>{new Date(posts.created_at).toLocaleDateString('ko-KR')}</span>

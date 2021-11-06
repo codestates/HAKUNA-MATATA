@@ -40,10 +40,18 @@
   color: #404040;
 }
 
-.basicinfo > span > img {
+.basicinfo > span > div {
   width: 30px;
   height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
   margin-right: 10px;
+}
+
+.basicinfo > span > div img {
+  width: auto;
+  height: 100%;
 }
 
 .section1-content div:first-of-type {

@@ -1,19 +1,21 @@
 .modalInput {
-  width: 300px;
-  padding: 9px 0 9px 14px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 24px;
+  line-height: 160%;
+  font-weight: 400;
+  padding: 5px 10px;
+  margin-top: 8px;
+  margin-bottom: 3px;
   border-radius: 3px;
   border: 2px solid #d8d8d8;
   background: #f7fafb;
-  height: 51px;
-  margin-top: 8px;
-  margin-bottom: 3px;
-  font-size: 24px;
-  font-weight: 400;
 }
 
 .modalInput::placeholder {
   font-size: 24px;
   font-weight: 400;
+  vertical-align: bottom;
   line-height: 1.45em;
   color: #969696;
 }
@@ -49,26 +51,33 @@
 .form input,
 .form label {
   display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 8px;
 }
+
 .form input,
 .form select {
-  font: inherit;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
+  width: 100%;
+  max-width: 300px;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 2px solid #d8d8d8;
+  background: #f7fafb;
 }
 
-/* .form input:focus {
-  outline: none;
-  border-color: #fbe8d2;
-  background-color: #fffff9;
-} */
+.buttonWrap {
+  max-width: 300px;
+  margin: 0 auto;
+}
 
 .modalButton {
-  width: 300px;
-  padding: 21px 0 21px 0;
+  width: 100%;
+  padding: 20px 20px;
   background-color: #f3887e;
   border-radius: 5px;
   color: #fff;
@@ -85,8 +94,8 @@
 }
 
 .modalOauth {
-  width: 300px;
-  padding: 17px 0 17px 0;
+  width: 100%;
+  padding: 20px 10px;
   background-color: #404040;
   border-radius: 3px;
   color: #fff;
@@ -104,6 +113,14 @@
   color: #f3887e;
 }
 
+.modalOauth img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.modalOauth span {
+  vertical-align: middle;
+}
+
 .modalOauth:disabled,
 .modalOauth:disabled:hover,
 .modalOauth:disabled:active,
@@ -114,4 +131,21 @@
   color: #292929;
   border-color: #ccc;
   cursor: not-allowed;
+}
+
+@media all and (max-width: 480px) {
+  .modalInput,
+  .form input {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  .modalInput::placeholder {
+    font-size: 16px;
+  }
+  .modalButton,
+  .modalOauth {
+    padding: 15px 10px;
+    font-size: 20px;
+    border-radius: 3px;
+  }
 }

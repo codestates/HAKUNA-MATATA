@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { showLoginModal } from '../../store/modal-slice';
 import style from './WriteComment.module.css';
@@ -14,6 +14,7 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
   const { isLogin } = loginState;
 
   const [commentContent, setCommentContent] = useState('');
+  const [userInfo, setUserinfo] = useState({});
 
   const sendComment = async () => {
     try {
@@ -51,10 +52,26 @@ const WriteComment = ({ pathName, setComments, comments, setPosts, posts }) => {
     setCommentContent(e.target.value);
   };
 
+  useEffect(() => {
+    const url = `${REACT_APP_API_URL}/users/userinfo`;
+    axios.get(url).then((response) => {
+      setUserinfo(response.data.userInfo);
+    });
+  }, []);
+
   return (
     <section className={style.section3}>
       <div className={style.writecomment}>
-        <img src={userImg} alt="user comment img" />
+        <div className={style.userProfile}>
+          <img
+            src={
+              userInfo.image
+                ? `https://hakunamatata.kr${userInfo.image}`
+                : userImg
+            }
+            alt="user comment img"
+          />
+        </div>
         <textarea
           placeholder="댓글을 입력하세요."
           className={style.textarea}

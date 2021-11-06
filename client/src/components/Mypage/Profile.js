@@ -31,7 +31,7 @@ const Profile = () => {
       );
       setProfileInfo({
         nickname: profileInfo.nickname,
-        userBio: profileInfo.bio
+        userBio: profileInfo.userBio
       });
       dispatch(getUserInfo(response.data.userInfo));
     } catch (err) {

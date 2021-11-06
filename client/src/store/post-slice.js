@@ -12,6 +12,6 @@ const posts = createSlice({
   }
 });
 
-export const { addpost, logout, getposts } = posts.actions;
+export const { getposts } = posts.actions;
 
 export default posts.reducer;
