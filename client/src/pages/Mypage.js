@@ -24,7 +24,7 @@ const Mypage = () => {
   const userInfo = useSelector((state) => state.isLogin.userInfo);
   const [imgSrc, setImgSrc] = useState(userImage);
   const [userPosts, setUserPosts] = useState([]);
-  console.log(setUserPosts);
+  console.log('setUserPosts', setUserPosts);
   useEffect(() => {
     userAutn();
     dispatch(profile());
